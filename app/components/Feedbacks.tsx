@@ -64,7 +64,7 @@ const Feedbacks = () => {
 			</div>
 			<div className="paddingX -mt-20 pb-14 flex flex-wrap gap-7">
 				{testimonials.map((testimonial, index) => (
-					<FeedbackCard key={testimonial.id} index={index} {...testimonial} />
+					<FeedbackCard key={index} index={index} {...testimonial} />
 				))}
 			</div>
 		</div>

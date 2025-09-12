@@ -13,29 +13,25 @@ export const navLinks = [
   },
 ];
 
-const services = [
+export const services = [
   {
-    title: 'Full Stack Web Developer',
-    icon: '/web.webp',
+    title: 'Web Developer',
+    icon: '/tech/web.webp',
   },
   {
-    title: 'UI/UX Designer',
-    icon: '/backend.webp',
+    title: 'React Developer',
+    icon: '/tech/reactjs.webp',
   },
   {
-    title: 'Grapich Design',
-    icon: '/creator.webp',
-  },
-  {
-    title: 'MIS Graduate',
-    icon: '/mobile.webp',
+    title: 'Backend Developer',
+    icon: '/tech/backend.webp',
   },
 ];
 
-const technologies = [
+export const technologies = [
   {
     name: 'HTML 5',
-    icon: '/tech/html.webp',
+    icon: '/tech/html.png',
   },
   {
     name: 'CSS 3',
@@ -54,10 +50,6 @@ const technologies = [
     icon: '/tech/reactjs.webp',
   },
   {
-    name: 'Next.JS',
-    icon: '/tech/nextjs.svg',
-  },
-  {
     name: 'Redux Toolkit',
     icon: '/tech/redux.webp',
   },
@@ -66,8 +58,12 @@ const technologies = [
     icon: '/tech/tailwind.webp',
   },
   {
-    name: 'bootstrap',
-    icon: '/tech/bootstrap.webp',
+    name: 'Node JS',
+    icon: '/tech/nodejs.webp',
+  },
+  {
+    name: 'MongoDB',
+    icon: '/tech/mongodb.webp',
   },
   {
     name: 'Three JS',
@@ -82,12 +78,48 @@ const technologies = [
     icon: '/tech/figma.webp',
   },
   {
-    name: 'wordpress',
-    icon: '/tech/wordpress.webp',
+    name: 'docker',
+    icon: '/tech/docker.png',
   },
   {
-    name: 'wordpress',
-    icon: '/tech/wordpress.webp',
+    name: 'postgres',
+    icon: '/tech/postgres.png',
+  },
+  {
+    name: 'my_sql',
+    icon: '/tech/my_sql.png',
+  },
+  {
+    name: 'java',
+    icon: '/tech/java.png',
+  },
+  {
+    name: 'c',
+    icon: '/tech/c.png',
+  },
+  {
+    name: 'c_shap',
+    icon: '/tech/c_shap.png',
+  },
+  {
+    name: 'spring',
+    icon: '/tech/spring.png',
+  },
+  {
+    name: 'vue',
+    icon: '/tech/vue.png',
+  },
+  {
+    name: 'angular',
+    icon: '/tech/angular.png',
+  },
+  {
+    name: 'NGINX_web_server',
+    icon: '/tech/NGINX_web_server.png',
+  },
+  {
+    name: 'project_management',
+    icon: '/tech/project_management.png',
   },
   {
     name: 'wordpress',
@@ -96,264 +128,92 @@ const technologies = [
 ];
 
 const experiences = [
-<<<<<<< HEAD
-	{
-		title: "Wordpress Developer & UI/UX Designer",
-		company_name: "A.V.M Auto",
-		icon: "/company/avm.webp",
-		iconBg: "#383E56",
-		date: "2020 -  2023",
-		points: [
-			"Self-Taught Expertise: Gained proficiency in WordPress and UI/UX design through independent learning.",
-			"Collaborative Design: Worked closely with stakeholders to gather feedback and iterate on the portfolio website's interactivity.",
-			"Successful Website Development: Designed and developed a visually appealing and user-friendly portfolio website using WordPress.",
-			"Positive Business Impact: Contributed to +54.25% sales and overall business growth through the improved website."
-		],
-	},
-	{
-		title: "Next.JS Developer",
-		company_name: "Sparkbright Engineering",
-		icon: "/company/avm.webp",
-		iconBg: "#E6DEDD",
-		date: "2023 - 2024",
-		points: [
-			"Self-Taught Expertise: Gained proficiency in React.JS and Next.JS through independent learning.",
-			"Successful Website Development: Designed and developed a visually appealing and user-friendly portfolio website using Next.JS.",
-			"Collaborative Design: Worked closely with stakeholders to gather feedback and iterate on the portfolio website's interactivity."
-		],
-	},
-	{
-		title: "Software Developer",
-		company_name: "Way to Web Pvt. Ltd.",
-		icon: "/company/avm.webp",
-		iconBg: "#E6DEDD",
-		date: "2024 - Present",
-		points: [
-			"Developing and maintaining Wordpress Site for A.V.M Auto The Car Body Shop based in Ahmedabad, Gujarat India.",
-			"Analyzing feedbacks and fixing bugs.",
-			"Search Engine Optimization.",
-			"Design Maintainence and hosting maintenance.",
-		],
-	},
-=======
   {
     title: 'Frontend Web Developer',
     company_name: 'JobSeek / Freelance Work',
     icon: '/company/web.png',
     iconBg: '#E6DEDD',
-    date: '2023 - 2024',
+    date: '2022 - 2023',
     points: [
-      'Developed and maintained responsive web applications using React, Tailwind CSS, and Node.js.',
-      'Designed and implemented interactive dashboards and user interfaces for freelancers and business owners.',
-      'Implemented user authentication, CRUD functionalities, and data filtering for better user experience.',
-      'Optimized website performance and ensured cross-device responsiveness.',
+      'Developed and maintained web applications using React.js and other related technologies.',
+      'Collaborated with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
+      'Implemented responsive design and ensured cross-browser compatibility.',
+      'Participated in code reviews and providing constructive feedback to other developers.',
     ],
   },
   {
-    title: 'Web & UI/UX Designer',
-    company_name: 'EasyFound / Freelance Work',
-    icon: '/company/web_design.png',
+    title: 'Full Stack Developer',
+    company_name: 'EasyFound / Freelance',
+    icon: '/company/frontend.png',
     iconBg: '#383E56',
-    date: '2022 - Present',
+    date: '2023 - 2024',
     points: [
-      'Designed and developed user-friendly web applications with a focus on accessibility and modern UI trends.',
-      'Created wireframes, prototypes, and UI/UX flows using Figma for seamless user experience.',
-      'Collaborated with clients to understand requirements and delivered high-quality designs.',
-      'Managed database integration and dynamic content using MySQL and MongoDB.',
+      'Developed full-stack web applications using React, Node.js, and MongoDB.',
+      'Created RESTful APIs and integrated third-party services.',
+      'Implemented user authentication and authorization systems.',
+      'Optimized applications for maximum speed and scalability.',
     ],
   },
   {
     title: 'Software Developer',
-    company_name: 'Freelance / Java & C# Development',
-    icon: '/company/java.png',
+    company_name: 'DocuHub / Freelance',
+    icon: '/company/cs.png',
     iconBg: '#E6DEDD',
-    date: '2023 - Present',
+    date: '2024 - Present',
     points: [
-      'Developed backend logic and console-based applications using Java, C/C++, and C#.',
-      'Implemented OOP, MVC patterns, and modular programming to ensure maintainable code.',
-      'Handled data management, authentication, and CRUD operations efficiently.',
+      'Developing and maintaining web applications using modern technologies.',
+      'Working with various clients to understand requirements and deliver solutions.',
+      'Implementing responsive design and ensuring cross-platform compatibility.',
       'Gained practical experience with payment processing, HTTP requests, and database connectivity.',
     ],
   },
->>>>>>> 8716b72 (Update portfolio with new features: 3D skills cloud, FlipWords animation, improved metadata, and personalized content)
 ];
 
 const testimonials = [
   {
-    id: 1,
     testimonial:
-      'Also do check out my Github Profile where I have shared all my codes from basic to advanced.',
+      'GitHub is a web-based platform used for version control and collaboration. It allows developers to work together on projects from anywhere.',
     name: 'Theara Chim',
-    image: '/tech/github.webp',
+    image: '/socialmedia/github.svg',
     link: 'https://github.com/theara24',
   },
   {
-    id: 2,
-    testimonial:
-      'Telegram is a cloud-based instant messaging app with end-to-end encryption and cross-platform availability.',
-    name: 'Theara Chim',
-    image: '/socialmedia/telegram.png',
-    link: 'https://t.me/chim_theara',
-  },
-  {
-    id: 3,
     testimonial:
       'LinkedIn is a business and employment-focused social media platform that works through websites and mobile apps.',
     name: 'Theara Chim',
     image: '/socialmedia/linkedin.svg',
-    link: 'https://www.linkedin.com/in/theara-chim-971845341', // update your LinkedIn later
+    link: 'https://linkedin.com/in/theara-chim',
   },
   {
-    id: 4,
     testimonial:
-      'Facebook is a social networking platform that connects people and communities globally.',
+      'Telegram is a cloud-based instant messaging and voice over IP service. It allows you to send messages and exchange files.',
+    name: 'Theara Chim',
+    image: '/socialmedia/telegram.png',
+    link: 'https://t.me/theara24',
+  },
+  {
+    testimonial:
+      'Facebook is a social networking service that allows you to connect with friends, family, and colleagues.',
     name: 'Theara Chim',
     image: '/socialmedia/facebook.png',
-    link: 'https://www.facebook.com/share/16dR4bHnUa/?mibextid=wwXIfr', // update with your Facebook profile link
+    link: 'https://www.facebook.com/share/16dR4bHnUa/?mibextid=wwXIfr',
   },
   {
-    id: 5,
     testimonial:
       'Dribbble is a self-promotion and social networking platform for digital designers and creatives. It serves as a design portfolio.',
     name: 'Theara Chim',
     image: '/socialmedia/dribble.svg',
-    link: 'https://dribbble.com/theara24', // update if you have one
+    link: 'https://dribbble.com/theara24',
   },
   {
-    id: 6,
     testimonial:
       'Fiverr is a global online marketplace for freelance services, where you can showcase your skills and get hired.',
     name: 'Theara Chim',
     image: '/socialmedia/fiverr.png',
-    link: 'https://www.fiverr.com/rrelaxing/buying?source=avatar_menu_profile', // update with your Fiverr link
+    link: 'https://www.fiverr.com/rrelaxing/buying?source=avatar_menu_profile',
   },
 ];
 
-<<<<<<< HEAD
-
-const projects :{
-	name: string;
-	description: string;
-	tags: {
-		name: string;
-		color: string;
-	}[];
-	image: string;
-	source_code_link?: string;
-	deploy_link: string;
-	platform: "Netlify" | "Vercel" | "Figma" | "Wordpress"
-}[] = [
-	{
-		name: "A.V.M Auto Portfolio",
-		description:
-			"A Designed and developed a visually appealing and user-friendly portfolio website using WordPress.",
-		tags: [
-			{
-				name: "wordpress",
-				color: "blue-text-gradient",
-			},
-			{
-				name: "google-translate",
-				color: "green-text-gradient",
-			},
-		],
-		image: "/projectimg/avm.webp",
-		platform: "Wordpress",
-		deploy_link: "https://avmauto.in/",
-	},
-	{
-		name: "Admin Dashboard UI",
-		description:
-			"React Admin Dashboard is a stunning web application that has a beautiful User Interface and has been built using advanced JavaScript concepts, React, and Tailwind CSS which has different graphs, stats and themes.",
-		tags: [
-			{
-				name: "react",
-				color: "blue-text-gradient",
-			},
-			{
-				name: "Syncfusion UI",
-				color: "orange-text-gradient",
-			},
-			{
-				name: "tailwind",
-				color: "green-text-gradient",
-			},
-		],
-		image: "/projectimg/dashboard.webp",
-		source_code_link: "https://github.com/omunite215/React-Admin-DashBoard",
-		platform: "Netlify",
-		deploy_link: "https://reactadmindashboardbyom.netlify.app/",
-	},
-	{
-		name: "HooBank",
-		description:
-			"A responsive Bank HomePage showcasing different features such as various payment gateways integration, easy money transfer, advanced security, etc. It has a beautiful interface made using Tailwind CSS and React",
-		tags: [
-			{
-				name: "react",
-				color: "blue-text-gradient",
-			},
-			{
-				name: "tailwind",
-				color: "green-text-gradient",
-			},
-		],
-		image: "/projectimg/hoobank.webp",
-		source_code_link: "https://github.com/omunite215/hoobank",
-		platform: "Netlify",
-		deploy_link: "https://hoobankbyom.netlify.app/",
-	},
-	{
-		name: "Provid A Youtube Clone",
-		description:
-			"Provid is a YouTube clone project built with React, Material UI, and Tailwind CSS. The platform has been designed with a stunning dark mode that enhances the viewing experience. The user interface is intuitive and easy to navigate, ensuring that users can easily find the content they're looking for.",
-		tags: [
-			{
-				name: "react",
-				color: "blue-text-gradient",
-			},
-			{
-				name: "materialui",
-				color: "orange-text-gradient",
-			},
-			{
-				name: "rapidapi",
-				color: "blue-text-gradient",
-			},
-		],
-		image: "/projectimg/provid.webp",
-		source_code_link: "https://github.com/omunite215/Provid-A-YouTube-Clone",
-		platform: "Netlify",
-		deploy_link: "https://providbyom.netlify.app/",
-	},
-	{
-		name: "A 3D Developer Portfolio",
-		description:
-			"A responsive 3D Portfolio website which is made using Three.js a cross-browser JavaScript library and application programming interface used to create and display animated 3D computer graphics in a web browser using WebGL. It has a beautiful interface made using Tailwind CSS and React.",
-		tags: [
-			{
-				name: "react",
-				color: "blue-text-gradient",
-			},
-			{
-				name: "tailwind",
-				color: "green-text-gradient",
-			},
-			{
-				name: "threejs",
-				color: "orange-text-gradient",
-			},
-			{
-				name: "emailjs",
-				color: "pink-text-gradient",
-			},
-		],
-		image: "/projectimg/portfoliosample.webp",
-		source_code_link: "https://github.com/omunite215/portfolio",
-		platform: "Netlify",
-		deploy_link: "https://portfoliobyompatel.netlify.app/",
-	},
-=======
 const projects: {
   name: string;
   description: string;
@@ -362,132 +222,199 @@ const projects: {
     color: string;
   }[];
   image: string;
-  source_code_link?: string;
+  source_code_link: string;
   deploy_link: string;
-  platform: 'Netlify' | 'Vercel' | 'Figma' | 'Wordpress' | 'Web';
+  platform: string;
 }[] = [
   {
-    name: 'DocuHub',
+    name: 'EasyFound - Lost & Found Platform',
     description:
-      'A full-stack web platform for students to collaborate with mentors, create documents, publish them, and make them available for public viewing & download.',
+      'A comprehensive lost and found platform built with React and Node.js, featuring user authentication, image upload, and real-time notifications. Users can post lost items and search for found items with advanced filtering.',
     tags: [
-      { name: 'html', color: 'blue-text-gradient' },
-      { name: 'css', color: 'green-text-gradient' },
-      { name: 'javascript', color: 'pink-text-gradient' },
-      { name: 'bootstrap', color: 'orange-text-gradient' },
-      { name: 'tailwind', color: 'red-text-gradient' },
-      { name: 'react', color: 'green-text-gradient' },
-      { name: 'next.js', color: 'blue-text-gradient' },
-      { name: 'java', color: 'orange-text-gradient' },
-      { name: 'spring', color: 'pink-text-gradient' },
-      { name: 'postgresql', color: 'green-text-gradient' },
-      { name: 'docker', color: 'blue-text-gradient' },
-      { name: 'nginx', color: 'red-text-gradient' },
-    ],
-    image: '/projectimg/docuhub.png',
-    platform: 'Vercel',
-    deploy_link: 'https://deploy-docu-hub-frontend.vercel.app/',
-  },
-
-  {
-    name: 'EasyFound',
-    description:
-      'A web platform that helps users easily find the best services in Cambodia. Built during Pre-University Scholarship.',
-    tags: [
-      { name: 'html', color: 'blue-text-gradient' },
-      { name: 'css', color: 'green-text-gradient' },
-      { name: 'javascript', color: 'pink-text-gradient' },
-      { name: 'bootstrap', color: 'orange-text-gradient' },
-      { name: 'tailwind', color: 'red-text-gradient' },
-      { name: 'react', color: 'green-text-gradient' },
-      { name: 'figma', color: 'blue-text-gradient' },
+      {
+        name: 'React',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Node.js',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'MongoDB',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Express',
+        color: 'blue-text-gradient',
+      },
     ],
     image: '/projectimg/easyfound.png',
+    source_code_link: 'https://github.com/theara24/easyfound',
     platform: 'Vercel',
-    deploy_link: 'https://ezfound-deploy.vercel.app/',
+    deploy_link: 'https://easyfound.vercel.app',
   },
   {
-    name: 'JobSeek',
+    name: 'JobSeek - Job Portal',
     description:
-      'A job-finding platform for Cambodia. Built during Foundation Scholarship, including UI/UX and full development.',
+      'A modern job portal with advanced search functionality, company profiles, and application tracking. Built with Next.js and featuring responsive design, user authentication, and admin dashboard.',
     tags: [
-      { name: 'html', color: 'blue-text-gradient' },
-      { name: 'css', color: 'green-text-gradient' },
-      { name: 'javascript', color: 'pink-text-gradient' },
-      { name: 'bootstrap', color: 'orange-text-gradient' },
-      { name: 'tailwind', color: 'red-text-gradient' },
-      { name: 'react', color: 'green-text-gradient' },
-      { name: 'java', color: 'blue-text-gradient' },
-      { name: 'postgresql', color: 'orange-text-gradient' },
-      { name: 'figma', color: 'pink-text-gradient' },
+      {
+        name: 'Next.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'TypeScript',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Tailwind CSS',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Prisma',
+        color: 'blue-text-gradient',
+      },
     ],
     image: '/projectimg/jobseek.png',
+    source_code_link: 'https://github.com/theara24/jobseek',
     platform: 'Vercel',
-    deploy_link: 'https://www.job-seek.works/',
+    deploy_link: 'https://jobseek-portal.vercel.app',
   },
   {
-    name: 'Employee Management System',
+    name: 'DocuHub - Document Management',
     description:
-      'A console-based C/C++ application for managing employee records including add, update, search, and delete operations.',
+      'A secure document management system with file upload, categorization, and sharing capabilities. Features include user roles, document versioning, and search functionality.',
     tags: [
-      { name: 'c/c++', color: 'blue-text-gradient' },
-      { name: 'console-app', color: 'green-text-gradient' },
+      {
+        name: 'React',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Firebase',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Material-UI',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Redux',
+        color: 'blue-text-gradient',
+      },
     ],
-    image: '/projectimg/c.png',
-    platform: 'Web',
-    deploy_link: 'http://training.antkh.com/achievements/808.aspx',
+    image: '/projectimg/docuhub.png',
+    source_code_link: 'https://github.com/theara24/docuhub',
+    platform: 'Netlify',
+    deploy_link: 'https://docuhub.netlify.app',
   },
   {
-    name: 'POS System',
+    name: 'POS System - Point of Sale',
     description:
-      'A C# desktop-based POS system that makes it easy to manage products and sales records. University project.',
+      'A complete point of sale system for retail businesses with inventory management, sales tracking, and reporting features. Built with modern web technologies and responsive design.',
     tags: [
-      { name: 'c#', color: 'blue-text-gradient' },
-      { name: 'desktop-app', color: 'green-text-gradient' },
+      {
+        name: 'Vue.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Node.js',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'MySQL',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Bootstrap',
+        color: 'blue-text-gradient',
+      },
     ],
     image: '/projectimg/pos.png',
-    platform: 'Web',
-    deploy_link: '#',
+    source_code_link: 'https://github.com/theara24/pos-system',
+    platform: 'Heroku',
+    deploy_link: 'https://pos-system-demo.herokuapp.com',
   },
   {
-    name: 'POS System with SQL Server',
+    name: 'C++ Learning Platform',
     description:
-      'A C# desktop-based POS System that connects with SQL Server for storing and managing product data efficiently. Designed for easy inventory and sales management.',
+      'An interactive learning platform for C++ programming with coding challenges, tutorials, and progress tracking. Features include code editor, compiler integration, and user progress analytics.',
     tags: [
-      { name: 'c#', color: 'blue-text-gradient' },
-      { name: 'sql-server', color: 'green-text-gradient' },
-      { name: 'desktop-app', color: 'pink-text-gradient' },
+      {
+        name: 'React',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Python',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Docker',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'PostgreSQL',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: '/projectimg/c.png',
+    source_code_link: 'https://github.com/theara24/cpp-learning',
+    platform: 'AWS',
+    deploy_link: 'https://cpp-learning.aws.com',
+  },
+  {
+    name: 'SQL Server Management Tool',
+    description:
+      'A web-based SQL Server management tool with query execution, database visualization, and performance monitoring. Features include query history, export functionality, and user management.',
+    tags: [
+      {
+        name: 'Angular',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'C#',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'SQL Server',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Entity Framework',
+        color: 'blue-text-gradient',
+      },
     ],
     image: '/projectimg/sql_sever.png',
-    platform: 'Web',
-    deploy_link: '#',
+    source_code_link: 'https://github.com/theara24/sql-manager',
+    platform: 'Azure',
+    deploy_link: 'https://sql-manager.azure.com',
   },
   {
-    name: 'EasyFound UI/UX',
+    name: 'Portfolio Website',
     description:
-      'UI/UX design project for EasyFound platform created with Figma during Pre-University Scholarship.',
+      'A modern, responsive portfolio website built with Next.js, featuring 3D animations, interactive components, and a clean UI/UX design. The website showcases my skills, projects, and experience in web development.',
     tags: [
-      { name: 'figma', color: 'blue-text-gradient' },
-      { name: 'ui/ux', color: 'pink-text-gradient' },
+      {
+        name: 'Next.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'React',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Tailwind CSS',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Three.js',
+        color: 'blue-text-gradient',
+      },
     ],
-    image: '/projectimg/easyfoundui.png',
-    platform: 'Figma',
-    deploy_link: '#',
+    image: '/projectimg/portfolio_preview.png',
+    source_code_link: 'https://github.com/theara24/Project_3DPortfolio',
+    platform: 'Vercel',
+    deploy_link: 'https://theara-portfolio.vercel.app',
   },
-  {
-    name: 'JobSeek UI/UX',
-    description:
-      'UI/UX design project for JobSeek platform created with Figma during Foundation Scholarship.',
-    tags: [
-      { name: 'figma', color: 'blue-text-gradient' },
-      { name: 'ui/ux', color: 'pink-text-gradient' },
-    ],
-    image: '/projectimg/jobseekui.png',
-    platform: 'Figma',
-    deploy_link:
-      'https://www.figma.com/design/xtMOvFfMJVKh1zoiOUKBk4/F3-Project?node-id=0-1&t=QTTNLLQeUmky2j3X-1',
-  },
->>>>>>> 8716b72 (Update portfolio with new features: 3D skills cloud, FlipWords animation, improved metadata, and personalized content)
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { experiences, testimonials, projects };
