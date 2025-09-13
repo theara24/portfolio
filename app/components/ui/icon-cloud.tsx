@@ -54,7 +54,7 @@ export default function IconCloud({ iconSlugs, className }: IconCloudProps) {
                     initial: [0.1, -0.1],
                     maxSpeed: 0.02,
                     minSpeed: 0.005,
-                    radius: 180,
+                    radiusX: 180, // changed from radius to radiusX
                     dragControl: true,
                     outlineColour: '#0000',
                 }}
