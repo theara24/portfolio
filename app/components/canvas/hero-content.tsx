@@ -131,9 +131,10 @@ export const HeroContent = () => {
             className="flex flex-col gap-2 sm:gap-4 mt-4 sectionHeadText text-white"
           >
             <span>
-              Hello I am<br />
+              Hello I am
+              <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              Thear Chim
+                Thear Chim
               </span>{' '}
             </span>
           </motion.div>
@@ -172,10 +173,11 @@ export const HeroContent = () => {
 
           {/* Button */}
           <motion.a
+            href="#about" // navigate to About section
             variants={zoomIn(1, 0.5)}
             className="py-1 sm:py-2 px-3 sm:px-4 button-primary text-center text-white cursor-pointer rounded-lg max-w-[150px] sm:max-w-[200px] bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
           >
-            Learn more
+            About Me
           </motion.a>
         </div>
 

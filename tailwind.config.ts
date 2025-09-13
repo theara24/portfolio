@@ -7,6 +7,12 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'w-4', 'h-4',
+    { pattern: /^text-/ },
+    { pattern: /^w-/ },
+    { pattern: /^h-/ },
+  ],
   theme: {
     extend: {
       fontFamily: {
