@@ -15,16 +15,20 @@ export const navLinks = [
 
 export const services = [
   {
-    title: 'Web Developer',
-    icon: '/tech/web.webp',
+    title: 'Full Stack Developer',
+    icon: '/fullsttack.webp',
   },
   {
-    title: 'React Developer',
-    icon: '/tech/reactjs.webp',
+    title: 'Frontend Developer (React & Tailwind)',
+    icon: '/frontend.webp',
   },
   {
-    title: 'Backend Developer',
-    icon: '/tech/backend.webp',
+    title: 'Database Developer',
+    icon: '/database.webp',
+  },
+  {
+    title: 'UI/UX & Graphic Designer',
+    icon: '/uxui.webp',
   },
 ];
 
@@ -249,9 +253,9 @@ const projects: {
       },
     ],
     image: '/projectimg/easyfound.png',
-    source_code_link: 'https://github.com/theara24/easyfound',
+    source_code_link: 'https://github.com/Nyfong/PU1G2-serviceListing2.git',
     platform: 'Vercel',
-    deploy_link: 'https://easyfound.vercel.app',
+    deploy_link: 'https://ezfound-deploy.vercel.app/',
   },
   {
     name: 'JobSeek - Job Portal',
@@ -276,9 +280,9 @@ const projects: {
       },
     ],
     image: '/projectimg/jobseek.png',
-    source_code_link: 'https://github.com/theara24/jobseek',
+    source_code_link: 'https://github.com/SisovandaraKong/Web-F3.git',
     platform: 'Vercel',
-    deploy_link: 'https://jobseek-portal.vercel.app',
+    deploy_link: 'https://www.job-seek.works/',
   },
   {
     name: 'DocuHub - Document Management',
@@ -303,9 +307,9 @@ const projects: {
       },
     ],
     image: '/projectimg/docuhub.png',
-    source_code_link: 'https://github.com/theara24/docuhub',
-    platform: 'Netlify',
-    deploy_link: 'https://docuhub.netlify.app',
+    source_code_link: 'https://github.com/FSWD-GEN-01/ipub-frontend.git',
+    platform: 'Vercel',
+    deploy_link: 'https://deploy-docu-hub-frontend.vercel.app/',
   },
   {
     name: 'POS System - Point of Sale',
@@ -330,9 +334,9 @@ const projects: {
       },
     ],
     image: '/projectimg/pos.png',
-    source_code_link: 'https://github.com/theara24/pos-system',
+    source_code_link: 'https://github.com/theara24/POS-System.git',
     platform: 'Heroku',
-    deploy_link: 'https://pos-system-demo.herokuapp.com',
+    deploy_link: 'https://github.com/theara24/POS-System.git',
   },
   {
     name: 'C++ Learning Platform',
@@ -357,9 +361,10 @@ const projects: {
       },
     ],
     image: '/projectimg/c.png',
-    source_code_link: 'https://github.com/theara24/cpp-learning',
+    source_code_link:
+      'https://github.com/theara24/Employee-Management-System.git',
     platform: 'AWS',
-    deploy_link: 'https://cpp-learning.aws.com',
+    deploy_link: 'http://training.antkh.com/achievements/808.aspx',
   },
   {
     name: 'SQL Server Management Tool',
@@ -384,36 +389,41 @@ const projects: {
       },
     ],
     image: '/projectimg/sql_sever.png',
-    source_code_link: 'https://github.com/theara24/sql-manager',
+    source_code_link: 'https://github.com/theara24/POS_SQLServer.git',
     platform: 'Azure',
-    deploy_link: 'https://sql-manager.azure.com',
+    deploy_link: 'https://github.com/theara24/POS_SQLServer.git',
   },
   {
-    name: 'Portfolio Website',
+    name: 'EasyFound - Ux Ui',
     description:
-      'A modern, responsive portfolio website built with Next.js, featuring 3D animations, interactive components, and a clean UI/UX design. The website showcases my skills, projects, and experience in web development.',
+      'A clean UI/UX design. The website showcases my skills, projects, and experience in web development.',
     tags: [
       {
-        name: 'Next.js',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'React',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'Tailwind CSS',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'Three.js',
+        name: 'Figma',
         color: 'blue-text-gradient',
       },
     ],
-    image: '/projectimg/portfolio_preview.png',
-    source_code_link: 'https://github.com/theara24/Project_3DPortfolio',
-    platform: 'Vercel',
-    deploy_link: 'https://theara-portfolio.vercel.app',
+    image: '/projectimg/easyfoundui.png',
+    source_code_link: '#',
+    platform: 'Figma',
+    deploy_link: '#',
+  },
+  {
+    name: 'JobSeek - Ux Ui',
+    description:
+      'A clean UI/UX design. The website showcases my skills, projects, and experience in web development.',
+    tags: [
+      {
+        name: 'Figma',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: '/projectimg/jobseekui.png',
+    source_code_link:
+      'https://www.figma.com/design/xtMOvFfMJVKh1zoiOUKBk4/F3-Project?node-id=0-1&t=Pex5WD5eefpBhI8E-1',
+    platform: 'Figma',
+    deploy_link:
+      'https://www.figma.com/design/xtMOvFfMJVKh1zoiOUKBk4/F3-Project?node-id=0-1&t=Pex5WD5eefpBhI8E-1',
   },
 ];
 
