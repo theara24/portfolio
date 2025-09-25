@@ -22,12 +22,13 @@ const ServiceCard = ({ index, title, icon }: ServiceCardProps) => {
       <motion.div
         variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
         initial="hidden"
-        animate="show"
+        whileInView="show"
+        viewport={{ once: true }} // Animate once when entering viewport
         className="w-full green-pink-gradient p-px rounded-[20px] shadow-card"
       >
         <motion.div
           animate={{
-            y: [0, -10, 0], // floating up and down
+            y: [0, -10, 0], // Floating up and down
           }}
           transition={{
             duration: 3,
@@ -65,7 +66,7 @@ const About = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{
-            opacity: [0, 1, 0.8, 1], // subtle flicker glow
+            opacity: [0, 1, 0.8, 1], // Subtle flicker glow
           }}
           transition={{
             duration: 3,
@@ -107,29 +108,31 @@ const About = () => {
           }}
           className="text-secondary text-[17px] max-w-[3xl] leading-[30px] flex-1"
         >
-          Creative Web Designer and Full-Sttact Web Developer with strong skills in
-          React, Next.js, Tailwind CSS, and modern UI/UX design. Experienced in
-          building responsive, user-friendly websites and crafting intuitive
-          digital experiences. With a background in Management Information
-          Systems (MIS), I bridge design and technology to deliver solutions
-          that are both functional and visually engaging. Passionate about
-          freelancing, collaboration, and bringing ideas to life through clean
-          design and efficient development.
+          Creative Full-Stack Developer and Web Designer with expertise in
+          frontend (React, Next.js, Vue, Nuxt, Tailwind CSS) and backend
+          (Node.js, PHP, C#, Java, REST APIs) development. Skilled in database
+          design (MySQL, PostgreSQL, MongoDB) and UI/UX design (Figma, Adobe
+          XD). Passionate about delivering scalable, user-friendly, and
+          culturally relevant web solutions.
         </motion.p>
 
-        {/* Floating image */}
+        {/* Enhanced Floating Image */}
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{
+          initial={{ opacity: 0, x: 100, scale: 0.8 }}
+          whileInView={{
             opacity: 1,
             x: 0,
-            y: [0, -10, 0],
+            y: [0, -15, 0], // Increased vertical float
+            scale: [0.95, 1.05, 0.95], // Gentle scaling for "breathing" effect
+            rotate: [-2, 2, -2], // Subtle tilt
           }}
           transition={{
-            duration: 3,
+            duration: 4,
             repeat: Infinity,
+            repeatType: 'loop',
             ease: 'easeInOut',
           }}
+          viewport={{ once: true }} // Animate once when entering viewport
           className="relative w-full md:w-[300px] h-[300px]"
         >
           <Image
@@ -145,7 +148,8 @@ const About = () => {
       <motion.div
         className="mt-20 flex flex-wrap gap-10"
         initial="hidden"
-        animate="show"
+        whileInView="show"
+        viewport={{ once: true }} // Animate once when entering viewport
         transition={{ staggerChildren: 0.3 }}
       >
         {services.map((service, index) => (

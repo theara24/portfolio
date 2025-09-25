@@ -1,10 +1,16 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import IconCloudDemo from '@/app/components/globe';
 import { Card, CardContent } from '@/app/components/ui/card';
 import { Badge } from '@/app/components/ui/badge';
 import { Code2, Paintbrush, Database, Layout, Cpu, Cloud } from 'lucide-react';
+import { isWebGLSupported } from '@/app/utils/webgl';
+import WebGLFallback from '@/app/components/WebGLFallback';
+import { SiAngular } from 'react-icons/si';
+import { SiC, SiCplusplus } from 'react-icons/si';
+import { SiPostman } from 'react-icons/si';
+
 import {
   FaReact,
   FaNodeJs,
@@ -14,13 +20,20 @@ import {
   FaLinux,
   FaFigma,
   FaAws,
+  FaPhp,
+  FaJava,
+  FaVuejs,
+  FaBootstrap,
 } from 'react-icons/fa';
 import {
+  SiNuxtdotjs,
   SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
   SiPostgresql,
   SiMongodb,
+  SiMysql,
+  SiAdobexd,
   SiGraphql,
   SiJest,
   SiWebpack,
@@ -54,7 +67,7 @@ const SkillCard: React.FC<{
   skills: Skill[];
   color: string;
 }> = ({ icon: Icon, title, skills, color }) => (
-  <Card className="group relative overflow-hidden bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
+  <Card className="group relative overflow-hidden py-5 bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(100,100,255,0.1)] to-transparent group-hover:via-[rgba(100,100,255,0.2)] animate-shimmer" />
     <CardContent className="p-6 relative z-10">
       <div className="flex items-center gap-4 mb-6">
@@ -84,7 +97,51 @@ const SkillCard: React.FC<{
   </Card>
 );
 
-const Tech: React.FC = () => {
+// Spline Viewer Component with WebGL fallback
+const SplineViewer: React.FC = () => {
+  const [webglSupported, setWebglSupported] = useState<boolean | null>(null);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    setWebglSupported(isWebGLSupported());
+
+    // Load Spline script
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src =
+      'https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js';
+    script.async = true;
+    script.onload = () => setScriptLoaded(true);
+    script.onerror = () => {
+      console.warn('Failed to load Spline viewer script');
+      setScriptLoaded(false);
+    };
+
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
+  if (webglSupported === null) {
+    return (
+      <div className="w-full h-full bg-gray-900/50 rounded-lg animate-pulse" />
+    );
+  }
+
+  if (!webglSupported || !scriptLoaded) {
+    return <WebGLFallback message="3D Robot model not supported" />;
+  }
+
+  return (
+    <div className="w-full h-full">
+      <spline-viewer url="https://prod.spline.design/AREWywtjBBjH7Rek/scene.splinecode"></spline-viewer>
+    </div>
+  );
+};
+
+const Skill: React.FC = () => {
   const skillCategories: Category[] = [
     {
       icon: Code2,
@@ -97,20 +154,41 @@ const Tech: React.FC = () => {
           icon: <SiNextdotjs className="w-4 h-4 text-white" />,
         },
         {
-          name: 'TypeScript',
-          icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
+          name: 'Vue',
+          icon: <FaVuejs className="w-4 h-4 text-[#4FC08D]" />,
+        },
+        {
+          name: 'Angular',
+          icon: <SiAngular className="w-4 h-4 text-[#DD0031]" />,
+        },
+        
+        {
+          name: 'Nuxt',
+          icon: <SiNuxtdotjs className="w-4 h-4 text-[#00C58E]" />,
         },
         {
           name: 'Tailwind CSS',
           icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" />,
         },
         {
-          name: 'HTML5',
+          name: 'Bootstrap',
+          icon: <FaBootstrap className="w-4 h-4 text-[#7952B3]" />,
+        },
+        {
+          name: 'HTML',
           icon: <BsFileEarmarkCode className="w-4 h-4 text-[#E34F26]" />,
         },
         {
-          name: 'CSS3',
+          name: 'CSS',
           icon: <BsFileEarmarkCode className="w-4 h-4 text-[#1572B6]" />,
+        },
+        {
+          name: 'JavaScript',
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#F7DF1E]" />,
+        },
+        {
+          name: 'TypeScript',
+          icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
         },
       ],
     },
@@ -128,14 +206,6 @@ const Tech: React.FC = () => {
           icon: <FaPython className="w-4 h-4 text-[#3776AB]" />,
         },
         {
-          name: 'PostgreSQL',
-          icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
-        },
-        {
-          name: 'MongoDB',
-          icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
-        },
-        {
           name: 'REST APIs',
           icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
         },
@@ -143,6 +213,23 @@ const Tech: React.FC = () => {
           name: 'GraphQL',
           icon: <SiGraphql className="w-4 h-4 text-[#E10098]" />,
         },
+        
+        {
+          name: 'PHP',
+          icon: <FaPhp className="w-4 h-4 text-[#777BB4]" />,
+        },
+        {
+          name: 'C#',
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#9B4F96]" />,
+        },
+        {
+          name: 'Java',
+          icon: <FaJava className="w-4 h-4 text-[#007396]" />,
+        },
+        { name: 'C', icon: <SiC className="w-4 h-4 text-[#A8B9CC]" /> },
+{ name: 'C++', icon: <SiCplusplus className="w-4 h-4 text-[#00599C]" /> },
+
+        
       ],
     },
     {
@@ -151,6 +238,10 @@ const Tech: React.FC = () => {
       color: 'text-purple-400',
       skills: [
         { name: 'Figma', icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" /> },
+        {
+          name: 'Adobe XD',
+          icon: <SiAdobexd className="w-4 h-4 text-[#FF61F6]" />,
+        },
         {
           name: 'Responsive Design',
           icon: <Layout className="w-4 h-4 text-[#38B2AC]" />,
@@ -167,7 +258,7 @@ const Tech: React.FC = () => {
     },
     {
       icon: Cloud,
-      title: 'Cloud & DevOps',
+      title: 'Cloud & Database',
       color: 'text-orange-400',
       skills: [
         { name: 'AWS', icon: <FaAws className="w-4 h-4 text-[#FF9900]" /> },
@@ -180,8 +271,23 @@ const Tech: React.FC = () => {
           name: 'Kubernetes',
           icon: <BsGrid1X2 className="w-4 h-4 text-[#326CE5]" />,
         },
+        { name: 'Postman', icon: <SiPostman className="w-4 h-4 text-[#FF6C37]" /> },
+
         { name: 'Git', icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" /> },
         { name: 'Linux', icon: <FaLinux className="w-4 h-4 text-[#FCC624]" /> },
+        {
+          name: 'MySQL',
+          icon: <SiMysql className="w-4 h-4 text-[#4479A1]" />,
+        },
+        {
+          name: 'PostgreSQL',
+          icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
+        },
+        {
+          name: 'MongoDB',
+          icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
+        },
+
       ],
     },
     {
@@ -193,7 +299,6 @@ const Tech: React.FC = () => {
           name: 'VS Code',
           icon: <TbBrandVscode className="w-4 h-4 text-[#007ACC]" />,
         },
-        { name: 'Jest', icon: <SiJest className="w-4 h-4 text-[#C21325]" /> },
         {
           name: 'Webpack',
           icon: <SiWebpack className="w-4 h-4 text-[#8DD6F9]" />,
@@ -303,12 +408,7 @@ const Tech: React.FC = () => {
           {/* Right: 3D Spline Viewer */}
           <div className="lg:w-1/2 flex items-center justify-center">
             <div className="w-full h-[600px]">
-              <script
-                type="module"
-                src="https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js"
-                async
-              ></script>
-              <spline-viewer url="https://prod.spline.design/AREWywtjBBjH7Rek/scene.splinecode"></spline-viewer>
+              <SplineViewer />
             </div>
           </div>
         </div>
@@ -358,4 +458,4 @@ const Tech: React.FC = () => {
   );
 };
 
-export default Tech;
+export default Skill;

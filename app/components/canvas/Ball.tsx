@@ -7,8 +7,9 @@ import {
   Preload,
   useTexture,
 } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
+import WebGLCanvas from '@/app/components/WebGLCanvas';
+import WebGLFallback from '@/app/components/WebGLFallback';
 
 const Ball = ({ imgUrl }: { imgUrl: string }) => {
   const [decal] = useTexture([imgUrl]);
@@ -38,10 +39,13 @@ const Ball = ({ imgUrl }: { imgUrl: string }) => {
 
 const BallCanvas = ({ icon }: { icon: string }) => {
   return (
-    <Canvas
+    <WebGLCanvas
       frameloop="demand"
       dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{
+        preserveDrawingBuffer: true,
+      }}
+      fallback={<WebGLFallback message="3D Ball not supported" />}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
@@ -49,7 +53,7 @@ const BallCanvas = ({ icon }: { icon: string }) => {
       </Suspense>
 
       <Preload all />
-    </Canvas>
+    </WebGLCanvas>
   );
 };
 

@@ -1,8 +1,9 @@
 'use client';
 import CanvasLoader from '@/app/components/Loader';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
+import WebGLCanvas from '@/app/components/WebGLCanvas';
+import WebGLFallback from '@/app/components/WebGLFallback';
 
 const Earth = () => {
   const earth = useGLTF('/planet/scene.gltf');
@@ -14,17 +15,20 @@ const Earth = () => {
 
 const EarthCanvas = () => {
   return (
-    <Canvas
+    <WebGLCanvas
       shadows
       frameloop="demand"
       dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{
+        preserveDrawingBuffer: true,
+      }}
       camera={{
         fov: 45,
         near: 0.1,
         far: 200,
         position: [-4, 3, 6],
       }}
+      fallback={<WebGLFallback message="3D Earth model not supported" />}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -36,7 +40,7 @@ const EarthCanvas = () => {
         <Earth />
         <Preload all />
       </Suspense>
-    </Canvas>
+    </WebGLCanvas>
   );
 };
 

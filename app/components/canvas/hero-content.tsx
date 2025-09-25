@@ -17,26 +17,21 @@ const CodeAnimation = () => {
   const codeSegments = useMemo(
     () => [
       "<span class='text-purple-400'>const</span> <span class='text-gray-300'>profile</span> <span class='text-purple-400'>=</span> <span class='text-purple-400'>{</span>",
-      "  <span class='text-gray-300'>name</span>: <span class='text-green-400'>'Nazmul Hossain'</span>,",
-      "  <span class='text-gray-300'>title</span>: <span class='text-green-400'>'Full-Stack Developer | Cloud Enthusiast | Problem Solver'</span>,",
+      "  <span class='text-gray-300'>name</span>: <span class='text-green-400'>'Theara Chim'</span>,",
+      "  <span class='text-gray-300'>title</span>: <span class='text-green-400'>'Full-Stack Developer in Training'</span>,",
       "  <span class='text-gray-300'>skills</span>: [",
-      "    <span class='text-green-400'>'React'</span>, <span class='text-green-400'>'NextJS'</span>, <span class='text-green-400'>'Redux'</span>, <span class='text-green-400'>'Express'</span>,",
-      "    <span class='text-green-400'>'MySQL'</span>, <span class='text-green-400'>'MongoDB'</span>, <span class='text-green-400'>'Docker'</span>,",
-      "    <span class='text-green-400'>'AWS'</span>, <span class='text-green-400'>'TypeScript'</span>,",
-      "    <span class='text-green-400'>'GraphQL'</span>, <span class='text-green-400'>'Git'</span>, <span class='text-green-400'>'Linux'</span>,",
-      "    <span class='text-green-400'>'Discord Development'</span>",
+      "    <span class='text-green-400'>'React'</span>, <span class='text-green-400'>'Next.js'</span>, <span class='text-green-400'>'Vue.js'</span>, <span class='text-green-400'>'Nuxt.js'</span>, <span class='text-green-400'>'Angular'</span>,",
+      "    <span class='text-green-400'>'Tailwind CSS'</span>, <span class='text-green-400'>'Bootstrap'</span>, <span class='text-green-400'>'HTML'</span>, <span class='text-green-400'>'CSS'</span>, <span class='text-green-400'>'JavaScript'</span>, <span class='text-green-400'>'TypeScript'</span>,",
+      "    <span class='text-green-400'>'Node.js'</span>, <span class='text-green-400'>'PHP'</span>, <span class='text-green-400'>'C#'</span>, <span class='text-green-400'>'Java'</span>, <span class='text-green-400'>'C'</span>, <span class='text-green-400'>'C++'</span>,",
+      "    <span class='text-green-400'>'MySQL'</span>, <span class='text-green-400'>'PostgreSQL'</span>, <span class='text-green-400'>'MongoDB'</span>,",
+      "    <span class='text-green-400'>'Figma'</span>, <span class='text-green-400'>'Adobe XD'</span>, <span class='text-green-400'>'Adobe Photoshop'</span>, <span class='text-green-400'>'Illustrator'</span>, <span class='text-green-400'>'InDesign'</span>, <span class='text-green-400'>'Premiere'</span>, <span class='text-green-400'>'DaVinci'</span>, <span class='text-green-400'>'CapCut'</span>,",
+      "    <span class='text-green-400'>'AWS'</span>, <span class='text-green-400'>'Docker'</span>, <span class='text-green-400'>'CI/CD'</span>, <span class='text-green-400'>'Kubernetes'</span>,",
+      "    <span class='text-green-400'>'Git'</span>, <span class='text-green-400'>'Linux'</span>, <span class='text-green-400'>'Postman'</span>",
       '  ],',
-      "  <span class='text-gray-300'>hardWorker</span>: <span class='text-purple-400'>true</span>,",
-      "  <span class='text-gray-300'>quickLearner</span>: <span class='text-purple-400'>true</span>,",
-      "  <span class='text-gray-300'>problemSolver</span>: <span class='text-purple-400'>true</span>,",
-      "  <span class='text-gray-300'>yearsOfExperience</span>: <span class='text-purple-400'>4</span>,",
+      "  <span class='text-gray-300'>projectsCompleted</span>: <span class='text-purple-400'>['JobFinder', 'Carify', 'FoodPanda Clone', 'Scholarship Portal']</span>,",
+      "  <span class='text-gray-300'>learningAttitude</span>: <span class='text-purple-400'>true</span>,",
       "  <span class='text-gray-300'>hireable</span>: <span class='text-purple-400'>function</span>() <span class='text-purple-400'>{</span>",
-      "    <span class='text-purple-400'>return</span> (",
-      "      <span class='text-purple-400'>this</span>.<span class='text-gray-300'>hardWorker</span> &&",
-      "      <span class='text-purple-400'>this</span>.<span class='text-gray-300'>problemSolver</span> &&",
-      "      <span class='text-purple-400'>this</span>.<span class='text-gray-300'>skills</span>.<span class='text-gray-300'>length</span> >= <span class='text-purple-400'>5</span> &&",
-      "      <span class='text-purple-400'>this</span>.<span class='text-gray-300'>yearsOfExperience</span> >= <span class='text-purple-400'>3</span>",
-      '    );',
+      "    <span class='text-purple-400'>return</span> this.learningAttitude && this.projectsCompleted.length >= 2;",
       "  <span class='text-purple-400'>}</span>",
       "<span class='text-purple-400'>}</span>;",
     ],
@@ -59,7 +54,7 @@ const CodeAnimation = () => {
             return newLines;
           });
           setCurrentChar((prev) => prev + 1);
-        }, 1); // ⚡ ultra-fast typing
+        }, 1);
         return () => clearTimeout(timeout);
       } else {
         setCurrentLine((prev) => prev + 1);
@@ -73,7 +68,6 @@ const CodeAnimation = () => {
       variants={fadeIn('left', 'spring', 1.2, 0.05)}
       className="p-2 sm:p-4 bg-gray-900 rounded-lg shadow-lg border border-gray-800 w-full max-w-[320px] sm:max-w-[420px] md:max-w-[480px] overflow-hidden"
     >
-      {/* Mac-style header */}
       <div className="flex items-center bg-gray-800 p-1 sm:p-2 rounded-t-lg">
         <div className="flex space-x-1 sm:space-x-2">
           <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
@@ -84,14 +78,10 @@ const CodeAnimation = () => {
           developer.js
         </span>
       </div>
-
-      {/* Typing Code Content */}
       <pre className="p-2 sm:p-4 text-gray-200 whitespace-pre-wrap font-mono text-xs sm:text-sm leading-relaxed">
         {displayedCode.map((line, index) => (
           <div key={index} dangerouslySetInnerHTML={{ __html: line }} />
         ))}
-
-        {/* Cursor */}
         <motion.span
           className="inline-block w-1 sm:w-2 h-3 sm:h-4 bg-purple-500 ml-1"
           animate={{ opacity: [0, 1, 0] }}
@@ -134,7 +124,7 @@ export const HeroContent = () => {
               Hello I am
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-                Thear Chim
+                Theara Chim
               </span>{' '}
             </span>
           </motion.div>

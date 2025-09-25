@@ -19,11 +19,11 @@ export const services = [
     icon: '/fullsttack.webp',
   },
   {
-    title: 'Frontend Developer (React & Tailwind)',
+    title: 'Frontend Developer',
     icon: '/frontend.webp',
   },
   {
-    title: 'Database Developer',
+    title: 'Database & Backend Developer',
     icon: '/database.webp',
   },
   {
@@ -133,42 +133,43 @@ export const technologies = [
 
 const experiences = [
   {
-    title: 'Frontend Web Developer',
-    company_name: 'JobSeek / Freelance Work',
+    title: 'Freelance Web Designer',
+    company_name: 'Self-Employed',
     icon: '/company/web.png',
-    iconBg: '#E6DEDD',
-    date: '2022 - 2023',
-    points: [
-      'Developed and maintained web applications using React.js and other related technologies.',
-      'Collaborated with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-      'Implemented responsive design and ensured cross-browser compatibility.',
-      'Participated in code reviews and providing constructive feedback to other developers.',
-    ],
-  },
-  {
-    title: 'Full Stack Developer',
-    company_name: 'EasyFound / Freelance',
-    icon: '/company/frontend.png',
-    iconBg: '#383E56',
-    date: '2023 - 2024',
-    points: [
-      'Developed full-stack web applications using React, Node.js, and MongoDB.',
-      'Created RESTful APIs and integrated third-party services.',
-      'Implemented user authentication and authorization systems.',
-      'Optimized applications for maximum speed and scalability.',
-    ],
-  },
-  {
-    title: 'Software Developer',
-    company_name: 'DocuHub / Freelance',
-    icon: '/company/cs.png',
     iconBg: '#E6DEDD',
     date: '2024 - Present',
     points: [
-      'Developing and maintaining web applications using modern technologies.',
-      'Working with various clients to understand requirements and deliver solutions.',
-      'Implementing responsive design and ensuring cross-platform compatibility.',
-      'Gained practical experience with payment processing, HTTP requests, and database connectivity.',
+      'Developed and maintained web applications using React.js, Tailwind CSS, and other modern technologies.',
+      'Implemented responsive designs and ensured cross-browser compatibility for seamless user experiences.',
+      'Collaborated with clients and team members to deliver high-quality, user-centric products.',
+      'Optimized web applications for performance and scalability, focusing on clean and maintainable code.',
+    ],
+  },
+  {
+    title: 'Work Study Student',
+    company_name: 'ISTAD / SETEC Institute',
+    icon: '/company/frontend.png',
+    iconBg: '#383E56',
+    date: '2024 - Present',
+    points: [
+      'Developed skills in UX/UI design using Figma and Adobe XD to create user-friendly interfaces.',
+      'Built frontend applications with React, Tailwind CSS, Bootstrap, and JavaScript.',
+      'Created full-stack and console applications using Java, OOP, MVC, JDBC, and QR payment systems.',
+      'Managed databases with PostgreSQL, MySQL, and MongoDB, ensuring efficient data handling.',
+      'Led and contributed to projects including JobFinder, Carify, FoodPanda Clone, Scholarship Portal, SQL Server Management Tool, and POS System.',
+    ],
+  },
+  {
+    title: 'Additional Experience',
+    company_name: 'Various Projects',
+    icon: '/company/cs.png',
+    iconBg: '#E6DEDD',
+    date: '2023 - Present',
+    points: [
+      'Adhered to project schedules and policies to maintain a productive and professional learning environment.',
+      'Collaborated on group projects to achieve high-quality, professional outcomes.',
+      'Organized extracurricular activities to enhance technical and soft skills.',
+      'Utilized multimedia and interactive tools to improve learning outcomes and project delivery.',
     ],
   },
 ];
@@ -178,7 +179,7 @@ const testimonials = [
     testimonial:
       'GitHub is a web-based platform used for version control and collaboration. It allows developers to work together on projects from anywhere.',
     name: 'Theara Chim',
-    image: '/socialmedia/github.svg',
+    image: '/socialmedia/github.png',
     link: 'https://github.com/theara24',
   },
   {

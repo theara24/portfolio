@@ -1,8 +1,9 @@
 'use client';
 import CanvasLoader from '@/app/components/Loader';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
 import { Suspense, useEffect, useState } from 'react';
+import WebGLCanvas from '@/app/components/WebGLCanvas';
+import WebGLFallback from '@/app/components/WebGLFallback';
 
 const Computers = ({ isMobile }: { isMobile: boolean }) => {
   const computer = useGLTF('/desktop_pc/scene.gltf');
@@ -45,11 +46,14 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    <Canvas
+    <WebGLCanvas
       frameloop="demand"
       shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{
+        preserveDrawingBuffer: true,
+      }}
+      fallback={<WebGLFallback message="3D Computer model not supported" />}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -60,7 +64,7 @@ const ComputersCanvas = () => {
         <Computers isMobile={isMobile} />
       </Suspense>
       <Preload all />
-    </Canvas>
+    </WebGLCanvas>
   );
 };
 

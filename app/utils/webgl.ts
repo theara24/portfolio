@@ -1,6 +1,4 @@
-/**
- * WebGL utility functions for detecting and handling WebGL capabilities
- */
+// WebGL utility functions for error handling and fallbacks
 
 export const isWebGLSupported = (): boolean => {
   if (typeof window === 'undefined') return false;
@@ -27,53 +25,28 @@ export const isWebGL2Supported = (): boolean => {
   }
 };
 
-export const getWebGLInfo = () => {
-  if (typeof window === 'undefined') return null;
-
+export const getWebGLContext = (
+  canvas: HTMLCanvasElement
+): WebGLRenderingContext | null => {
   try {
-    const canvas = document.createElement('canvas');
-    const gl =
-      canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-
-    if (!gl) return null;
-
-    // Type assertion to ensure we have a WebGLRenderingContext
-    const webglContext = gl as WebGLRenderingContext;
-
-    return {
-      version: webglContext.getParameter(webglContext.VERSION),
-      vendor: webglContext.getParameter(webglContext.VENDOR),
-      renderer: webglContext.getParameter(webglContext.RENDERER),
-      maxTextureSize: webglContext.getParameter(webglContext.MAX_TEXTURE_SIZE),
-      maxVertexAttribs: webglContext.getParameter(
-        webglContext.MAX_VERTEX_ATTRIBS
-      ),
-      maxVaryingVectors: webglContext.getParameter(
-        webglContext.MAX_VARYING_VECTORS
-      ),
-    };
+    const context = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (context instanceof WebGLRenderingContext) {
+      return context;
+    }
+    console.warn('WebGL context not available');
+    return null;
   } catch (e) {
+    console.warn('WebGL context creation failed:', e);
     return null;
   }
 };
 
-export const createWebGLSafeCanvas = (): HTMLCanvasElement | null => {
-  if (typeof window === 'undefined') return null;
-
-  try {
-    const canvas = document.createElement('canvas');
-    const gl = canvas.getContext('webgl', {
-      antialias: false,
-      alpha: false,
-      depth: true,
-      stencil: false,
-      preserveDrawingBuffer: false,
-      powerPreference: 'default',
-      failIfMajorPerformanceCaveat: false,
-    });
-
-    return gl ? canvas : null;
-  } catch (e) {
-    return null;
-  }
+export const createWebGLFallback = (
+  message: string = '3D content not supported'
+) => {
+  return {
+    message,
+    className:
+      'flex items-center justify-center h-full w-full bg-gray-900/50 rounded-lg',
+  };
 };
