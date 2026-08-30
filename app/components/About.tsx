@@ -10,10 +10,11 @@ import { fadeIn, textVariant } from '@/app/utils/motion';
 type ServiceCardProps = {
   index: number;
   title: string;
+  description: string;
   icon: string;
 };
 
-const ServiceCard = ({ index, title, icon }: ServiceCardProps) => {
+const ServiceCard = ({ index, title, description, icon }: ServiceCardProps) => {
   return (
     <Tilt
       options={{ max: 45, scale: 1, speed: 450 }}
@@ -47,6 +48,9 @@ const ServiceCard = ({ index, title, icon }: ServiceCardProps) => {
           <h3 className="text-white text-[20px] font-bold text-center">
             {title}
           </h3>
+          <p className="text-secondary text-[14px] text-center leading-relaxed">
+            {description}
+          </p>
         </motion.div>
       </motion.div>
     </Tilt>
@@ -108,12 +112,23 @@ const About = () => {
           }}
           className="text-secondary text-[17px] max-w-[3xl] leading-[30px] flex-1"
         >
-          Creative Full-Stack Developer and Web Designer with expertise in
-          frontend (React, Next.js, Vue, Nuxt, Tailwind CSS) and backend
-          (Node.js, PHP, C#, Java, REST APIs) development. Skilled in database
-          design (MySQL, PostgreSQL, MongoDB) and UI/UX design (Figma, Adobe
-          XD). Passionate about delivering scalable, user-friendly, and
-          culturally relevant web solutions.
+          I&apos;m a Junior Backend Developer passionate about building
+          reliable, scalable, and practical software solutions. My professional
+          experience focuses on backend development with TypeScript, Node.js,
+          and Express.js, including REST APIs, databases, microservices, and
+          third-party integrations.
+          <br />
+          <br />
+          I also have experience with frontend and mobile development using
+          React, Next.js, and React Native, allowing me to understand and
+          contribute across the full application stack. With a background in
+          Management Information Systems, I enjoy connecting technology with
+          real-world business needs and solving problems through software.
+          <br />
+          <br />
+          Outside of professional development, I continue to improve my
+          technical skills through personal projects, academic work, and
+          continuous learning.
         </motion.p>
 
         {/* Enhanced Floating Image */}

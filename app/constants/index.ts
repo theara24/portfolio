@@ -15,19 +15,24 @@ export const navLinks = [
 
 export const services = [
   {
-    title: 'Full Stack Developer',
+    title: 'Backend Developer',
+    description: 'Building REST APIs, backend services, and business logic.',
     icon: '/fullsttack.webp',
   },
   {
-    title: 'Frontend Developer',
+    title: 'Software Engineer',
+    description: 'Designing practical and maintainable software solutions.',
     icon: '/frontend.webp',
   },
   {
-    title: 'Database & Backend Developer',
+    title: 'Full-Stack Developer',
+    description: 'Building web applications across frontend and backend.',
     icon: '/database.webp',
   },
   {
-    title: 'UI/UX & Graphic Designer',
+    title: 'Database & Systems',
+    description:
+      'Working with databases, APIs, distributed services, and system architecture.',
     icon: '/uxui.webp',
   },
 ];
