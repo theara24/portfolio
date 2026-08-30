@@ -228,110 +228,215 @@ const testimonials = [
   },
 ];
 
-type ProjectTab = 'Professional' | 'Personal' | 'University';
+type ProjectCategory = 'Professional' | 'Personal' | 'University';
 
-const projects: {
+interface Project {
   name: string;
-  tab: ProjectTab;
+  category: ProjectCategory;
   description: string;
+  longDescription?: string;
+  features?: string[];
+  role?: string;
+  status?: string;
+  date?: string;
+  company?: string;
   tags: {
     name: string;
     color: string;
   }[];
   image: string;
-  source_code_link: string;
-  deploy_link: string;
-  platform: string;
-}[] = [
+  source_code_link?: string;
+  deploy_link?: string;
+  platform?: string;
+  featured?: boolean;
+  sortOrder?: number;
+}
+
+const projects: Project[] = [
   {
-    name: 'EasyFound - Lost & Found Platform',
-    tab: 'University',
+    name: 'Customer Services Platform',
+    category: 'Professional',
     description:
-      'A comprehensive lost and found platform built with React and Node.js, featuring user authentication, image upload, and real-time notifications. Users can post lost items and search for found items with advanced filtering.',
+      'A multi-tenant customer service platform designed to support customer conversations, ticket management, agent workflows, real-time communication, and integrations with messaging platforms.',
+    longDescription:
+      'Company proprietary project — implementation details are confidential.',
+    features: [
+      'Ticket management',
+      'Agent workflows',
+      'Real-time communication',
+      'Messaging platform integration',
+    ],
+    role: 'Not verified',
+    status: 'Professional Project',
+    company: 'Everlast Information & Apps Dev Co., Ltd.',
     tags: [
-      {
-        name: 'React',
-        color: 'blue-text-gradient',
-      },
       {
         name: 'Node.js',
         color: 'green-text-gradient',
       },
       {
-        name: 'MongoDB',
-        color: 'pink-text-gradient',
+        name: 'TypeScript',
+        color: 'blue-text-gradient',
       },
       {
         name: 'Express',
         color: 'blue-text-gradient',
       },
-    ],
-    image: '/projectimg/easyfound.png',
-    source_code_link: 'https://github.com/Nyfong/PU1G2-serviceListing2.git',
-    platform: 'Vercel',
-    deploy_link: 'https://ezfound-deploy.vercel.app/',
-  },
-  {
-    name: 'JobSeek - Job Portal',
-    tab: 'University',
-    description:
-      'A modern job portal with advanced search functionality, company profiles, and application tracking. Built with Next.js and featuring responsive design, user authentication, and admin dashboard.',
-    tags: [
       {
-        name: 'Next.js',
+        name: 'REST APIs',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Redis',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Docker',
         color: 'blue-text-gradient',
       },
+    ],
+    image: '/projectimg/dashboard.webp',
+    source_code_link: undefined,
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: true,
+    sortOrder: 1,
+  },
+  {
+    name: 'Omnichannel Customer Messaging Middleware',
+    category: 'Professional',
+    description:
+      'An omnichannel messaging middleware project for integrating customer communication platforms and synchronizing conversations with a customer service platform.',
+    longDescription:
+      'Company proprietary project — implementation details are confidential.',
+    features: [
+      'Messaging platform integration',
+      'Conversation synchronization',
+    ],
+    role: 'Not verified',
+    status: 'Professional Project',
+    company: 'Everlast Information & Apps Dev Co., Ltd.',
+    tags: [
+      {
+        name: 'WhatsApp',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Telegram',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'LINE',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Chatwoot',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'JWT',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Docker',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: '/projectimg/portfoliosample.webp',
+    source_code_link: undefined,
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: true,
+    sortOrder: 2,
+  },
+  {
+    name: 'Voting & Wallet System',
+    category: 'Professional',
+    description:
+      'A transactional voting platform involving voting lifecycle management, settlement workflows, appeals, and wallet-related operations.',
+    longDescription:
+      'Company proprietary project — implementation details are confidential.',
+    features: [
+      'Voting lifecycle',
+      'Settlement workflows',
+      'Appeals',
+      'Wallet-related operations',
+    ],
+    role: 'Not verified',
+    status: 'Professional Project',
+    company: 'Everlast Information & Apps Dev Co., Ltd.',
+    tags: [
       {
         name: 'TypeScript',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Backend APIs',
         color: 'green-text-gradient',
       },
       {
-        name: 'Tailwind CSS',
+        name: 'Monorepo',
         color: 'pink-text-gradient',
       },
       {
-        name: 'Prisma',
+        name: 'Admin API',
         color: 'blue-text-gradient',
       },
     ],
-    image: '/projectimg/jobseek.png',
-    source_code_link: 'https://github.com/SisovandaraKong/Web-F3.git',
-    platform: 'Vercel',
-    deploy_link: 'https://www.job-seek.works/',
+    image: '/projectimg/analytics.webp',
+    source_code_link: undefined,
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: true,
+    sortOrder: 3,
   },
   {
-    name: 'DocuHub - Document Management',
-    tab: 'University',
+    name: 'Chatwoot Integration Platform',
+    category: 'Professional',
     description:
-      'A secure document management system with file upload, categorization, and sharing capabilities. Features include user roles, document versioning, and search functionality.',
+      'A customized customer engagement platform based on Chatwoot, integrated with an external platform to support customer communication workflows.',
+    longDescription:
+      'Company proprietary project — implementation details are confidential.',
+    features: ['Customer communication workflows'],
+    role: 'Not verified',
+    status: 'Professional Project',
+    company: 'Everlast Information & Apps Dev Co., Ltd.',
     tags: [
       {
-        name: 'React',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'Firebase',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'Material-UI',
+        name: 'Ruby',
         color: 'pink-text-gradient',
       },
       {
-        name: 'Redux',
+        name: 'Rails',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Chatwoot',
         color: 'blue-text-gradient',
       },
     ],
-    image: '/projectimg/docuhub.png',
-    source_code_link: 'https://github.com/FSWD-GEN-01/ipub-frontend.git',
-    platform: 'Vercel',
-    deploy_link: 'https://deploy-docu-hub-frontend.vercel.app/',
+    image: '/projectimg/provid.webp',
+    source_code_link: undefined,
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: true,
+    sortOrder: 4,
   },
   {
     name: 'POS System - Point of Sale',
-    tab: 'University',
+    category: 'Personal',
     description:
       'A complete point of sale system for retail businesses with inventory management, sales tracking, and reporting features. Built with modern web technologies and responsive design.',
+    longDescription: 'Not available',
+    features: [
+      'Inventory management',
+      'Sales tracking',
+      'Reporting',
+    ],
+    role: 'Not verified',
+    status: 'Not available',
+    date: 'Not available',
+    company: 'Personal',
     tags: [
       {
         name: 'Vue.js',
@@ -352,48 +457,27 @@ const projects: {
     ],
     image: '/projectimg/pos.png',
     source_code_link: 'https://github.com/theara24/POS-System.git',
-    platform: 'Heroku',
-    deploy_link: 'https://github.com/theara24/POS-System.git',
-  },
-  {
-    name: 'C++ Learning Platform',
-    tab: 'Personal',
-    description:
-      'An interactive learning platform for C++ programming with coding challenges, tutorials, and progress tracking. Features include code editor, compiler integration, and user progress analytics.',
-    tags: [
-      {
-        name: 'React',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'Python',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'Docker',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'PostgreSQL',
-        color: 'blue-text-gradient',
-      },
-    ],
-    image: '/projectimg/c.png',
-    source_code_link:
-      'https://github.com/theara24/Employee-Management-System.git',
-    platform: 'AWS',
-    deploy_link: 'http://training.antkh.com/achievements/808.aspx',
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: false,
+    sortOrder: 5,
   },
   {
     name: 'SQL Server Management Tool',
-    tab: 'University',
+    category: 'Personal',
     description:
       'A web-based SQL Server management tool with query execution, database visualization, and performance monitoring. Features include query history, export functionality, and user management.',
+    longDescription: 'Not available',
+    features: [
+      'Query execution',
+      'Database visualization',
+      'Performance monitoring',
+    ],
+    role: 'Not verified',
+    status: 'Not available',
+    date: 'Not available',
+    company: 'Personal',
     tags: [
-      {
-        name: 'Angular',
-        color: 'blue-text-gradient',
-      },
       {
         name: 'C#',
         color: 'green-text-gradient',
@@ -402,21 +486,171 @@ const projects: {
         name: 'SQL Server',
         color: 'pink-text-gradient',
       },
-      {
-        name: 'Entity Framework',
-        color: 'blue-text-gradient',
-      },
     ],
     image: '/projectimg/sql_sever.png',
     source_code_link: 'https://github.com/theara24/POS_SQLServer.git',
-    platform: 'Azure',
-    deploy_link: 'https://github.com/theara24/POS_SQLServer.git',
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: false,
+    sortOrder: 6,
+  },
+  {
+    name: 'C++ Learning Platform',
+    category: 'Personal',
+    description:
+      'An interactive learning platform for C++ programming with coding challenges, tutorials, and progress tracking. Features include code editor, compiler integration, and user progress analytics.',
+    // TODO: Verify project identity and repository before final portfolio publication.
+    longDescription: 'Not available',
+    features: ['Not available'],
+    role: 'Not verified',
+    status: 'Not available',
+    date: 'Not available',
+    company: 'Personal',
+    tags: [
+      {
+        name: 'C++',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: '/projectimg/c.png',
+    source_code_link: undefined,
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: false,
+    sortOrder: 7,
+  },
+  {
+    name: 'EasyFound - Lost & Found Platform',
+    category: 'University',
+    description:
+      'A comprehensive lost and found platform built with React and Node.js, featuring user authentication, image upload, and real-time notifications. Users can post lost items and search for found items with advanced filtering.',
+    longDescription: 'Not available',
+    features: [
+      'User authentication',
+      'Image upload',
+      'Real-time notifications',
+      'Search and filtering',
+    ],
+    role: 'Not verified',
+    status: 'Not available',
+    date: 'Not available',
+    tags: [
+      {
+        name: 'React',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Node.js',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'MongoDB',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Express',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: '/projectimg/easyfound.png',
+    source_code_link: undefined,
+    deploy_link: 'https://ezfound-deploy.vercel.app/',
+    platform: 'Vercel',
+    featured: false,
+    sortOrder: 8,
+  },
+  {
+    name: 'JobSeek - Job Portal',
+    category: 'University',
+    description:
+      'A modern job portal with advanced search functionality, company profiles, and application tracking. Built with Next.js and featuring responsive design, user authentication, and admin dashboard.',
+    longDescription: 'Not available',
+    features: [
+      'Advanced search',
+      'Company profiles',
+      'Application tracking',
+      'Admin dashboard',
+    ],
+    role: 'Not verified',
+    status: 'Not available',
+    date: 'Not available',
+    tags: [
+      {
+        name: 'Next.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'TypeScript',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Tailwind CSS',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Prisma',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: '/projectimg/jobseek.png',
+    source_code_link: 'https://github.com/SisovandaraKong/Web-F3.git',
+    deploy_link: undefined,
+    platform: 'Vercel',
+    featured: false,
+    sortOrder: 9,
+  },
+  {
+    name: 'DocuHub - Document Management',
+    category: 'University',
+    description:
+      'A secure document management system with file upload, categorization, and sharing capabilities. Features include user roles, document versioning, and search functionality.',
+    longDescription: 'Not available',
+    features: [
+      'File upload',
+      'Categorization',
+      'Sharing',
+      'User roles',
+      'Versioning',
+      'Search',
+    ],
+    role: 'Not verified',
+    status: 'Not available',
+    date: 'Not available',
+    tags: [
+      {
+        name: 'React',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Firebase',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Material-UI',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Redux',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: '/projectimg/docuhub.png',
+    source_code_link: undefined,
+    deploy_link: 'https://deploy-docu-hub-frontend.vercel.app/',
+    platform: 'Vercel',
+    featured: false,
+    sortOrder: 10,
   },
   {
     name: 'EasyFound - Ux Ui',
-    tab: 'University',
+    category: 'University',
     description:
-      'A clean UI/UX design. The website showcases my skills, projects, and experience in web development.',
+      'Figma UI/UX design for the EasyFound lost and found platform.',
+    longDescription: 'Not available',
+    features: [],
+    role: 'Not verified',
+    status: 'Not available',
+    date: 'Not available',
     tags: [
       {
         name: 'Figma',
@@ -424,15 +658,22 @@ const projects: {
       },
     ],
     image: '/projectimg/easyfoundui.png',
-    source_code_link: '#',
+    source_code_link: undefined,
+    deploy_link: undefined,
     platform: 'Figma',
-    deploy_link: '#',
+    featured: false,
+    sortOrder: 11,
   },
   {
     name: 'JobSeek - Ux Ui',
-    tab: 'University',
+    category: 'University',
     description:
-      'A clean UI/UX design. The website showcases my skills, projects, and experience in web development.',
+      'Figma UI/UX design for the JobSeek job portal.',
+    longDescription: 'Not available',
+    features: [],
+    role: 'Not verified',
+    status: 'Not available',
+    date: 'Not available',
     tags: [
       {
         name: 'Figma',
@@ -440,11 +681,12 @@ const projects: {
       },
     ],
     image: '/projectimg/jobseekui.png',
-    source_code_link:
-      'https://www.figma.com/design/xtMOvFfMJVKh1zoiOUKBk4/F3-Project?node-id=0-1&t=Pex5WD5eefpBhI8E-1',
-    platform: 'Figma',
+    source_code_link: undefined,
     deploy_link:
       'https://www.figma.com/design/xtMOvFfMJVKh1zoiOUKBk4/F3-Project?node-id=0-1&t=Pex5WD5eefpBhI8E-1',
+    platform: 'Figma',
+    featured: false,
+    sortOrder: 12,
   },
 ];
 

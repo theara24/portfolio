@@ -19,7 +19,7 @@ type ProjectCardProps = {
     tags: { name: string; color: string }[];
     image: string;
     source_code_link?: string;
-    deploy_link: string;
+    deploy_link?: string;
     platform: "Netlify" | "Vercel" | "Figma" | "Wordpress" | "Web";
 };
 
@@ -73,29 +73,31 @@ const ProjectCard = ({
                                 />
                             </Link>
                         )}
-                        <Link
-                            href={deploy_link}
-                            target="_blank"
-                            className="black-gradient w-10 h-10 ml-2 rounded-full flex justify-center items-center cursor-pointer"
-                        >
-                            <Image
-                                src={
-                                    platform === "Netlify"
-                                        ? "/tech/netlify.webp"
-                                        : platform === "Vercel"
-                                            ? "/tech/vercel.svg"
-                                            : platform === "Wordpress"
-                                                ? "/tech/wordpress.webp"
-                                                : platform === "Web"
-                                                    ? "/web.webp"
-                                                    : "/tech/figma.webp"
-                                }
-                                width={24}
-                                height={24}
-                                alt="source code"
-                                className="object-contain"
-                            />
-                        </Link>
+                        {deploy_link && (
+                            <Link
+                                href={deploy_link}
+                                target="_blank"
+                                className="black-gradient w-10 h-10 ml-2 rounded-full flex justify-center items-center cursor-pointer"
+                            >
+                                <Image
+                                    src={
+                                        platform === "Netlify"
+                                            ? "/tech/netlify.webp"
+                                            : platform === "Vercel"
+                                                ? "/tech/vercel.svg"
+                                                : platform === "Wordpress"
+                                                    ? "/tech/wordpress.webp"
+                                                    : platform === "Web"
+                                                        ? "/web.webp"
+                                                        : "/tech/figma.webp"
+                                    }
+                                    width={24}
+                                    height={24}
+                                    alt="source code"
+                                    className="object-contain"
+                                />
+                            </Link>
+                        )}
                     </div>
                 </motion.div>
 
@@ -120,10 +122,10 @@ const ProjectCard = ({
 };
 
 const Works = () => {
-    const [activeTab, setActiveTab] = useState<ProjectTab>("University");
+    const [activeTab, setActiveTab] = useState<ProjectTab>("Professional");
 
     const filteredProjects = projects.filter(
-        (project) => project.tab === activeTab
+        (project) => project.category === activeTab
     );
 
     return (
@@ -181,8 +183,9 @@ const Works = () => {
                     {filteredProjects.map((project, index) => {
                         // Map unsupported platform values to 'Web'
                         const allowedPlatforms = ["Netlify", "Vercel", "Figma", "Wordpress", "Web"];
-                        const platform = allowedPlatforms.includes(project.platform)
-                            ? project.platform
+                        const rawPlatform = project.platform ?? "Not available";
+                        const platform = allowedPlatforms.includes(rawPlatform)
+                            ? rawPlatform
                             : "Web";
                         return (
                             <ProjectCard
