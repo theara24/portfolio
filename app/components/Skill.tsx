@@ -4,45 +4,49 @@ import { motion } from 'framer-motion';
 import IconCloudDemo from '@/app/components/globe';
 import { Card, CardContent } from '@/app/components/ui/card';
 import { Badge } from '@/app/components/ui/badge';
-import { Code2, Paintbrush, Database, Layout, Cpu, Cloud } from 'lucide-react';
+import {
+  Blocks,
+  Boxes,
+  Cloud,
+  Code2,
+  Database,
+  Layout,
+  Network,
+  Paintbrush,
+  Plug,
+  Smartphone,
+} from 'lucide-react';
 import { isWebGLSupported } from '@/app/utils/webgl';
 import WebGLFallback from '@/app/components/WebGLFallback';
-import { SiAngular } from 'react-icons/si';
-import { SiC, SiCplusplus } from 'react-icons/si';
-import { SiPostman } from 'react-icons/si';
 
 import {
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaDocker,
-  FaGitAlt,
-  FaLinux,
-  FaFigma,
   FaAws,
-  FaPhp,
-  FaJava,
-  FaVuejs,
   FaBootstrap,
+  FaDocker,
+  FaFigma,
+  FaGitAlt,
+  FaJava,
+  FaLinux,
+  FaNodeJs,
+  FaPhp,
+  FaReact,
 } from 'react-icons/fa';
 import {
-  SiNuxtdotjs,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiPostgresql,
+  SiAdobexd,
+  SiExpress,
+  SiLaravel,
   SiMongodb,
   SiMysql,
-  SiAdobexd,
-  SiGraphql,
-  SiJest,
-  SiWebpack,
-  SiRedux,
-  SiFirebase,
-  SiVercel,
-  SiVite,
+  SiNextdotjs,
+  SiNginx,
+  SiNodedotjs,
+  SiPortainer,
+  SiPostgresql,
+  SiRabbitmq,
+  SiRedis,
+  SiTailwindcss,
+  SiTypescript,
 } from 'react-icons/si';
-import { TbBrandVscode } from 'react-icons/tb';
 import { BsFileEarmarkCode, BsGrid1X2 } from 'react-icons/bs';
 import { MdAnimation } from 'react-icons/md';
 import { FcWorkflow } from 'react-icons/fc';
@@ -145,34 +149,148 @@ const Skill: React.FC = () => {
   const skillCategories: Category[] = [
     {
       icon: Code2,
-      title: 'Frontend Development',
+      title: 'Backend Development',
+      color: 'text-green-400',
+      skills: [
+        {
+          name: 'Node.js',
+          icon: <FaNodeJs className="w-4 h-4 text-[#339933]" />,
+        },
+        {
+          name: 'TypeScript',
+          icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
+        },
+        {
+          name: 'Express.js',
+          icon: <SiExpress className="w-4 h-4 text-white" />,
+        },
+        {
+          name: 'Java',
+          icon: <FaJava className="w-4 h-4 text-[#007396]" />,
+        },
+        {
+          name: 'PHP',
+          icon: <FaPhp className="w-4 h-4 text-[#777BB4]" />,
+        },
+        {
+          name: 'Laravel',
+          icon: <SiLaravel className="w-4 h-4 text-[#FF2D20]" />,
+        },
+        {
+          name: 'REST APIs',
+          icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
+        },
+      ],
+    },
+    {
+      icon: Database,
+      title: 'Database & Caching',
+      color: 'text-orange-400',
+      skills: [
+        {
+          name: 'PostgreSQL',
+          icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
+        },
+        {
+          name: 'MySQL',
+          icon: <SiMysql className="w-4 h-4 text-[#4479A1]" />,
+        },
+        {
+          name: 'MongoDB',
+          icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
+        },
+        {
+          name: 'SQL Server',
+          icon: <Database className="w-4 h-4 text-[#CC2927]" />,
+        },
+        {
+          name: 'Redis',
+          icon: <SiRedis className="w-4 h-4 text-[#FF4438]" />,
+        },
+      ],
+    },
+    {
+      icon: Network,
+      title: 'Architecture & Integration',
+      color: 'text-cyan-400',
+      skills: [
+        {
+          name: 'Microservices',
+          icon: <Boxes className="w-4 h-4 text-[#0EA5E9]" />,
+        },
+        {
+          name: 'Monorepo',
+          icon: <Blocks className="w-4 h-4 text-[#8B5CF6]" />,
+        },
+        {
+          name: 'RabbitMQ',
+          icon: <SiRabbitmq className="w-4 h-4 text-[#FF6600]" />,
+        },
+        {
+          name: 'REST APIs',
+          icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
+        },
+        {
+          name: 'Third-Party API Integration',
+          icon: <Plug className="w-4 h-4 text-[#10B981]" />,
+        },
+      ],
+    },
+    {
+      icon: Cloud,
+      title: 'DevOps & Infrastructure',
       color: 'text-blue-400',
       skills: [
-        { name: 'React', icon: <FaReact className="w-4 h-4 text-[#61DAFB]" /> },
+        {
+          name: 'Docker',
+          icon: <FaDocker className="w-4 h-4 text-[#2496ED]" />,
+        },
+        {
+          name: 'Nginx',
+          icon: <SiNginx className="w-4 h-4 text-[#009639]" />,
+        },
+        {
+          name: 'Portainer',
+          icon: <SiPortainer className="w-4 h-4 text-[#13BEF9]" />,
+        },
+        {
+          name: 'CI/CD',
+          icon: <FcWorkflow className="w-4 h-4" />,
+        },
+        {
+          name: 'Git',
+          icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" />,
+        },
+        {
+          name: 'Linux',
+          icon: <FaLinux className="w-4 h-4 text-[#FCC624]" />,
+        },
+        {
+          name: 'AWS',
+          icon: <FaAws className="w-4 h-4 text-[#FF9900]" />,
+        },
+      ],
+    },
+    {
+      icon: Layout,
+      title: 'Frontend & Mobile',
+      color: 'text-blue-400',
+      skills: [
+        {
+          name: 'React',
+          icon: <FaReact className="w-4 h-4 text-[#61DAFB]" />,
+        },
         {
           name: 'Next.js',
           icon: <SiNextdotjs className="w-4 h-4 text-white" />,
         },
         {
-          name: 'Vue',
-          icon: <FaVuejs className="w-4 h-4 text-[#4FC08D]" />,
+          name: 'React Native',
+          icon: <Smartphone className="w-4 h-4 text-[#61DAFB]" />,
         },
         {
-          name: 'Angular',
-          icon: <SiAngular className="w-4 h-4 text-[#DD0031]" />,
-        },
-        
-        {
-          name: 'Nuxt',
-          icon: <SiNuxtdotjs className="w-4 h-4 text-[#00C58E]" />,
-        },
-        {
-          name: 'Tailwind CSS',
-          icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" />,
-        },
-        {
-          name: 'Bootstrap',
-          icon: <FaBootstrap className="w-4 h-4 text-[#7952B3]" />,
+          name: 'JavaScript',
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#F7DF1E]" />,
         },
         {
           name: 'HTML',
@@ -183,58 +301,18 @@ const Skill: React.FC = () => {
           icon: <BsFileEarmarkCode className="w-4 h-4 text-[#1572B6]" />,
         },
         {
-          name: 'JavaScript',
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#F7DF1E]" />,
+          name: 'Tailwind CSS',
+          icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" />,
         },
         {
-          name: 'TypeScript',
-          icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
+          name: 'Bootstrap',
+          icon: <FaBootstrap className="w-4 h-4 text-[#7952B3]" />,
         },
       ],
     },
     {
-      icon: Database,
-      title: 'Backend Development',
-      color: 'text-green-400',
-      skills: [
-        {
-          name: 'Node.js',
-          icon: <FaNodeJs className="w-4 h-4 text-[#339933]" />,
-        },
-        {
-          name: 'Python',
-          icon: <FaPython className="w-4 h-4 text-[#3776AB]" />,
-        },
-        {
-          name: 'REST APIs',
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
-        },
-        {
-          name: 'GraphQL',
-          icon: <SiGraphql className="w-4 h-4 text-[#E10098]" />,
-        },
-        
-        {
-          name: 'PHP',
-          icon: <FaPhp className="w-4 h-4 text-[#777BB4]" />,
-        },
-        {
-          name: 'C#',
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#9B4F96]" />,
-        },
-        {
-          name: 'Java',
-          icon: <FaJava className="w-4 h-4 text-[#007396]" />,
-        },
-        { name: 'C', icon: <SiC className="w-4 h-4 text-[#A8B9CC]" /> },
-{ name: 'C++', icon: <SiCplusplus className="w-4 h-4 text-[#00599C]" /> },
-
-        
-      ],
-    },
-    {
-      icon: Layout,
-      title: 'UI/UX Design',
+      icon: Paintbrush,
+      title: 'UI/UX & Design',
       color: 'text-purple-400',
       skills: [
         { name: 'Figma', icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" /> },
@@ -253,85 +331,6 @@ const Skill: React.FC = () => {
         {
           name: 'Prototyping',
           icon: <MdAnimation className="w-4 h-4 text-[#F59E0B]" />,
-        },
-      ],
-    },
-    {
-      icon: Cloud,
-      title: 'Cloud & Database',
-      color: 'text-orange-400',
-      skills: [
-        { name: 'AWS', icon: <FaAws className="w-4 h-4 text-[#FF9900]" /> },
-        {
-          name: 'Docker',
-          icon: <FaDocker className="w-4 h-4 text-[#2496ED]" />,
-        },
-        { name: 'CI/CD', icon: <FcWorkflow className="w-4 h-4" /> },
-        {
-          name: 'Kubernetes',
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#326CE5]" />,
-        },
-        { name: 'Postman', icon: <SiPostman className="w-4 h-4 text-[#FF6C37]" /> },
-
-        { name: 'Git', icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" /> },
-        { name: 'Linux', icon: <FaLinux className="w-4 h-4 text-[#FCC624]" /> },
-        {
-          name: 'MySQL',
-          icon: <SiMysql className="w-4 h-4 text-[#4479A1]" />,
-        },
-        {
-          name: 'PostgreSQL',
-          icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
-        },
-        {
-          name: 'MongoDB',
-          icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
-        },
-
-      ],
-    },
-    {
-      icon: Cpu,
-      title: 'Tools & Technologies',
-      color: 'text-pink-400',
-      skills: [
-        {
-          name: 'VS Code',
-          icon: <TbBrandVscode className="w-4 h-4 text-[#007ACC]" />,
-        },
-        {
-          name: 'Webpack',
-          icon: <SiWebpack className="w-4 h-4 text-[#8DD6F9]" />,
-        },
-        { name: 'Redux', icon: <SiRedux className="w-4 h-4 text-[#764ABC]" /> },
-        {
-          name: 'Firebase',
-          icon: <SiFirebase className="w-4 h-4 text-[#FFCA28]" />,
-        },
-        { name: 'Vercel', icon: <SiVercel className="w-4 h-4 text-white" /> },
-        { name: 'Vite', icon: <SiVite className="w-4 h-4 text-[#646CFF]" /> },
-      ],
-    },
-    {
-      icon: Paintbrush,
-      title: 'Creative Skills',
-      color: 'text-yellow-400',
-      skills: [
-        {
-          name: 'UI Animation',
-          icon: <MdAnimation className="w-4 h-4 text-[#FF4081]" />,
-        },
-        {
-          name: 'SVG Animation',
-          icon: <MdAnimation className="w-4 h-4 text-[#00C853]" />,
-        },
-        {
-          name: '3D Modeling',
-          icon: <Cpu className="w-4 h-4 text-[#7C4DFF]" />,
-        },
-        {
-          name: 'Motion Graphics',
-          icon: <MdAnimation className="w-4 h-4 text-[#FF6D00]" />,
         },
       ],
     },
@@ -394,14 +393,14 @@ const Skill: React.FC = () => {
                 }}
                 className="text-secondary text-[17px] max-w-[3xl] leading-[30px]"
               >
-                I’m a passionate Web Designer and Full-Stack Developer skilled
-                in React, Next.js, Tailwind CSS, and modern UI/UX design. I
-                create responsive, user-focused websites that blend creativity
-                with functionality. With a strong foundation in Management
-                Information Systems (MIS), I connect design and development to
-                build solutions that are practical, innovative, and visually
-                appealing. I enjoy freelancing, solving challenges, and turning
-                ideas into engaging digital experiences.
+                I&apos;m a backend-focused Full-Stack Developer with experience
+                building web applications, REST APIs, and software solutions
+                using modern technologies. I work with TypeScript, Node.js,
+                Express.js, React, Next.js, databases, and development
+                infrastructure. With a foundation in Management Information
+                Systems, I combine technical knowledge with an understanding of
+                business needs to build practical, reliable, and user-focused
+                solutions.
               </motion.p>
             </div>
           </div>
