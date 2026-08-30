@@ -22,18 +22,19 @@ const educationData = [
   {
     institution: 'SETEC Institute',
     degree: 'Bachelor of Management Information Systems',
-    date: '2023 - 2027',
+    date: '2023 - Present',
     location: 'Phnom Penh, Cambodia',
     icon: '/education/university.png',
     iconBg: '#3b82f6',
     gpa: 'In Progress',
     achievements: [
-      'Focused on Management Information Systems (MIS)',
-      'Learning Web Design, UX/UI, Database, and Programming',
-      'Active in projects and teamwork collaboration',
+      'Software Development & Programming',
+      'Database Management & System Analysis',
+      'Web Development & Information Systems',
+      'Team-based Academic Projects',
     ],
     description:
-      'Pursuing a bachelor’s degree with emphasis on information systems, technology, and business management.',
+      'Pursuing a bachelor’s degree in Management Information Systems, combining information technology, software development, database systems, and business processes.',
   },
   {
     institution: 'Sok An Doung Khpous Bouret Cholsar High School',
@@ -43,27 +44,9 @@ const educationData = [
     icon: '/education/highschool.png',
     iconBg: '#14b8a6',
     gpa: 'Graduated',
-    achievements: [
-      'Completed secondary education with strong academic performance',
-      'Participated in school activities and community programs',
-    ],
+    achievements: [],
     description:
-      'Focused on general education, preparing for higher studies in technology and management.',
-  },
-  {
-    institution: 'Kouk Pou Secondary School',
-    degree: 'Secondary School Certificate',
-    date: '2017 - 2019',
-    location: 'Takeo, Cambodia',
-    icon: '/education/secondary.png',
-    iconBg: '#f59e0b',
-    gpa: 'Completed',
-    achievements: [
-      'Built foundation in science, mathematics, and technology',
-      'Active participation in class activities',
-    ],
-    description:
-      'Provided fundamental education and skills that prepared for high school and further academic success.',
+      'Completed high school education and prepared for further studies in technology and information systems.',
   },
 ];
 
@@ -271,7 +254,7 @@ const certificatesData = [
   {
     title: 'Full Stack Web Development',
     issuer: 'ISTAD',
-    date: '2025-Present',
+    date: '2025',
     verifyLink: '',
     image: '/certificates/fullstack.png',
     skills: [
@@ -452,24 +435,30 @@ const EducationCard: React.FC<EducationCardProps> = ({ education, index }) => {
             {education.description}
           </p>
           <div>
-            <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
-              <Award className="w-5 h-5 text-yellow-400" />
-              Key Achievements
-            </h4>
-            <ul className="space-y-2">
-              {education.achievements.map((achievement, idx) => (
-                <motion.li
-                  key={idx}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="flex items-start gap-3 text-slate-300"
+            {education.achievements.length > 0 && (
+              <>
+                <h4
+                  className="text-white font-semibold mb-3 flex items-center gap-2"
                 >
-                  <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 mt-2 flex-shrink-0" />
-                  <span>{achievement}</span>
-                </motion.li>
-              ))}
-            </ul>
+                  <Award className="w-5 h-5 text-yellow-400" />
+                  Key Focus
+                </h4>
+                <ul className="space-y-2">
+                  {education.achievements.map((achievement, idx) => (
+                    <motion.li
+                      key={idx}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.1 }}
+                      className="flex items-start gap-3 text-slate-300"
+                    >
+                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 mt-2 flex-shrink-0" />
+                      <span>{achievement}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
         </div>
       </Tilt>
@@ -535,9 +524,6 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
                   </span>
                 ))}
               </div>
-              <p className="text-slate-500 text-xs mb-4">
-                ID: {certificate.credentialId}
-              </p>
             </div>
             <button
               onClick={openModal}
