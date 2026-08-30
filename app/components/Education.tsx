@@ -375,6 +375,17 @@ const referencesData = [
     email: 'choeurnpinchai@gmail.com',
     phone: '099774967',
   },
+  {
+    name: 'Htoo Aung',
+    title: 'Senior Backend Developer',
+    company: 'Everlast Information & Apps Dev Co., Ltd.',
+    quote:
+      'Experienced in backend development and building scalable, real-time applications using modern web technologies.',
+    image: '/references/htoo-aung.png',
+    telegram: 'https://t.me/reksmey_mom',
+    email: 'cool.htooaung@gmail.com',
+    phone: '0713761920',
+  },
 ];
 
 type EducationCardProps = {
