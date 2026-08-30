@@ -121,7 +121,7 @@ export const HeroContent = () => {
             className="flex flex-col gap-2 sm:gap-4 mt-4 sectionHeadText text-white"
           >
             <span>
-              Hello I am
+              Hello, I&apos;m
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
                 Theara Chim
@@ -136,15 +136,10 @@ export const HeroContent = () => {
               <FlipWords
                 className={'text-lg sm:text-xl text-blue-400 font-medium'}
                 words={[
-                  'Full-Stack Development',
-                  'React & Next.js',
-                  'TypeScript & JavaScript',
-                  'Node.js & Express.js',
-                  'MySQL & MongoDB',
-                  'Docker & AWS',
-                  'UI/UX Design with Figma',
-                  'Responsive Web Development',
-                  'Problem Solving & Quick Learning',
+                  'Junior Backend Developer',
+                  'Software Engineer',
+                  'Backend & API Development',
+                  'Full-Stack Developer',
                 ]}
               />
             </span>
@@ -155,10 +150,10 @@ export const HeroContent = () => {
             variants={fadeIn('right', 'spring', 0.8, 0.75)}
             className="text-sm sm:text-base md:text-lg text-gray-300 my-2 sm:my-5 max-w-[400px] sm:max-w-[500px]"
           >
-            I&apos;m Full-Stack Developer passionate about building web and
-            mobile applications. I specialize in creating responsive, scalable,
-            and user-friendly solutions. Explore my projects and skills to see
-            what I can deliver.
+            I&apos;m a Junior Backend Developer focused on building reliable
+            and scalable applications. I specialize in TypeScript, Node.js, and
+            Express.js, with experience in REST APIs, databases, microservices,
+            and modern development infrastructure.
           </motion.p>
 
           {/* Button */}
