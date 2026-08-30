@@ -138,16 +138,33 @@ export const technologies = [
 
 const experiences = [
   {
+    title: 'Junior Backend Developer',
+    company_name: 'Everlast Information & Apps Dev Co., Ltd.',
+    icon: '/backend.webp',
+    iconBg: '#383E56',
+    date: '2025 - Present',
+    points: [
+      'Developed and maintained REST APIs and backend services using TypeScript, Node.js, and Express.js.',
+      'Worked with microservice and monorepo architectures to build and maintain scalable backend services.',
+      'Implemented asynchronous communication and background processing using RabbitMQ.',
+      'Worked with PostgreSQL, MongoDB, MySQL, and Redis for data persistence, caching, and backend workflows.',
+      'Implemented backend workflows involving concurrency control, transaction management, and background jobs.',
+      'Integrated third-party APIs and external services to support application functionality.',
+      'Used Docker, Nginx, Portainer, and CI/CD workflows for deployment and service management.',
+      'Participated in testing, debugging, code reviews, performance optimization, and production troubleshooting.',
+    ],
+  },
+  {
     title: 'Freelance Web Designer',
     company_name: 'Self-Employed',
     icon: '/company/web.png',
     iconBg: '#E6DEDD',
     date: '2024 - Present',
     points: [
-      'Developed and maintained web applications using React.js, Tailwind CSS, and other modern technologies.',
-      'Implemented responsive designs and ensured cross-browser compatibility for seamless user experiences.',
-      'Collaborated with clients and team members to deliver high-quality, user-centric products.',
-      'Optimized web applications for performance and scalability, focusing on clean and maintainable code.',
+      'Developed responsive web applications using React.js, Tailwind CSS, and modern web technologies.',
+      'Designed and implemented user-friendly interfaces with a focus on responsive layouts and usability.',
+      'Collaborated with clients to understand requirements and deliver practical web solutions.',
+      'Focused on clean, maintainable code and optimized applications for usability and performance.',
     ],
   },
   {
@@ -157,24 +174,11 @@ const experiences = [
     iconBg: '#383E56',
     date: '2024 - Present',
     points: [
-      'Developed skills in UX/UI design using Figma and Adobe XD to create user-friendly interfaces.',
-      'Built frontend applications with React, Tailwind CSS, Bootstrap, and JavaScript.',
-      'Created full-stack and console applications using Java, OOP, MVC, JDBC, and QR payment systems.',
-      'Managed databases with PostgreSQL, MySQL, and MongoDB, ensuring efficient data handling.',
-      'Led and contributed to projects including JobFinder, Carify, FoodPanda Clone, Scholarship Portal, SQL Server Management Tool, and POS System.',
-    ],
-  },
-  {
-    title: 'Additional Experience',
-    company_name: 'Various Projects',
-    icon: '/company/cs.png',
-    iconBg: '#E6DEDD',
-    date: '2023 - Present',
-    points: [
-      'Adhered to project schedules and policies to maintain a productive and professional learning environment.',
-      'Collaborated on group projects to achieve high-quality, professional outcomes.',
-      'Organized extracurricular activities to enhance technical and soft skills.',
-      'Utilized multimedia and interactive tools to improve learning outcomes and project delivery.',
+      'Developed practical skills in web development, programming, databases, UI/UX, and information systems through academic and project-based work.',
+      'Built frontend applications using React, Tailwind CSS, Bootstrap, and JavaScript.',
+      'Developed full-stack and console applications using Java, OOP, MVC, JDBC, and QR payment systems.',
+      'Worked with PostgreSQL, MySQL, and MongoDB for database design and data management.',
+      'Collaborated on projects including JobFinder, Carify, FoodPanda Clone, Scholarship Portal, SQL Server Management Tool, and POS System.',
     ],
   },
 ];
