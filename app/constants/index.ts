@@ -228,8 +228,11 @@ const testimonials = [
   },
 ];
 
+type ProjectTab = 'Professional' | 'Personal' | 'University';
+
 const projects: {
   name: string;
+  tab: ProjectTab;
   description: string;
   tags: {
     name: string;
@@ -242,6 +245,7 @@ const projects: {
 }[] = [
   {
     name: 'EasyFound - Lost & Found Platform',
+    tab: 'University',
     description:
       'A comprehensive lost and found platform built with React and Node.js, featuring user authentication, image upload, and real-time notifications. Users can post lost items and search for found items with advanced filtering.',
     tags: [
@@ -269,6 +273,7 @@ const projects: {
   },
   {
     name: 'JobSeek - Job Portal',
+    tab: 'University',
     description:
       'A modern job portal with advanced search functionality, company profiles, and application tracking. Built with Next.js and featuring responsive design, user authentication, and admin dashboard.',
     tags: [
@@ -296,6 +301,7 @@ const projects: {
   },
   {
     name: 'DocuHub - Document Management',
+    tab: 'University',
     description:
       'A secure document management system with file upload, categorization, and sharing capabilities. Features include user roles, document versioning, and search functionality.',
     tags: [
@@ -323,6 +329,7 @@ const projects: {
   },
   {
     name: 'POS System - Point of Sale',
+    tab: 'University',
     description:
       'A complete point of sale system for retail businesses with inventory management, sales tracking, and reporting features. Built with modern web technologies and responsive design.',
     tags: [
@@ -350,6 +357,7 @@ const projects: {
   },
   {
     name: 'C++ Learning Platform',
+    tab: 'Personal',
     description:
       'An interactive learning platform for C++ programming with coding challenges, tutorials, and progress tracking. Features include code editor, compiler integration, and user progress analytics.',
     tags: [
@@ -378,6 +386,7 @@ const projects: {
   },
   {
     name: 'SQL Server Management Tool',
+    tab: 'University',
     description:
       'A web-based SQL Server management tool with query execution, database visualization, and performance monitoring. Features include query history, export functionality, and user management.',
     tags: [
@@ -405,6 +414,7 @@ const projects: {
   },
   {
     name: 'EasyFound - Ux Ui',
+    tab: 'University',
     description:
       'A clean UI/UX design. The website showcases my skills, projects, and experience in web development.',
     tags: [
@@ -420,6 +430,7 @@ const projects: {
   },
   {
     name: 'JobSeek - Ux Ui',
+    tab: 'University',
     description:
       'A clean UI/UX design. The website showcases my skills, projects, and experience in web development.',
     tags: [

@@ -2,11 +2,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { Tilt } from "react-tilt";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "./HigherOrderComponents";
+
+type ProjectTab = "Professional" | "Personal" | "University";
+
+const tabs: ProjectTab[] = ["Professional", "Personal", "University"];
 
 type ProjectCardProps = {
     index: number;
@@ -116,6 +120,12 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+    const [activeTab, setActiveTab] = useState<ProjectTab>("University");
+
+    const filteredProjects = projects.filter(
+        (project) => project.tab === activeTab
+    );
+
     return (
         <>
             <motion.div variants={textVariant()}>
@@ -136,28 +146,60 @@ const Works = () => {
                 </motion.p>
             </div>
 
-            <div className="mt-20 flex flex-wrap gap-7">
-                {projects.map((project, index) => {
-                    // Map unsupported platform values to 'Web'
-                    const allowedPlatforms = ["Netlify", "Vercel", "Figma", "Wordpress", "Web"];
-                    const platform = allowedPlatforms.includes(project.platform)
-                        ? project.platform
-                        : "Web";
+            <motion.div
+                variants={fadeIn("up", "spring", 0.1, 0.5)}
+                className="mt-8 flex flex-wrap gap-4"
+            >
+                {tabs.map((tab) => {
+                    const isActive = tab === activeTab;
                     return (
-                        <ProjectCard
-                            key={`project-${index}`}
-                            index={index}
-                            name={project.name}
-                            description={project.description}
-                            tags={project.tags}
-                            image={project.image}
-                            source_code_link={project.source_code_link}
-                            deploy_link={project.deploy_link}
-                            platform={platform as "Netlify" | "Vercel" | "Figma" | "Wordpress" | "Web"}
-                        />
+                        <button
+                            key={tab}
+                            type="button"
+                            onClick={() => setActiveTab(tab)}
+                            className={`px-6 py-2 rounded-full text-[16px] font-medium transition-colors duration-300 cursor-pointer border ${
+                                isActive
+                                    ? "bg-tertiary text-white border-white"
+                                    : "text-secondary border-white/10 hover:border-white/40"
+                            }`}
+                        >
+                            {tab}
+                        </button>
                     );
                 })}
-            </div>
+            </motion.div>
+
+            {filteredProjects.length === 0 ? (
+                <motion.p
+                    variants={fadeIn("", "", 0.1, 0.75)}
+                    className="mt-20 text-secondary text-[17px]"
+                >
+                    No projects to show here yet.
+                </motion.p>
+            ) : (
+                <div className="mt-20 flex flex-wrap gap-7">
+                    {filteredProjects.map((project, index) => {
+                        // Map unsupported platform values to 'Web'
+                        const allowedPlatforms = ["Netlify", "Vercel", "Figma", "Wordpress", "Web"];
+                        const platform = allowedPlatforms.includes(project.platform)
+                            ? project.platform
+                            : "Web";
+                        return (
+                            <ProjectCard
+                                key={`project-${index}`}
+                                index={index}
+                                name={project.name}
+                                description={project.description}
+                                tags={project.tags}
+                                image={project.image}
+                                source_code_link={project.source_code_link}
+                                deploy_link={project.deploy_link}
+                                platform={platform as "Netlify" | "Vercel" | "Figma" | "Wordpress" | "Web"}
+                            />
+                        );
+                    })}
+                </div>
+            )}
         </>
     );
 };
