@@ -137,26 +137,9 @@ const About = () => {
         </motion.p>
 
         {/* Lanyard */}
-        <motion.div
-          initial={{ opacity: 0, x: 100, scale: 0.8 }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            y: [0, -15, 0],
-            scale: [0.95, 1.05, 0.95],
-            rotate: [-2, 2, -2],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            repeatType: 'loop',
-            ease: 'easeInOut',
-          }}
-          viewport={{ once: true }}
-          className="relative w-full md:w-[300px] h-[300px]"
-        >
+        <div className="relative w-full md:w-[300px] h-[300px]">
           <Lanyard frontImage="/Ra.png" />
-        </motion.div>
+        </div>
       </div>
 
       {/* Services with loop floating */}
