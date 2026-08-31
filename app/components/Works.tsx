@@ -16,8 +16,13 @@ type ProjectCardProps = {
     index: number;
     name: string;
     description: string;
+    context?: string;
     tags: { name: string; color: string }[];
     image: string;
+    company?: string;
+    role?: string;
+    status?: string;
+    confidentialNote?: string;
     source_code_link?: string;
     deploy_link?: string;
     platform: "Netlify" | "Vercel" | "Figma" | "Wordpress" | "Web";
@@ -27,12 +32,19 @@ const ProjectCard = ({
                          index,
                          name,
                          description,
+                         context,
                          tags,
                          image,
+                         company,
+                         role,
+                         status,
+                         confidentialNote,
                          source_code_link,
                          deploy_link,
                          platform,
                      }: ProjectCardProps) => {
+    const showMetadata =
+        !!company && company !== "Personal" && company !== "Not available";
     return (
         <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
             <Tilt
@@ -104,6 +116,9 @@ const ProjectCard = ({
                 <div className="mt-5">
                     <h3 className="text-white font-bold text-[24px]">{name}</h3>
                     <p className="mt-2 text-secondary text-[14px]">{description}</p>
+                    {context && (
+                        <p className="mt-2 text-secondary text-[13px]">{context}</p>
+                    )}
                 </div>
 
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -116,6 +131,38 @@ const ProjectCard = ({
                         </p>
                     ))}
                 </div>
+
+                {(showMetadata || confidentialNote) && (
+                    <div className="mt-4 border-t border-white/10 pt-3">
+                        {showMetadata && (
+                            <div className="text-[13px] leading-6">
+                                {company && (
+                                    <p className="text-secondary">
+                                        <span className="text-white/70 font-medium">Company:</span>{" "}
+                                        {company}
+                                    </p>
+                                )}
+                                {role && (
+                                    <p className="text-secondary">
+                                        <span className="text-white/70 font-medium">Role:</span>{" "}
+                                        {role}
+                                    </p>
+                                )}
+                                {status && (
+                                    <p className="text-secondary">
+                                        <span className="text-white/70 font-medium">Status:</span>{" "}
+                                        {status}
+                                    </p>
+                                )}
+                            </div>
+                        )}
+                        {confidentialNote && (
+                            <p className="mt-2 text-[12px] text-secondary/70">
+                                {confidentialNote}
+                            </p>
+                        )}
+                    </div>
+                )}
             </Tilt>
         </motion.div>
     );
@@ -193,8 +240,13 @@ const Works = () => {
                                 index={index}
                                 name={project.name}
                                 description={project.description}
+                                context={project.context}
                                 tags={project.tags}
                                 image={project.image}
+                                company={project.company}
+                                role={project.role}
+                                status={project.status}
+                                confidentialNote={project.confidentialNote}
                                 source_code_link={project.source_code_link}
                                 deploy_link={project.deploy_link}
                                 platform={platform as "Netlify" | "Vercel" | "Figma" | "Wordpress" | "Web"}

@@ -235,11 +235,13 @@ interface Project {
   category: ProjectCategory;
   description: string;
   longDescription?: string;
+  context?: string;
   features?: string[];
   role?: string;
   status?: string;
   date?: string;
   company?: string;
+  confidentialNote?: string;
   tags: {
     name: string;
     color: string;
@@ -257,7 +259,9 @@ const projects: Project[] = [
     name: 'Customer Services Platform',
     category: 'Professional',
     description:
-      'A multi-tenant customer service platform designed to support customer conversations, ticket management, agent workflows, real-time communication, and integrations with messaging platforms.',
+      'A multi-tenant customer service platform supporting customer conversations, ticket management, agent workflows, real-time communication, and messaging integrations.',
+    context:
+      'Professional backend project involving API development, real-time communication, multi-tenant services, messaging workflows, and external service integrations.',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: [
@@ -266,9 +270,11 @@ const projects: Project[] = [
       'Real-time communication',
       'Messaging platform integration',
     ],
-    role: 'Not verified',
+    role: 'Junior Backend Developer',
     status: 'Professional Project',
     company: 'Everlast Information & Apps Dev Co., Ltd.',
+    confidentialNote:
+      'Company proprietary project — implementation details are confidential.',
     tags: [
       {
         name: 'Node.js',
@@ -279,11 +285,15 @@ const projects: Project[] = [
         color: 'blue-text-gradient',
       },
       {
-        name: 'Express',
+        name: 'Express.js',
         color: 'blue-text-gradient',
       },
       {
         name: 'REST APIs',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'WebSocket / Real-time',
         color: 'pink-text-gradient',
       },
       {
@@ -306,16 +316,18 @@ const projects: Project[] = [
     name: 'Omnichannel Customer Messaging Middleware',
     category: 'Professional',
     description:
-      'An omnichannel messaging middleware project for integrating customer communication platforms and synchronizing conversations with a customer service platform.',
+      'Omnichannel messaging middleware for connecting customer communication platforms and synchronizing conversations with a customer service platform.',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: [
       'Messaging platform integration',
       'Conversation synchronization',
     ],
-    role: 'Not verified',
+    role: 'Junior Backend Developer',
     status: 'Professional Project',
     company: 'Everlast Information & Apps Dev Co., Ltd.',
+    confidentialNote:
+      'Company proprietary project — implementation details are confidential.',
     tags: [
       {
         name: 'WhatsApp',
@@ -330,11 +342,19 @@ const projects: Project[] = [
         color: 'green-text-gradient',
       },
       {
+        name: 'Messenger',
+        color: 'pink-text-gradient',
+      },
+      {
         name: 'Chatwoot',
         color: 'pink-text-gradient',
       },
       {
         name: 'JWT',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'RBAC',
         color: 'blue-text-gradient',
       },
       {
@@ -362,9 +382,11 @@ const projects: Project[] = [
       'Appeals',
       'Wallet-related operations',
     ],
-    role: 'Not verified',
+    role: 'Junior Backend Developer',
     status: 'Professional Project',
     company: 'Everlast Information & Apps Dev Co., Ltd.',
+    confidentialNote:
+      'Company proprietary project — implementation details are confidential.',
     tags: [
       {
         name: 'TypeScript',
@@ -382,6 +404,14 @@ const projects: Project[] = [
         name: 'Admin API',
         color: 'blue-text-gradient',
       },
+      {
+        name: 'Transactions',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Settlement',
+        color: 'pink-text-gradient',
+      },
     ],
     image: '/projectimg/analytics.webp',
     source_code_link: undefined,
@@ -398,9 +428,11 @@ const projects: Project[] = [
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: ['Customer communication workflows'],
-    role: 'Not verified',
+    role: 'Junior Backend Developer',
     status: 'Professional Project',
     company: 'Everlast Information & Apps Dev Co., Ltd.',
+    confidentialNote:
+      'Company proprietary project — implementation details are confidential.',
     tags: [
       {
         name: 'Ruby',
