@@ -389,7 +389,7 @@ const Skill: React.FC = () => {
                 }}
                 className="sectionSubText"
               >
-                My Knowledge
+                Technical Expertise
               </motion.p>
               <motion.h2
                 initial={{ width: 0 }}
