@@ -150,7 +150,7 @@ export const technologies = [
 
 const experiences = [
   {
-    title: 'Junior Backend Developer',
+    title: 'Backend Developer',
     company_name: 'Everlast Information & Apps Dev Co., Ltd.',
     icon: '/backend.webp',
     iconBg: '#383E56',
@@ -282,7 +282,7 @@ const projects: Project[] = [
       'Two-way synchronization',
       'Multi-tenant services',
     ],
-    role: 'Junior Backend Developer',
+    role: 'Backend Developer',
     status: 'Professional Project',
     company: 'Everlast Information & Apps Dev Co., Ltd.',
     confidentialNote:
@@ -469,7 +469,7 @@ const projects: Project[] = [
       'Platform integrations',
       'Security hardening',
     ],
-    role: 'Junior Backend Developer',
+    role: 'Backend Developer',
     status: 'Professional Project',
     company: 'Everlast Information & Apps Dev Co., Ltd.',
     confidentialNote:

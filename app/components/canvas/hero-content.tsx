@@ -16,21 +16,25 @@ import {
 const CodeAnimation = () => {
   const codeSegments = useMemo(
     () => [
-      "<span class='text-purple-400'>const</span> <span class='text-gray-300'>profile</span> <span class='text-purple-400'>=</span> <span class='text-purple-400'>{</span>",
+      "<span class='text-purple-400'>const</span> <span class='text-gray-300'>developer</span> <span class='text-purple-400'>=</span> <span class='text-purple-400'>{</span>",
       "  <span class='text-gray-300'>name</span>: <span class='text-green-400'>'Theara Chim'</span>,",
       "  <span class='text-gray-300'>role</span>: <span class='text-green-400'>'Backend-Focused Full-Stack Developer'</span>,",
-      "  <span class='text-gray-300'>backend</span>: <span class='text-purple-400'>[</span>",
-      "    <span class='text-green-400'>'Node.js'</span>, <span class='text-green-400'>'TypeScript'</span>, <span class='text-green-400'>'Express.js'</span>, <span class='text-green-400'>'Java'</span>, <span class='text-green-400'>'Spring'</span>,",
-      "    <span class='text-green-400'>'PHP'</span>, <span class='text-green-400'>'Laravel'</span>,",
-      "    <span class='text-green-400'>'REST APIs'</span>, <span class='text-green-400'>'PostgreSQL'</span>, <span class='text-green-400'>'MySQL'</span>, <span class='text-green-400'>'Redis'</span>,",
-      "    <span class='text-green-400'>'RabbitMQ'</span>, <span class='text-green-400'>'WebSockets'</span>",
+      "",
+      "  <span class='text-gray-300'>experience</span>: <span class='text-green-400'>'Programming since 2023'</span>,",
+      "  <span class='text-gray-300'>professional</span>: <span class='text-green-400'>'Backend development since 2025'</span>,",
+      "",
+      "  <span class='text-gray-300'>expertise</span>: <span class='text-purple-400'>[</span>",
+      "    <span class='text-green-400'>'Backend Development'</span>, <span class='text-green-400'>'API Engineering'</span>,",
+      "    <span class='text-green-400'>'Database Systems'</span>, <span class='text-green-400'>'Distributed Systems'</span>,",
+      "    <span class='text-green-400'>'Full-Stack Development'</span>",
       "  <span class='text-purple-400'>]</span>,",
-      "  <span class='text-gray-300'>frontend</span>: <span class='text-purple-400'>[</span> <span class='text-green-400'>'React'</span>, <span class='text-green-400'>'Next.js'</span>, <span class='text-green-400'>'Tailwind CSS'</span> <span class='text-purple-400'>]</span>,",
-      "  <span class='text-gray-300'>infra</span>: <span class='text-purple-400'>[</span> <span class='text-green-400'>'Docker'</span>, <span class='text-green-400'>'Nginx'</span>, <span class='text-green-400'>'CI/CD'</span>, <span class='text-green-400'>'Linux'</span> <span class='text-purple-400'>]</span>,",
-      "  <span class='text-gray-300'>focus</span>: <span class='text-green-400'>'APIs, data, messaging & scalable backends'</span>,",
-      "  <span class='text-gray-300'>hireable</span>: <span class='text-purple-400'>function</span>() <span class='text-purple-400'>{</span>",
-      "    <span class='text-purple-400'>return</span> <span class='text-purple-400'>true</span>;",
-      "  <span class='text-purple-400'>}</span>",
+      "",
+      "  <span class='text-gray-300'>primaryStack</span>: <span class='text-purple-400'>[</span>",
+      "    <span class='text-green-400'>'TypeScript'</span>, <span class='text-green-400'>'Node.js'</span>, <span class='text-green-400'>'Express.js'</span>,",
+      "    <span class='text-green-400'>'PostgreSQL'</span>, <span class='text-green-400'>'Redis'</span>, <span class='text-green-400'>'RabbitMQ'</span>, <span class='text-green-400'>'Docker'</span>",
+      "  <span class='text-purple-400'>]</span>,",
+      "",
+      "  <span class='text-gray-300'>availableForWork</span>: <span class='text-purple-400'>true</span>",
       "<span class='text-purple-400'>}</span>;",
     ],
     []
@@ -135,7 +139,7 @@ export const HeroContent = () => {
                 className={'text-lg sm:text-xl text-blue-400 font-medium'}
                 words={[
                   'Backend-Focused Full-Stack Developer',
-                  'Junior Backend Developer',
+                  'Backend Developer',
                   'Backend & API Development',
                   'Software Engineer',
                 ]}
@@ -148,10 +152,10 @@ export const HeroContent = () => {
             variants={fadeIn('right', 'spring', 0.8, 0.75)}
             className="text-sm sm:text-base md:text-lg text-gray-300 my-2 sm:my-5 max-w-[400px] sm:max-w-[500px]"
           >
-            I&apos;m a Backend-Focused Full-Stack Developer who builds reliable,
-            scalable applications with a strong foundation in APIs, databases,
-            and messaging systems. I specialize in TypeScript, Node.js, and
-            Express.js, while covering the full stack from modern frontends to
+            Backend-Focused Full-Stack Developer building reliable APIs,
+            backend services, distributed systems, and full-stack applications.
+            I specialize in TypeScript, Node.js, and Express.js, with experience
+            across databases, messaging systems, modern frontends, and
             deployment infrastructure.
           </motion.p>
 

@@ -112,23 +112,27 @@ const About = () => {
           }}
           className="text-secondary text-[17px] max-w-[3xl] leading-[30px] flex-1"
         >
-          I&apos;m a Junior Backend Developer passionate about building
-          reliable, scalable, and practical software solutions. My professional
-          experience focuses on backend development with TypeScript, Node.js,
-          and Express.js, including REST APIs, databases, microservices, and
-          third-party integrations.
+          I&apos;m a Backend-Focused Full-Stack Developer with professional
+          experience building backend services, REST APIs, distributed systems,
+          and full-stack applications. I have been studying programming and
+          software development since 2023 and have been working professionally
+          in backend development since 2025.
           <br />
           <br />
-          I also have experience with frontend and mobile development using
-          React, Next.js, and React Native, allowing me to understand and
-          contribute across the full application stack. With a background in
-          Management Information Systems, I enjoy connecting technology with
-          real-world business needs and solving problems through software.
+          My professional experience focuses on TypeScript, Node.js, and
+          Express.js, with hands-on work involving databases, Redis, message
+          queues, microservices, third-party integrations, and production
+          infrastructure. I have also contributed to frontend development using
+          React, Next.js, Vue.js, and React Native, allowing me to work across
+          different parts of the application stack.
           <br />
           <br />
-          Outside of professional development, I continue to improve my
-          technical skills through personal projects, academic work, and
-          continuous learning.
+          With a background in Management Information Systems, I combine
+          software development knowledge with an understanding of business
+          requirements and information systems. I enjoy building practical
+          solutions, solving technical problems, and continuously improving my
+          engineering skills through professional, academic, and personal
+          projects.
         </motion.p>
 
         {/* Enhanced Floating Image */}

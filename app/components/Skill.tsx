@@ -15,6 +15,7 @@ import {
   Paintbrush,
   Plug,
   Smartphone,
+  Terminal,
 } from 'lucide-react';
 import { isWebGLSupported } from '@/app/utils/webgl';
 import WebGLFallback from '@/app/components/WebGLFallback';
@@ -32,6 +33,8 @@ import {
   FaReact,
 } from 'react-icons/fa';
 import {
+  SiAdobexd,
+  SiDotnet,
   SiExpress,
   SiLaravel,
   SiMongodb,
@@ -43,8 +46,10 @@ import {
   SiPostgresql,
   SiRabbitmq,
   SiRedis,
+  SiSharp,
   SiTailwindcss,
   SiTypescript,
+  SiXmpp,
 } from 'react-icons/si';
 import { BsFileEarmarkCode, BsGrid1X2 } from 'react-icons/bs';
 import { FcWorkflow } from 'react-icons/fc';
@@ -68,27 +73,37 @@ const SkillCard: React.FC<{
   title: string;
   skills: Skill[];
   color: string;
-}> = ({ icon: Icon, title, skills, color }) => (
-  <Card className="group relative overflow-hidden py-5 bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
+  emphasized?: boolean;
+}> = ({ icon: Icon, title, skills, color, emphasized = false }) => (
+  <Card
+    className={`group relative overflow-hidden py-5 bg-gray-900/80 flex flex-col hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 ${
+      emphasized
+        ? 'border-cyan-400/40 shadow-lg shadow-cyan-500/5'
+        : 'border-gray-700'
+    }`}
+  >
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(100,100,255,0.1)] to-transparent group-hover:via-[rgba(100,100,255,0.2)] animate-shimmer" />
-    <CardContent className="p-6 relative z-10">
-      <div className="flex items-center gap-4 mb-6">
+    {emphasized && (
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
+    )}
+    <CardContent className="p-6 relative z-10 flex flex-col gap-5 grow">
+      <div className="flex items-center gap-4">
         <div
           className={`p-3 rounded-xl bg-gray-800/50 ${color} group-hover:scale-110 transition-transform duration-300`}
         >
-          <Icon className="w-8 h-8" />
+          <Icon className="w-7 h-7" />
         </div>
-        <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+        <h3 className="text-xl leading-snug font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
           {title}
         </h3>
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap content-start items-start gap-2 grow">
         {skills.map((skill, index) => (
           <Badge
             key={index}
             className="group/badge relative bg-gray-800/50 hover:bg-gray-700/80 text-gray-100 border-gray-600 flex items-center gap-2 py-2 px-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20"
           >
-            <span className="transform group-hover/badge:scale-110 transition-transform duration-300">
+            <span className="shrink-0 transform group-hover/badge:scale-110 transition-transform duration-300">
               {skill.icon}
             </span>
             <span className="font-medium">{skill.name}</span>
@@ -175,9 +190,24 @@ const Skill: React.FC = () => {
           icon: <SiLaravel className="w-4 h-4 text-[#FF2D20]" />,
         },
         {
+          name: 'C#',
+          icon: <SiSharp className="w-4 h-4 text-[#68217A]" />,
+        },
+        {
+          name: 'ASP.NET',
+          icon: <SiDotnet className="w-4 h-4 text-[#512BD4]" />,
+        },
+        {
           name: 'REST APIs',
           icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
         },
+      ],
+    },
+    {
+      icon: Database,
+      title: 'Databases & Data',
+      color: 'text-orange-400',
+      skills: [
         {
           name: 'PostgreSQL',
           icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
@@ -191,12 +221,16 @@ const Skill: React.FC = () => {
           icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
         },
         {
+          name: 'SQL Server',
+          icon: <Database className="w-4 h-4 text-[#CC2927]" />,
+        },
+        {
           name: 'Redis',
           icon: <SiRedis className="w-4 h-4 text-[#FF4438]" />,
         },
         {
-          name: 'SQL Server',
-          icon: <Database className="w-4 h-4 text-[#CC2927]" />,
+          name: 'Navicat',
+          icon: <Database className="w-4 h-4 text-[#1B9CFC]" />,
         },
       ],
     },
@@ -218,6 +252,10 @@ const Skill: React.FC = () => {
           icon: <Network className="w-4 h-4 text-[#0EA5E9]" />,
         },
         {
+          name: 'XMPP',
+          icon: <SiXmpp className="w-4 h-4 text-[#002B5C]" />,
+        },
+        {
           name: 'Microservices',
           icon: <Boxes className="w-4 h-4 text-[#8B5CF6]" />,
         },
@@ -229,7 +267,7 @@ const Skill: React.FC = () => {
     },
     {
       icon: Layout,
-      title: 'Frontend & Mobile',
+      title: 'Frontend Development',
       color: 'text-blue-400',
       skills: [
         {
@@ -299,6 +337,10 @@ const Skill: React.FC = () => {
           name: 'AWS',
           icon: <FaAws className="w-4 h-4 text-[#FF9900]" />,
         },
+        {
+          name: 'Jump Server',
+          icon: <Terminal className="w-4 h-4 text-[#38BDF8]" />,
+        },
       ],
     },
     {
@@ -307,6 +349,10 @@ const Skill: React.FC = () => {
       color: 'text-purple-400',
       skills: [
         { name: 'Figma', icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" /> },
+        {
+          name: 'Adobe XD',
+          icon: <SiAdobexd className="w-4 h-4 text-[#FF61F6]" />,
+        },
         {
           name: 'Responsive Design',
           icon: <Layout className="w-4 h-4 text-[#38B2AC]" />,
@@ -372,14 +418,18 @@ const Skill: React.FC = () => {
                 }}
                 className="text-secondary text-[17px] max-w-[3xl] leading-[30px]"
               >
-                I&apos;m a backend-focused Full-Stack Developer with experience
-                building web applications, REST APIs, and software solutions
-                using modern technologies. I work with TypeScript, Node.js,
-                Express.js, React, Next.js, databases, and development
-                infrastructure. With a foundation in Management Information
-                Systems, I combine technical knowledge with an understanding of
-                business needs to build practical, reliable, and user-focused
-                solutions.
+                I&apos;m a backend-focused Full-Stack Developer with hands-on
+                experience building APIs, backend services, full-stack
+                applications, and distributed systems. My core strengths are
+                TypeScript, Node.js, Express.js, databases, messaging systems,
+                and backend infrastructure, supported by experience with modern
+                frontend technologies and UI/UX tools.
+                <br />
+                <br />
+                My technical foundation began with programming and software
+                development studies in 2023 and has grown through professional
+                development, university coursework, academic projects, and
+                real-world software engineering work.
               </motion.p>
             </div>
           </div>
@@ -392,7 +442,7 @@ const Skill: React.FC = () => {
         </div>
 
         {/* Bottom Section: Skill Cards */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {skillCategories.map((category, index) => (
             <SkillCard
               key={index}
@@ -400,6 +450,10 @@ const Skill: React.FC = () => {
               title={category.title}
               skills={category.skills}
               color={category.color}
+              emphasized={
+                category.title === 'Backend Development' ||
+                category.title === 'Databases & Data'
+              }
             />
           ))}
         </div>
