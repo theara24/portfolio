@@ -77,7 +77,7 @@ const SkillCard: React.FC<{
   emphasized?: boolean;
 }> = ({ icon: Icon, title, skills, color, emphasized = false }) => (
   <Card
-    className={`group relative overflow-hidden py-5 bg-gray-900/80 flex flex-col hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 ${
+    className={`group relative overflow-hidden py-5 h-full bg-gray-900/80 flex flex-col hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 ${
       emphasized
         ? 'border-cyan-400/40 shadow-lg shadow-cyan-500/5'
         : 'border-gray-700'
@@ -88,7 +88,7 @@ const SkillCard: React.FC<{
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
     )}
     <CardContent className="p-6 relative z-10 flex flex-col gap-5 grow">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 min-h-[52px]">
         <div
           className={`p-3 rounded-xl bg-gray-800/50 ${color} group-hover:scale-110 transition-transform duration-300`}
         >
@@ -98,7 +98,7 @@ const SkillCard: React.FC<{
           {title}
         </h3>
       </div>
-      <div className="flex flex-wrap content-start items-start gap-2 grow">
+      <div className="flex flex-wrap content-start items-start gap-2 grow min-h-[120px]">
         {skills.map((skill, index) => (
           <Badge
             key={index}
