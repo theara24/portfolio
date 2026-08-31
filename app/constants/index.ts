@@ -256,19 +256,19 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: 'Customer Services Platform',
+    name: 'Omnichannel Messaging Platform',
     category: 'Professional',
     description:
-      'A multi-tenant customer service platform supporting customer conversations, ticket management, agent workflows, real-time communication, and messaging integrations.',
+      'Backend development for an internal omnichannel messaging platform connecting WhatsApp, Telegram, LINE, and Messenger with a central customer-support platform, handling message processing, media, and two-way synchronization across channels.',
     context:
-      'Professional backend project involving API development, real-time communication, multi-tenant services, messaging workflows, and external service integrations.',
+      'Focused on backend services — REST APIs, queue-based and asynchronous message processing, multi-tenant logic, and external channel integrations.',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: [
-      'Ticket management',
-      'Agent workflows',
-      'Real-time communication',
-      'Messaging platform integration',
+      'Message processing',
+      'External channel integrations',
+      'Two-way synchronization',
+      'Multi-tenant services',
     ],
     role: 'Junior Backend Developer',
     status: 'Professional Project',
@@ -289,15 +289,19 @@ const projects: Project[] = [
         color: 'blue-text-gradient',
       },
       {
-        name: 'REST APIs',
-        color: 'pink-text-gradient',
+        name: 'PostgreSQL',
+        color: 'blue-text-gradient',
       },
       {
-        name: 'WebSocket / Real-time',
+        name: 'Prisma',
         color: 'pink-text-gradient',
       },
       {
         name: 'Redis',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'BullMQ',
         color: 'pink-text-gradient',
       },
       {
@@ -313,53 +317,57 @@ const projects: Project[] = [
     sortOrder: 1,
   },
   {
-    name: 'Omnichannel Customer Messaging Middleware',
+    name: 'HashGame — Admin & Client Platform',
     category: 'Professional',
     description:
-      'Omnichannel messaging middleware for connecting customer communication platforms and synchronizing conversations with a customer service platform.',
+      'Full-stack development for an internal gaming platform, contributing across four application layers — Client Web, Client API, Admin Web, and Admin API — on both frontend interfaces and backend APIs.',
+    context:
+      'Implemented and maintained features across the client and admin applications, covering UI, API integrations, and backend logic.',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: [
-      'Messaging platform integration',
-      'Conversation synchronization',
+      'Client Web',
+      'Client API',
+      'Admin Web',
+      'Admin API',
     ],
-    role: 'Junior Backend Developer',
+    role: 'Backend + Frontend Developer',
     status: 'Professional Project',
     company: 'Everlast Information & Apps Dev Co., Ltd.',
     confidentialNote:
       'Company proprietary project — implementation details are confidential.',
     tags: [
       {
-        name: 'WhatsApp',
+        name: 'Vue.js',
         color: 'green-text-gradient',
       },
       {
-        name: 'Telegram',
+        name: 'Vuex',
         color: 'blue-text-gradient',
       },
       {
-        name: 'LINE',
+        name: 'Element UI',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Vue Router',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'i18n',
         color: 'green-text-gradient',
       },
       {
-        name: 'Messenger',
+        name: 'Laravel',
         color: 'pink-text-gradient',
       },
       {
-        name: 'Chatwoot',
+        name: 'PHP',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'REST API',
         color: 'pink-text-gradient',
-      },
-      {
-        name: 'JWT',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'RBAC',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'Docker',
-        color: 'blue-text-gradient',
       },
     ],
     image: '/projectimg/portfoliosample.webp',
@@ -370,19 +378,21 @@ const projects: Project[] = [
     sortOrder: 2,
   },
   {
-    name: 'Voting & Wallet System',
+    name: 'Voting & Wallet Platform',
     category: 'Professional',
     description:
-      'A transactional voting platform involving voting lifecycle management, settlement workflows, appeals, and wallet-related operations.',
+      'Full-stack development on a TypeScript-based voting platform across all four applications — Client Web, Client API, Admin Web, and Admin API — with backend-heavy work on APIs, voting workflows, authentication, and transactional services, plus supporting frontend development.',
+    context:
+      'Contributed backend architecture, core platform logic, and APIs across the client and admin applications, with supporting frontend development.',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: [
-      'Voting lifecycle',
-      'Settlement workflows',
-      'Appeals',
-      'Wallet-related operations',
+      'Voting workflows',
+      'Authentication',
+      'Admin APIs',
+      'Transactional services',
     ],
-    role: 'Junior Backend Developer',
+    role: 'Backend + Frontend Developer',
     status: 'Professional Project',
     company: 'Everlast Information & Apps Dev Co., Ltd.',
     confidentialNote:
@@ -393,24 +403,36 @@ const projects: Project[] = [
         color: 'blue-text-gradient',
       },
       {
-        name: 'Backend APIs',
+        name: 'Node.js',
         color: 'green-text-gradient',
       },
       {
-        name: 'Monorepo',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'Admin API',
+        name: 'React',
         color: 'blue-text-gradient',
       },
       {
-        name: 'Transactions',
-        color: 'green-text-gradient',
+        name: 'PostgreSQL',
+        color: 'pink-text-gradient',
       },
       {
-        name: 'Settlement',
+        name: 'Knex.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'RabbitMQ',
         color: 'pink-text-gradient',
+      },
+      {
+        name: 'Redis',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'BullMQ',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'JWT',
+        color: 'green-text-gradient',
       },
     ],
     image: '/projectimg/analytics.webp',
@@ -421,13 +443,20 @@ const projects: Project[] = [
     sortOrder: 3,
   },
   {
-    name: 'Chatwoot Integration Platform',
+    name: 'Customized Chatwoot Support Platform',
     category: 'Professional',
     description:
-      'A customized customer engagement platform based on Chatwoot, integrated with an external platform to support customer communication workflows.',
+      'Backend development on a customized, multi-tenant customer-support platform built on Chatwoot, including APIs, real-time communication, agent workflows, integrations, and security hardening.',
+    context:
+      'Contributed backend and platform hardening for an internal customer-support system — API development, real-time services, access control, reliability, and performance improvements.',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
-    features: ['Customer communication workflows'],
+    features: [
+      'Real-time communication',
+      'Agent workflows',
+      'Platform integrations',
+      'Security hardening',
+    ],
     role: 'Junior Backend Developer',
     status: 'Professional Project',
     company: 'Everlast Information & Apps Dev Co., Ltd.',
@@ -439,11 +468,31 @@ const projects: Project[] = [
         color: 'pink-text-gradient',
       },
       {
-        name: 'Rails',
+        name: 'Ruby on Rails',
         color: 'pink-text-gradient',
       },
       {
-        name: 'Chatwoot',
+        name: 'PostgreSQL',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Redis',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Sidekiq',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'ActionCable',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'REST APIs',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Docker',
         color: 'blue-text-gradient',
       },
     ],

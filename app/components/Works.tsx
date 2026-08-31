@@ -7,6 +7,7 @@ import { Tilt } from "react-tilt";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "./HigherOrderComponents";
+import { Lock } from "lucide-react";
 
 type ProjectTab = "Professional" | "Personal" | "University";
 
@@ -115,9 +116,13 @@ const ProjectCard = ({
 
                 <div className="mt-5">
                     <h3 className="text-white font-bold text-[24px]">{name}</h3>
-                    <p className="mt-2 text-secondary text-[14px]">{description}</p>
+                    <p className="mt-2 text-secondary text-[14px]">
+                        {description}
+                    </p>
                     {context && (
-                        <p className="mt-2 text-secondary text-[13px]">{context}</p>
+                        <p className="mt-2 text-secondary/80 text-[13px]">
+                            {context}
+                        </p>
                     )}
                 </div>
 
@@ -133,32 +138,42 @@ const ProjectCard = ({
                 </div>
 
                 {(showMetadata || confidentialNote) && (
-                    <div className="mt-4 border-t border-white/10 pt-3">
+                    <div className="mt-5 border-t border-white/10 pt-3">
                         {showMetadata && (
-                            <div className="text-[13px] leading-6">
+                            <dl className="space-y-1">
                                 {company && (
-                                    <p className="text-secondary">
-                                        <span className="text-white/70 font-medium">Company:</span>{" "}
-                                        {company}
-                                    </p>
+                                    <div className="flex gap-2.5 text-[12.5px] leading-5">
+                                        <dt className="w-20 shrink-0 pt-px text-[11px] font-medium uppercase tracking-wide text-white/40">
+                                            Company
+                                        </dt>
+                                        <dd className="text-white/80">{company}</dd>
+                                    </div>
                                 )}
                                 {role && (
-                                    <p className="text-secondary">
-                                        <span className="text-white/70 font-medium">Role:</span>{" "}
-                                        {role}
-                                    </p>
+                                    <div className="flex gap-2.5 text-[12.5px] leading-5">
+                                        <dt className="w-20 shrink-0 pt-px text-[11px] font-medium uppercase tracking-wide text-white/40">
+                                            Role
+                                        </dt>
+                                        <dd className="text-white/80">{role}</dd>
+                                    </div>
                                 )}
                                 {status && (
-                                    <p className="text-secondary">
-                                        <span className="text-white/70 font-medium">Status:</span>{" "}
-                                        {status}
-                                    </p>
+                                    <div className="flex gap-2.5 text-[12.5px] leading-5">
+                                        <dt className="w-20 shrink-0 pt-px text-[11px] font-medium uppercase tracking-wide text-white/40">
+                                            Status
+                                        </dt>
+                                        <dd className="text-white/80">{status}</dd>
+                                    </div>
                                 )}
-                            </div>
+                            </dl>
                         )}
                         {confidentialNote && (
-                            <p className="mt-2 text-[12px] text-secondary/70">
-                                {confidentialNote}
+                            <p className="mt-3 flex items-start gap-1.5 text-[12px] italic text-secondary/60 leading-[16px]">
+                                <Lock
+                                    className="mt-[2px] h-3.5 w-3.5 shrink-0 opacity-60"
+                                    aria-hidden="true"
+                                />
+                                <span>{confidentialNote}</span>
                             </p>
                         )}
                     </div>
@@ -187,11 +202,11 @@ const Works = () => {
                     variants={fadeIn("", "", 0.1, 1)}
                     className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
                 >
-                    Following projects showcases my skills and experience through
-                    real-world examples of my work. Each project is briefly described with
-                    links to code repositories and live demos in it. It reflects my
-                    ability to solve complex problems, work with different technologies,
-                    and manage projects effectively.
+                    A selection of projects showcasing my real-world development
+                    experience — responsibilities, technologies, and engineering work
+                    across backend and full-stack roles. It reflects my ability to build
+                    reliable services, integrate external systems, and deliver across
+                    different parts of the stack.
                 </motion.p>
             </div>
 
