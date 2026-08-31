@@ -18,20 +18,18 @@ const CodeAnimation = () => {
     () => [
       "<span class='text-purple-400'>const</span> <span class='text-gray-300'>profile</span> <span class='text-purple-400'>=</span> <span class='text-purple-400'>{</span>",
       "  <span class='text-gray-300'>name</span>: <span class='text-green-400'>'Theara Chim'</span>,",
-      "  <span class='text-gray-300'>title</span>: <span class='text-green-400'>'Full-Stack Developer in Training'</span>,",
-      "  <span class='text-gray-300'>skills</span>: [",
-      "    <span class='text-green-400'>'React'</span>, <span class='text-green-400'>'Next.js'</span>, <span class='text-green-400'>'Vue.js'</span>, <span class='text-green-400'>'Nuxt.js'</span>, <span class='text-green-400'>'Angular'</span>,",
-      "    <span class='text-green-400'>'Tailwind CSS'</span>, <span class='text-green-400'>'Bootstrap'</span>, <span class='text-green-400'>'HTML'</span>, <span class='text-green-400'>'CSS'</span>, <span class='text-green-400'>'JavaScript'</span>, <span class='text-green-400'>'TypeScript'</span>,",
-      "    <span class='text-green-400'>'Node.js'</span>, <span class='text-green-400'>'PHP'</span>, <span class='text-green-400'>'C#'</span>, <span class='text-green-400'>'Java'</span>, <span class='text-green-400'>'C'</span>, <span class='text-green-400'>'C++'</span>,",
-      "    <span class='text-green-400'>'MySQL'</span>, <span class='text-green-400'>'PostgreSQL'</span>, <span class='text-green-400'>'MongoDB'</span>,",
-      "    <span class='text-green-400'>'Figma'</span>, <span class='text-green-400'>'Adobe XD'</span>, <span class='text-green-400'>'Adobe Photoshop'</span>, <span class='text-green-400'>'Illustrator'</span>, <span class='text-green-400'>'InDesign'</span>, <span class='text-green-400'>'Premiere'</span>, <span class='text-green-400'>'DaVinci'</span>, <span class='text-green-400'>'CapCut'</span>,",
-      "    <span class='text-green-400'>'AWS'</span>, <span class='text-green-400'>'Docker'</span>, <span class='text-green-400'>'CI/CD'</span>, <span class='text-green-400'>'Kubernetes'</span>,",
-      "    <span class='text-green-400'>'Git'</span>, <span class='text-green-400'>'Linux'</span>, <span class='text-green-400'>'Postman'</span>",
-      '  ],',
-      "  <span class='text-gray-300'>projectsCompleted</span>: <span class='text-purple-400'>['JobFinder', 'Carify', 'FoodPanda Clone', 'Scholarship Portal']</span>,",
-      "  <span class='text-gray-300'>learningAttitude</span>: <span class='text-purple-400'>true</span>,",
+      "  <span class='text-gray-300'>role</span>: <span class='text-green-400'>'Backend-Focused Full-Stack Developer'</span>,",
+      "  <span class='text-gray-300'>backend</span>: <span class='text-purple-400'>[</span>",
+      "    <span class='text-green-400'>'Node.js'</span>, <span class='text-green-400'>'TypeScript'</span>, <span class='text-green-400'>'Express.js'</span>, <span class='text-green-400'>'Java'</span>, <span class='text-green-400'>'Spring'</span>,",
+      "    <span class='text-green-400'>'PHP'</span>, <span class='text-green-400'>'Laravel'</span>,",
+      "    <span class='text-green-400'>'REST APIs'</span>, <span class='text-green-400'>'PostgreSQL'</span>, <span class='text-green-400'>'MySQL'</span>, <span class='text-green-400'>'Redis'</span>,",
+      "    <span class='text-green-400'>'RabbitMQ'</span>, <span class='text-green-400'>'WebSockets'</span>",
+      "  <span class='text-purple-400'>]</span>,",
+      "  <span class='text-gray-300'>frontend</span>: <span class='text-purple-400'>[</span> <span class='text-green-400'>'React'</span>, <span class='text-green-400'>'Next.js'</span>, <span class='text-green-400'>'Tailwind CSS'</span> <span class='text-purple-400'>]</span>,",
+      "  <span class='text-gray-300'>infra</span>: <span class='text-purple-400'>[</span> <span class='text-green-400'>'Docker'</span>, <span class='text-green-400'>'Nginx'</span>, <span class='text-green-400'>'CI/CD'</span>, <span class='text-green-400'>'Linux'</span> <span class='text-purple-400'>]</span>,",
+      "  <span class='text-gray-300'>focus</span>: <span class='text-green-400'>'APIs, data, messaging & scalable backends'</span>,",
       "  <span class='text-gray-300'>hireable</span>: <span class='text-purple-400'>function</span>() <span class='text-purple-400'>{</span>",
-      "    <span class='text-purple-400'>return</span> this.learningAttitude && this.projectsCompleted.length >= 2;",
+      "    <span class='text-purple-400'>return</span> <span class='text-purple-400'>true</span>;",
       "  <span class='text-purple-400'>}</span>",
       "<span class='text-purple-400'>}</span>;",
     ],
@@ -136,10 +134,10 @@ export const HeroContent = () => {
               <FlipWords
                 className={'text-lg sm:text-xl text-blue-400 font-medium'}
                 words={[
+                  'Backend-Focused Full-Stack Developer',
                   'Junior Backend Developer',
-                  'Software Engineer',
                   'Backend & API Development',
-                  'Full-Stack Developer',
+                  'Software Engineer',
                 ]}
               />
             </span>
@@ -150,19 +148,20 @@ export const HeroContent = () => {
             variants={fadeIn('right', 'spring', 0.8, 0.75)}
             className="text-sm sm:text-base md:text-lg text-gray-300 my-2 sm:my-5 max-w-[400px] sm:max-w-[500px]"
           >
-            I&apos;m a Junior Backend Developer focused on building reliable
-            and scalable applications. I specialize in TypeScript, Node.js, and
-            Express.js, with experience in REST APIs, databases, microservices,
-            and modern development infrastructure.
+            I&apos;m a Backend-Focused Full-Stack Developer who builds reliable,
+            scalable applications with a strong foundation in APIs, databases,
+            and messaging systems. I specialize in TypeScript, Node.js, and
+            Express.js, while covering the full stack from modern frontends to
+            deployment infrastructure.
           </motion.p>
 
           {/* Button */}
           <motion.a
-            href="#about" // navigate to About section
+            href="#projects"
             variants={zoomIn(1, 0.5)}
-            className="py-1 sm:py-2 px-3 sm:px-4 button-primary text-center text-white cursor-pointer rounded-lg max-w-[150px] sm:max-w-[200px] bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
+            className="py-2 sm:py-2.5 px-4 sm:px-5 text-center text-white cursor-pointer rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 transition-colors"
           >
-            About Me
+            View My Work
           </motion.a>
         </div>
 

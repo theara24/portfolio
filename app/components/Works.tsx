@@ -150,11 +150,15 @@ const ProjectCard = ({
                                     </div>
                                 )}
                                 {role && (
-                                    <div className="flex gap-2.5 text-[12.5px] leading-5">
+                                    <div className="flex gap-2.5 text-[12.5px] leading-5 items-center">
                                         <dt className="w-20 shrink-0 pt-px text-[11px] font-medium uppercase tracking-wide text-white/40">
                                             Role
                                         </dt>
-                                        <dd className="text-white/80">{role}</dd>
+                                        <dd>
+                                            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[12px] font-semibold bg-gradient-to-r from-purple-600/25 to-cyan-600/25 border border-purple-400/40 text-purple-200">
+                                                {role}
+                                            </span>
+                                        </dd>
                                     </div>
                                 )}
                                 {status && (
@@ -274,4 +278,4 @@ const Works = () => {
     );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "projects");

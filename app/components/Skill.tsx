@@ -32,7 +32,6 @@ import {
   FaReact,
 } from 'react-icons/fa';
 import {
-  SiAdobexd,
   SiExpress,
   SiLaravel,
   SiMongodb,
@@ -48,7 +47,6 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 import { BsFileEarmarkCode, BsGrid1X2 } from 'react-icons/bs';
-import { MdAnimation } from 'react-icons/md';
 import { FcWorkflow } from 'react-icons/fc';
 
 // Assuming textVariant is defined elsewhere
@@ -180,13 +178,6 @@ const Skill: React.FC = () => {
           name: 'REST APIs',
           icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
         },
-      ],
-    },
-    {
-      icon: Database,
-      title: 'Database & Caching',
-      color: 'text-orange-400',
-      skills: [
         {
           name: 'PostgreSQL',
           icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
@@ -200,74 +191,39 @@ const Skill: React.FC = () => {
           icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
         },
         {
-          name: 'SQL Server',
-          icon: <Database className="w-4 h-4 text-[#CC2927]" />,
-        },
-        {
           name: 'Redis',
           icon: <SiRedis className="w-4 h-4 text-[#FF4438]" />,
+        },
+        {
+          name: 'SQL Server',
+          icon: <Database className="w-4 h-4 text-[#CC2927]" />,
         },
       ],
     },
     {
       icon: Network,
-      title: 'Architecture & Integration',
+      title: 'Messaging & Distributed Systems',
       color: 'text-cyan-400',
       skills: [
-        {
-          name: 'Microservices',
-          icon: <Boxes className="w-4 h-4 text-[#0EA5E9]" />,
-        },
-        {
-          name: 'Monorepo',
-          icon: <Blocks className="w-4 h-4 text-[#8B5CF6]" />,
-        },
         {
           name: 'RabbitMQ',
           icon: <SiRabbitmq className="w-4 h-4 text-[#FF6600]" />,
         },
         {
-          name: 'REST APIs',
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
-        },
-        {
-          name: 'Third-Party API Integration',
+          name: 'BullMQ',
           icon: <Plug className="w-4 h-4 text-[#10B981]" />,
         },
-      ],
-    },
-    {
-      icon: Cloud,
-      title: 'DevOps & Infrastructure',
-      color: 'text-blue-400',
-      skills: [
         {
-          name: 'Docker',
-          icon: <FaDocker className="w-4 h-4 text-[#2496ED]" />,
+          name: 'WebSockets',
+          icon: <Network className="w-4 h-4 text-[#0EA5E9]" />,
         },
         {
-          name: 'Nginx',
-          icon: <SiNginx className="w-4 h-4 text-[#009639]" />,
+          name: 'Microservices',
+          icon: <Boxes className="w-4 h-4 text-[#8B5CF6]" />,
         },
         {
-          name: 'Portainer',
-          icon: <SiPortainer className="w-4 h-4 text-[#13BEF9]" />,
-        },
-        {
-          name: 'CI/CD',
-          icon: <FcWorkflow className="w-4 h-4" />,
-        },
-        {
-          name: 'Git',
-          icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" />,
-        },
-        {
-          name: 'Linux',
-          icon: <FaLinux className="w-4 h-4 text-[#FCC624]" />,
-        },
-        {
-          name: 'AWS',
-          icon: <FaAws className="w-4 h-4 text-[#FF9900]" />,
+          name: 'Monorepo',
+          icon: <Blocks className="w-4 h-4 text-[#06B6D4]" />,
         },
       ],
     },
@@ -311,33 +267,56 @@ const Skill: React.FC = () => {
       ],
     },
     {
+      icon: Cloud,
+      title: 'DevOps & Infrastructure',
+      color: 'text-blue-400',
+      skills: [
+        {
+          name: 'Docker',
+          icon: <FaDocker className="w-4 h-4 text-[#2496ED]" />,
+        },
+        {
+          name: 'Nginx',
+          icon: <SiNginx className="w-4 h-4 text-[#009639]" />,
+        },
+        {
+          name: 'Portainer',
+          icon: <SiPortainer className="w-4 h-4 text-[#13BEF9]" />,
+        },
+        {
+          name: 'CI/CD',
+          icon: <FcWorkflow className="w-4 h-4" />,
+        },
+        {
+          name: 'Git',
+          icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" />,
+        },
+        {
+          name: 'Linux',
+          icon: <FaLinux className="w-4 h-4 text-[#FCC624]" />,
+        },
+        {
+          name: 'AWS',
+          icon: <FaAws className="w-4 h-4 text-[#FF9900]" />,
+        },
+      ],
+    },
+    {
       icon: Paintbrush,
       title: 'UI/UX & Design',
       color: 'text-purple-400',
       skills: [
         { name: 'Figma', icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" /> },
         {
-          name: 'Adobe XD',
-          icon: <SiAdobexd className="w-4 h-4 text-[#FF61F6]" />,
-        },
-        {
           name: 'Responsive Design',
           icon: <Layout className="w-4 h-4 text-[#38B2AC]" />,
-        },
-        {
-          name: 'Wireframing',
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#9CA3AF]" />,
-        },
-        {
-          name: 'Prototyping',
-          icon: <MdAnimation className="w-4 h-4 text-[#F59E0B]" />,
         },
       ],
     },
   ];
 
   return (
-    <main className="min-h-screen bg-[#04081A] relative text-white">
+    <main id="skills" className="min-h-screen bg-[#04081A] relative text-white">
       <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
       <div className="container mx-auto px-4 py-11 relative z-10">
         {/* Top Section: Text (Left) and Robot (Right) */}

@@ -69,7 +69,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <Link href="https://github.com/omunite215">
+          <Link href="#" aria-label="Back to top">
             <Image
               src="/my_logo.png"
               width={80}
