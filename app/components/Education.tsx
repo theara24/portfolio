@@ -580,7 +580,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
                   onError={() => {
                     console.error(`Failed to load image: ${certificate.image}`);
                   }}
-                  onLoadingComplete={() => {
+                  onLoad={() => {
                     console.log(
                       `Successfully loaded image: ${certificate.image}`
                     );
@@ -719,7 +719,7 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference, index }) => {
                           `Failed to load image: ${reference.image}`
                         );
                       }}
-                      onLoadingComplete={() => {
+                      onLoad={() => {
                         console.log(
                           `Successfully loaded image: ${reference.image}`
                         );

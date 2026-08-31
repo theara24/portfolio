@@ -14,6 +14,7 @@ import Experience from './Experience';
 import Works from './Works';
 import Feedbacks from './Feedbacks';
 import Contact from './Contact';
+import Lanyard from './Lanyard';
 import WebGLErrorBoundary from './WebGLErrorBoundary';
 import WebGLFallback from './WebGLFallback';
 import WebGLCanvas from './WebGLCanvas';
@@ -29,6 +30,7 @@ export {
   Works,
   Feedbacks,
   Contact,
+  Lanyard,
   EarthCanvas,
   BallCanvas,
   ComputersCanvas,

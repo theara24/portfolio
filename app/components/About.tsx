@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Tilt } from 'react-tilt';
 import { services } from '../constants';
 import { fadeIn, textVariant } from '@/app/utils/motion';
+import Lanyard from './Lanyard';
 
 type ServiceCardProps = {
   index: number;
@@ -135,15 +136,15 @@ const About = () => {
           projects.
         </motion.p>
 
-        {/* Enhanced Floating Image */}
+        {/* Lanyard */}
         <motion.div
           initial={{ opacity: 0, x: 100, scale: 0.8 }}
           whileInView={{
             opacity: 1,
             x: 0,
-            y: [0, -15, 0], // Increased vertical float
-            scale: [0.95, 1.05, 0.95], // Gentle scaling for "breathing" effect
-            rotate: [-2, 2, -2], // Subtle tilt
+            y: [0, -15, 0],
+            scale: [0.95, 1.05, 0.95],
+            rotate: [-2, 2, -2],
           }}
           transition={{
             duration: 4,
@@ -151,15 +152,10 @@ const About = () => {
             repeatType: 'loop',
             ease: 'easeInOut',
           }}
-          viewport={{ once: true }} // Animate once when entering viewport
+          viewport={{ once: true }}
           className="relative w-full md:w-[300px] h-[300px]"
         >
-          <Image
-            src="/Ra.png"
-            alt="Developer Portfolio"
-            fill
-            className="object-cover rounded-[20px] shadow-card"
-          />
+          <Lanyard frontImage="/Ra.png" />
         </motion.div>
       </div>
 
