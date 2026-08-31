@@ -12,11 +12,15 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [hidden, setHidden] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const controls = useAnimation();
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
+
+      // Track whether we've scrolled past the top for the bg transition
+      setScrolled(currentScroll > 40);
 
       if (currentScroll > lastScrollY && currentScroll > 100) {
         // scrolling down → hide
@@ -28,14 +32,14 @@ const Navbar = () => {
       setLastScrollY(currentScroll);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
   useEffect(() => {
     controls.start({
       y: hidden ? -100 : 0,
-      transition: { duration: 0.5, ease: hidden ? 'easeIn' : 'easeOut' },
+      transition: { duration: 0.4, ease: [0.33, 1, 0.68, 1] },
     });
   }, [hidden, controls]);
 
@@ -52,10 +56,12 @@ const Navbar = () => {
     <motion.nav
       animate={controls}
       initial={{ y: 0 }}
-      className={`paddingX w-full flex items-center py-5 fixed top-0 z-30 transition-all duration-300 ${
+      className={`paddingX w-full flex items-center py-4 fixed top-0 z-30 transition-all duration-300 ${
         hidden
-          ? 'pointer-events-none' // prevents ghost clicks when hidden
-          : 'bg-white/10 backdrop-blur-md border-b border-white/20 shadow-lg'
+          ? 'pointer-events-none bg-transparent'
+          : scrolled
+          ? 'bg-[#050816]/70 backdrop-blur-md border-b border-white/10 shadow-lg'
+          : 'bg-transparent'
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">

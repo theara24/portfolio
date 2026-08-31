@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { isWebGLSupported } from '@/app/utils/webgl';
 import WebGLFallback from '@/app/components/WebGLFallback';
+import Reveal from '@/app/components/Reveal';
 
 import {
   FaAws,
@@ -444,17 +445,23 @@ const Skill: React.FC = () => {
         {/* Bottom Section: Skill Cards */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {skillCategories.map((category, index) => (
-            <SkillCard
+            <Reveal
               key={index}
-              icon={category.icon}
-              title={category.title}
-              skills={category.skills}
-              color={category.color}
-              emphasized={
-                category.title === 'Backend Development' ||
-                category.title === 'Databases & Data'
-              }
-            />
+              direction="up"
+              delay={(index % 3) * 0.1}
+              className="h-full"
+            >
+              <SkillCard
+                icon={category.icon}
+                title={category.title}
+                skills={category.skills}
+                color={category.color}
+                emphasized={
+                  category.title === 'Backend Development' ||
+                  category.title === 'Databases & Data'
+                }
+              />
+            </Reveal>
           ))}
         </div>
       </div>

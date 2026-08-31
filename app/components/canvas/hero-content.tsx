@@ -101,7 +101,7 @@ export const HeroContent = () => {
       variants={staggerContainer(0.1, 0.1)}
       initial="hidden"
       animate="show"
-      className="flex flex-col items-center justify-center px-2 sm:px-4 md:px-10 lg:px-20 mt-10 sm:mt-20 md:mt-40 w-full z-20"
+      className="flex flex-col items-center justify-center px-2 sm:px-4 md:px-10 lg:px-20 mt-10 sm:mt-20 md:mt-32 w-full z-20"
     >
       <div className="flex flex-col sm:flex-row items-start justify-between gap-4 sm:gap-6 max-w-4xl sm:max-w-6xl w-full">
         {/* Text and Button Column */}
@@ -120,11 +120,12 @@ export const HeroContent = () => {
           {/* Headline */}
           <motion.div
             variants={fadeIn('right', 'spring', 0.5, 0.05)}
-            className="flex flex-col gap-2 sm:gap-4 mt-4 sectionHeadText text-white"
+            className="flex flex-col gap-2 sm:gap-4 mt-4 text-white"
           >
-            <span>
+            <span className="heroSubText text-white/70">
               Hello, I&apos;m
-              <br />
+            </span>
+            <span className="heroHeadText">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
                 Theara Chim
               </span>{' '}

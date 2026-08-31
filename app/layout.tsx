@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Poppins as FontSans } from 'next/font/google';
+import SmoothScroll from '@/app/components/SmoothScroll';
 import '@/app/styles/globals.css';
 
 const fontSans = FontSans({
@@ -111,7 +112,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={fontSans.variable}>{children}</body>
+      <body className={fontSans.variable}>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }
