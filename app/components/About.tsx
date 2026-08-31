@@ -61,83 +61,87 @@ const ServiceCard = ({ index, title, description, icon }: ServiceCardProps) => {
 const About = () => {
   return (
     <>
-      {/* Header */}
-      <motion.div
-        variants={textVariant()}
-        initial="hidden"
-        animate="show"
-        transition={{ staggerChildren: 0.2 }}
-      >
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{
-            opacity: [0, 1, 0.8, 1], // Subtle flicker glow
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            repeatType: 'mirror',
-          }}
-          className="sectionSubText"
-        >
-          Introduction
-        </motion.p>
-
-        {/* Looping typing effect */}
-        <motion.h2
-          initial={{ width: 0 }}
-          animate={{ width: '100%' }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'easeInOut',
-          }}
-          className="sectionHeadText overflow-hidden whitespace-nowrap border-r-4 border-white pr-2"
-        >
-          Overview.
-        </motion.h2>
-      </motion.div>
-
       {/* About Content */}
-      <div className="mt-4 flex flex-col md:flex-row items-center gap-6">
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: [0.6, 1, 0.6],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            repeatType: 'mirror',
-          }}
-          className="text-secondary text-[17px] max-w-[3xl] leading-[30px] flex-1"
-        >
-          I&apos;m a Backend-Focused Full-Stack Developer with professional
-          experience building backend services, REST APIs, distributed systems,
-          and full-stack applications. I have been studying programming and
-          software development since 2023 and have been working professionally
-          in backend development since 2025.
-          <br />
-          <br />
-          My professional experience focuses on TypeScript, Node.js, and
-          Express.js, with hands-on work involving databases, Redis, message
-          queues, microservices, third-party integrations, and production
-          infrastructure. I have also contributed to frontend development using
-          React, Next.js, Vue.js, and React Native, allowing me to work across
-          different parts of the application stack.
-          <br />
-          <br />
-          With a background in Management Information Systems, I combine
-          software development knowledge with an understanding of business
-          requirements and information systems. I enjoy building practical
-          solutions, solving technical problems, and continuously improving my
-          engineering skills through professional, academic, and personal
-          projects.
-        </motion.p>
+      <div className="mt-4 flex flex-col lg:flex-row items-start gap-6">
+        {/* Left Column */}
+        <div className="flex-1">
+          {/* Header */}
+          <motion.div
+            variants={textVariant()}
+            initial="hidden"
+            animate="show"
+            transition={{ staggerChildren: 0.2 }}
+          >
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: [0, 1, 0.8, 1], // Subtle flicker glow
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatType: 'mirror',
+              }}
+              className="sectionSubText"
+            >
+              Introduction
+            </motion.p>
 
-        {/* Lanyard */}
-        <div className="relative w-full md:w-[300px] h-[300px]">
+            {/* Looping typing effect */}
+            <motion.h2
+              initial={{ width: 0 }}
+              animate={{ width: '100%' }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: 'reverse',
+                ease: 'easeInOut',
+              }}
+              className="sectionHeadText overflow-hidden whitespace-nowrap border-r-4 border-white pr-2"
+            >
+              Overview.
+            </motion.h2>
+          </motion.div>
+
+          {/* Biography */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: [0.6, 1, 0.6],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              repeatType: 'mirror',
+            }}
+            className="text-secondary text-[17px] max-w-[3xl] leading-[30px] mt-4"
+          >
+            I&apos;m a Backend-Focused Full-Stack Developer with professional
+            experience building backend services, REST APIs, distributed systems,
+            and full-stack applications. I have been studying programming and
+            software development since 2023 and have been working professionally
+            in backend development since 2025.
+            <br />
+            <br />
+            My professional experience focuses on TypeScript, Node.js, and
+            Express.js, with hands-on work involving databases, Redis, message
+            queues, microservices, third-party integrations, and production
+            infrastructure. I have also contributed to frontend development using
+            React, Next.js, Vue.js, and React Native, allowing me to work across
+            different parts of the application stack.
+            <br />
+            <br />
+            With a background in Management Information Systems, I combine
+            software development knowledge with an understanding of business
+            requirements and information systems. I enjoy building practical
+            solutions, solving technical problems, and continuously improving my
+            engineering skills through professional, academic, and personal
+            projects.
+          </motion.p>
+        </div>
+
+        {/* Right Column */}
+        <div className="relative w-full lg:w-[400px] h-[700px]">
           <Lanyard frontImage="/Ra.png" />
         </div>
       </div>
