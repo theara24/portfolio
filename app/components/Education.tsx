@@ -388,30 +388,52 @@ type EducationCardProps = {
 };
 
 const EducationCard: React.FC<EducationCardProps> = ({ education, index }) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`);
+  };
+
   return (
     <motion.div
       variants={fadeIn('up', 'spring', index * 0.3, 0.75)}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="relative"
+      className="relative group"
     >
-      <Tilt options={{ max: 15, scale: 1.02, speed: 400 }} className="w-full">
-        <div className="bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg border border-slate-700/50 rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 group">
-          <div className="flex items-start justify-between mb-6">
+      <Tilt options={{ max: 10, scale: 1.01, speed: 600, reverse: true }} className="w-full h-full">
+        <div
+          onMouseMove={handleMouseMove}
+          className="relative bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg border border-slate-700/50 rounded-3xl p-8 transition-all duration-500 overflow-hidden group-hover:border-slate-500/70 group-hover:-translate-y-1.5"
+        >
+          {/* top light sweep */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 translate-y-0 group-hover:opacity-100 transition-opacity duration-500" />
+          {/* corner glow */}
+          <div className="pointer-events-none absolute -top-16 -right-16 w-48 h-48 rounded-full bg-blue-500/15 blur-3xl opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700" />
+          {/* spotlight following cursor */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            style={{
+              background:
+                'radial-gradient(circle 400px at var(--mx,50%) var(--my,0%), rgba(59,130,246,0.12), transparent 60%)',
+            }}
+          />
+          <div className="relative flex items-start justify-between mb-6">
             <div className="flex items-center gap-4">
               <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileHover={{ scale: 1.12, rotate: 6 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 15 }}
                 className="relative"
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-0.5">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-0.5 shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 transition-shadow duration-500">
                   <div className="w-full h-full rounded-2xl bg-slate-800 flex items-center justify-center">
-                    <GraduationCap className="w-8 h-8 text-blue-400" />
+                    <GraduationCap className="w-8 h-8 text-blue-400 group-hover:text-white transition-colors duration-300" />
                   </div>
                 </div>
               </motion.div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-blue-300 transition-colors duration-300">
                   {education.degree}
                 </h3>
                 <p className="text-blue-400 font-semibold text-lg">
@@ -421,25 +443,25 @@ const EducationCard: React.FC<EducationCardProps> = ({ education, index }) => {
             </div>
             <div className="text-right">
               <div className="flex items-center gap-2 text-slate-400 mb-2">
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-4 h-4 group-hover:text-blue-300 transition-colors" />
                 <span className="text-sm">{education.date}</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-400">
+              <div className="flex items-center gap-2 text-slate-400 group-hover:text-slate-300 transition-colors">
                 <MapPin className="w-4 h-4" />
                 <span className="text-sm">{education.location}</span>
               </div>
             </div>
           </div>
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full px-4 py-2 mb-6">
+          <div className="relative inline-flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full px-4 py-2 mb-6 group-hover:border-green-400/60 group-hover:shadow-[0_0_20px_-4px_rgba(16,185,129,0.5)] transition-all duration-500">
             <Award className="w-4 h-4 text-green-400" />
             <span className="text-green-400 font-semibold">
               {education.gpa}
             </span>
           </div>
-          <p className="text-slate-300 leading-relaxed mb-6">
+          <p className="relative text-slate-300 leading-relaxed mb-6">
             {education.description}
           </p>
-          <div>
+          <div className="relative">
             {education.achievements.length > 0 && (
               <>
                 <h4
@@ -455,9 +477,9 @@ const EducationCard: React.FC<EducationCardProps> = ({ education, index }) => {
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.1 }}
-                      className="flex items-start gap-3 text-slate-300"
+                      className="flex items-start gap-3 text-slate-300 group-hover:text-slate-200 transition-colors duration-300"
                     >
-                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 mt-2 flex-shrink-0" />
+                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 mt-2 flex-shrink-0 group-hover:scale-110 transition-transform" />
                       <span>{achievement}</span>
                     </motion.li>
                   ))}
@@ -491,6 +513,12 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
     setIsModalOpen(false);
   };
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`);
+  };
+
   return (
     <>
       <motion.div
@@ -498,21 +526,36 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
+        className="h-full group"
       >
-        <Tilt options={{ max: 20, scale: 1.05, speed: 400 }} className="h-full">
-          <div className="bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg border border-slate-700/50 rounded-2xl p-6 shadow-xl hover:shadow-purple-500/20 transition-all duration-500 group h-full flex flex-col">
-            <div className="relative mb-6">
+        <Tilt options={{ max: 12, scale: 1.02, speed: 500 }} className="h-full">
+          <div
+            onMouseMove={handleMouseMove}
+            className="relative bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg border border-slate-700/50 rounded-2xl p-6 overflow-hidden transition-all duration-500 group-hover:border-purple-500/60 group-hover:-translate-y-1.5 shadow-xl group-hover:shadow-purple-500/20 h-full flex flex-col"
+          >
+            {/* light sweep */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* cursor spotlight */}
+            <div
+              className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style={{
+                background:
+                  'radial-gradient(circle 380px at var(--mx,50%) var(--my,0%), rgba(168,85,247,0.14), transparent 60%)',
+              }}
+            />
+            <div className="relative mb-6 flex justify-center">
               <motion.div
-                whileHover={{ scale: 1.1, rotate: -5 }}
-                className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 p-0.5"
+                whileHover={{ scale: 1.15, rotate: -8, y: -3 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 14 }}
+                className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 p-0.5 shadow-lg shadow-purple-500/30 group-hover:shadow-purple-500/60 transition-shadow duration-500"
               >
                 <div className="w-full h-full rounded-2xl bg-slate-800 flex items-center justify-center">
-                  <Award className="w-10 h-10 text-purple-400" />
+                  <Award className="w-10 h-10 text-purple-400 group-hover:text-white transition-colors duration-300" />
                 </div>
               </motion.div>
             </div>
-            <div className="text-center mb-4 flex-grow">
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+            <div className="relative text-center mb-4 flex-grow">
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300">
                 {certificate.title}
               </h3>
               <p className="text-purple-400 font-semibold mb-2">
@@ -523,7 +566,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
                 {certificate.skills.map((skill, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 bg-slate-700/50 text-slate-300 text-xs rounded-full border border-slate-600/50"
+                    className="px-3 py-1 bg-slate-700/50 text-slate-300 text-xs rounded-full border border-slate-600/50 transition-colors duration-300 group-hover:border-purple-500/40 group-hover:bg-purple-500/10 group-hover:text-purple-200"
                   >
                     {skill}
                   </span>
@@ -532,9 +575,9 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
             </div>
             <button
               onClick={openModal}
-              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-xl transition-all duration-300 group/link"
+              className="relative inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-4 py-2.5 rounded-xl transition-all duration-300 group-hover:shadow-[0_8px_24px_-8px_rgba(168,85,247,0.9)] hover:-translate-y-0.5 group/link"
             >
-              <ExternalLink className="w-4 h-4 group-hover/link:scale-110 transition-transform" />
+              <ExternalLink className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
               <span className="font-medium">Verify Certificate</span>
             </button>
           </div>
@@ -685,18 +728,42 @@ type ReferenceCardProps = {
 };
 
 const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference, index }) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`);
+  };
+
   return (
     <motion.div
       variants={fadeIn('up', 'spring', index * 0.2, 0.75)}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
+      className="h-full group"
     >
-      <Tilt options={{ max: 15, scale: 1.02, speed: 400 }} className="h-full">
-        <div className="bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg border border-slate-700/50 rounded-2xl p-6 shadow-xl hover:shadow-emerald-500/20 transition-all duration-500 group h-full flex flex-col">
-          <div className="flex items-center gap-4 mb-4">
-            <motion.div whileHover={{ scale: 1.1 }} className="relative">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 p-0.5 overflow-hidden">
+      <Tilt options={{ max: 10, scale: 1.01, speed: 500 }} className="h-full">
+        <div
+          onMouseMove={handleMouseMove}
+          className="relative bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg border border-slate-700/50 rounded-2xl p-6 overflow-hidden transition-all duration-500 group-hover:border-emerald-500/60 group-hover:-translate-y-1.5 shadow-xl group-hover:shadow-emerald-500/20 h-full flex flex-col"
+        >
+          {/* light sweep */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          {/* cursor spotlight */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            style={{
+              background:
+                'radial-gradient(circle 380px at var(--mx,50%) var(--my,0%), rgba(16,185,129,0.13), transparent 60%)',
+            }}
+          />
+          <div className="relative flex items-center gap-4 mb-4">
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 3 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+              className="relative"
+            >
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 p-0.5 overflow-hidden shadow-lg shadow-emerald-500/30 group-hover:shadow-emerald-500/50 ring-2 ring-transparent group-hover:ring-emerald-400/50 transition-all duration-500">
                 <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center overflow-hidden">
                   {reference.image ? (
                     <Image
@@ -704,7 +771,7 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference, index }) => {
                       alt={reference.name}
                       width={64}
                       height={64}
-                      className="rounded-full object-cover"
+                      className="rounded-full object-cover scale-105"
                       onError={() => {
                         console.error(
                           `Failed to load image: ${reference.image}`
@@ -723,7 +790,7 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference, index }) => {
               </div>
             </motion.div>
             <div>
-              <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+              <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-300">
                 {reference.name}
               </h3>
               <p className="text-emerald-400 font-semibold text-sm">
@@ -732,21 +799,21 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference, index }) => {
               <p className="text-slate-400 text-sm">{reference.company}</p>
             </div>
           </div>
-          <div className="flex-grow mb-6">
+          <div className="relative flex-grow mb-6">
             <div className="relative">
               <div className="text-6xl text-slate-600 absolute -top-4 -left-2"></div>
-              <p className="text-slate-300 italic leading-relaxed pl-8 pr-4">
+              <p className="text-slate-300 italic leading-relaxed pl-8 pr-4 group-hover:text-slate-200 transition-colors duration-300">
                 {reference.quote}
               </p>
               <div className="text-6xl text-slate-600 absolute -bottom-8 right-0 rotate-180"></div>
             </div>
           </div>
-          <div className="flex flex-col gap-3">
+          <div className="relative flex flex-col gap-3">
             <div className="flex gap-3">
               <Link
                 href={reference.telegram}
                 target="_blank"
-                className="flex-1 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-400 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-center"
+                className="flex-1 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-400 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-center hover:-translate-y-0.5 hover:border-blue-400/60"
               >
                 Telegram
               </Link>
