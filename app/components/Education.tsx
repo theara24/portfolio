@@ -67,7 +67,6 @@ const certificatesData = [
       'React',
       'Git',
     ],
-    credentialId: 'ISTAD-WD-2023',
     scholarship: 'Pre-University Scholarship',
     scholarshipDetails:
       'Institute of Science and Technology Advanced Development currently provides a 100% scholarship opportunity for 200 places per year.',
@@ -121,7 +120,6 @@ const certificatesData = [
     verifyLink: '',
     image: '/certificates/cpp.png',
     skills: ['C', 'C++', 'Problem Solving', 'Algorithms'],
-    credentialId: 'ANT-CPP-2022',
     scholarship: '',
     scholarshipDetails: '',
     technologies: [],
@@ -158,7 +156,6 @@ const certificatesData = [
       'PostgreSQL',
       'Git',
     ],
-    credentialId: 'ISTAD-WEBDEV-2023',
     scholarship: 'Foundation Scholarship',
     scholarshipDetails:
       'Institute of Science and Technology Advanced Development currently provides a 50% scholarship opportunity for 120 to 160 places per year.',
@@ -222,7 +219,6 @@ const certificatesData = [
     verifyLink: '',
     image: '/certificates/korean.png',
     skills: ['Korean Language', 'Speaking', 'Listening', 'Writing'],
-    credentialId: 'CKCC-KOR-2021',
     scholarship: '',
     scholarshipDetails: '',
     technologies: [],
@@ -241,7 +237,6 @@ const certificatesData = [
     verifyLink: '',
     image: '/certificates/english.png',
     skills: ['English Communication', 'Writing', 'Speaking', 'Reading'],
-    credentialId: 'PCU-ENG-2020',
     scholarship: 'GESL (General English as a Second Language)',
     scholarshipDetails:
       'The GESL program is a part-time, general English program tailored for adults. Classes are offered on weekdays during the afternoons or evenings, and there is also an intensive version of the GESL program that runs on weekends. The program consists of 12 levels from beginner to advanced, with each level lasting 3 months.',
@@ -273,7 +268,6 @@ const certificatesData = [
       'Git',
       'Project Management',
     ],
-    credentialId: 'ISTAD-FSWD-2024',
     scholarship: 'Full Stack Scholarship',
     scholarshipDetails:
       'Institute of Science and Technology Advanced Development currently provides a 50% scholarship opportunity for 120 to 160 places per year.',
@@ -596,10 +590,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
                 <p className="text-purple-400 font-semibold mb-2">
                   Issued by {certificate.issuer}
                 </p>
-                <p className="text-slate-400 mb-2">Date: {certificate.date}</p>
-                <p className="text-slate-400 mb-4">
-                  Credential ID: {certificate.credentialId}
-                </p>
+                <p className="text-slate-400 mb-4">Date: {certificate.date}</p>
 
                 {/* Scholarship Details */}
                 {certificate.scholarship && (
