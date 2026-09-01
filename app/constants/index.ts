@@ -208,14 +208,14 @@ const testimonials = [
       'LinkedIn is a business and employment-focused social media platform that works through websites and mobile apps.',
     name: 'Theara Chim',
     image: '/socialmedia/linkedin.svg',
-    link: 'https://linkedin.com/in/theara-chim',
+    link: 'https://www.linkedin.com/in/theara-chim-971845341/',
   },
   {
     testimonial:
       'Telegram is a cloud-based instant messaging and voice over IP service. It allows you to send messages and exchange files.',
     name: 'Theara Chim',
     image: '/socialmedia/telegram.png',
-    link: 'https://t.me/theara24',
+    link: 'https://t.me/chim_theara',
   },
 ];
 

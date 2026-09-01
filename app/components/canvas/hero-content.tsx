@@ -1,50 +1,51 @@
 'use client';
 
-import { SparklesIcon } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
-import { FlipWords } from '@/app/components/canvas/FlipWords';
-import { useMemo } from 'react';
-import { useEffect, useState } from 'react';
-import {
-  fadeIn,
-  textVariant,
-  zoomIn,
-  staggerContainer,
-} from '@/app/utils/motion';
+import { ArrowRight, Send, Sparkles } from 'lucide-react';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { useLoading } from '../PageLoaderProvider';
 
-/* ---------------- CODE ANIMATION (Typing Effect) ---------------- */
-const CodeAnimation = () => {
+/* ---------------- CODE TERMINAL (Typing Effect) ---------------- */
+const CodeTerminal = () => {
   const codeSegments = useMemo(
     () => [
-      "<span class='text-purple-400'>const</span> <span class='text-gray-300'>developer</span> <span class='text-purple-400'>=</span> <span class='text-purple-400'>{</span>",
-      "  <span class='text-gray-300'>name</span>: <span class='text-green-400'>'Theara Chim'</span>,",
-      "  <span class='text-gray-300'>role</span>: <span class='text-green-400'>'Backend-Focused Full-Stack Developer'</span>,",
-      "",
-      "  <span class='text-gray-300'>experience</span>: <span class='text-green-400'>'Programming since 2023'</span>,",
-      "  <span class='text-gray-300'>professional</span>: <span class='text-green-400'>'Backend development since 2025'</span>,",
-      "",
-      "  <span class='text-gray-300'>expertise</span>: <span class='text-purple-400'>[</span>",
-      "    <span class='text-green-400'>'Backend Development'</span>, <span class='text-green-400'>'API Engineering'</span>,",
-      "    <span class='text-green-400'>'Database Systems'</span>, <span class='text-green-400'>'Distributed Systems'</span>,",
-      "    <span class='text-green-400'>'Full-Stack Development'</span>",
-      "  <span class='text-purple-400'>]</span>,",
-      "",
-      "  <span class='text-gray-300'>primaryStack</span>: <span class='text-purple-400'>[</span>",
-      "    <span class='text-green-400'>'TypeScript'</span>, <span class='text-green-400'>'Node.js'</span>, <span class='text-green-400'>'Express.js'</span>,",
-      "    <span class='text-green-400'>'PostgreSQL'</span>, <span class='text-green-400'>'Redis'</span>, <span class='text-green-400'>'RabbitMQ'</span>, <span class='text-green-400'>'Docker'</span>",
-      "  <span class='text-purple-400'>]</span>,",
-      "",
-      "  <span class='text-gray-300'>availableForWork</span>: <span class='text-purple-400'>true</span>",
-      "<span class='text-purple-400'>}</span>;",
+      "const developer = {",
+      "  name: 'Theara Chim',",
+      "  role: 'Backend-Focused Full-Stack Developer',",
+      "  experience: 'Programming since 2023',",
+      "  professional: 'Backend development since 2025',",
+      "  expertise: [",
+      "    'Backend Development', 'API Engineering',",
+      "    'Database Systems', 'Distributed Systems',",
+      "    'Full-Stack Development',",
+      "  ],",
+      "  primaryStack: [",
+      "    'TypeScript', 'Node.js', 'Express.js',",
+      "    'PostgreSQL', 'Redis', 'RabbitMQ', 'Docker',",
+      "  ],",
+      "  availableForWork: true,",
+      "};",
     ],
     []
   );
 
+  const { isLoaded } = useLoading();
   const [displayedCode, setDisplayedCode] = useState<string[]>([]);
   const [currentLine, setCurrentLine] = useState(0);
   const [currentChar, setCurrentChar] = useState(0);
+  const [started, setStarted] = useState(false);
 
+  // Only begin the typing animation once the initial loading animation has
+  // finished (isLoaded becomes true), so the console feels sequenced.
   useEffect(() => {
+    if (isLoaded) {
+      setStarted(true);
+    }
+  }, [isLoaded]);
+
+  const startedRef = useRef(false);
+  useEffect(() => {
+    if (!started || startedRef.current) return;
     if (currentLine < codeSegments.length) {
       if (currentChar < codeSegments[currentLine].length) {
         const timeout = setTimeout(() => {
@@ -62,116 +63,192 @@ const CodeAnimation = () => {
         setCurrentLine((prev) => prev + 1);
         setCurrentChar(0);
       }
+    } else {
+      startedRef.current = true;
     }
-  }, [currentChar, currentLine, codeSegments]);
+  }, [started, currentChar, currentLine, codeSegments]);
 
   return (
-    <motion.div
-      variants={fadeIn('left', 'spring', 1.2, 0.05)}
-      className="p-2 sm:p-4 bg-gray-900 rounded-lg shadow-lg border border-gray-800 w-full max-w-[320px] sm:max-w-[420px] md:max-w-[480px] overflow-hidden"
-    >
-      <div className="flex items-center bg-gray-800 p-1 sm:p-2 rounded-t-lg">
-        <div className="flex space-x-1 sm:space-x-2">
-          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
-          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
-          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
+    <div className="w-full max-w-md rounded-xl border border-white/10 bg-[#0b0a1f]/90 shadow-2xl shadow-purple-900/20 overflow-hidden">
+      <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-3">
+        <div className="flex gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+          <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+          <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
         </div>
-        <span className="ml-2 sm:ml-4 text-xs sm:text-sm text-gray-400 font-mono">
-          developer.js
-        </span>
+        <span className="ml-2 font-mono text-xs text-white/40">developer.js</span>
       </div>
-      <pre className="p-2 sm:p-4 text-gray-200 whitespace-pre-wrap font-mono text-xs sm:text-sm leading-relaxed">
-        {displayedCode.map((line, index) => (
-          <div key={index} dangerouslySetInnerHTML={{ __html: line }} />
-        ))}
-        <motion.span
-          className="inline-block w-1 sm:w-2 h-3 sm:h-4 bg-purple-500 ml-1"
-          animate={{ opacity: [0, 1, 0] }}
-          transition={{ repeat: Infinity, duration: 0.3 }}
-        />
+      <pre className="p-5 font-mono text-xs leading-relaxed text-gray-200 whitespace-pre-wrap">
+        {displayedCode.map((line, index) =>
+          index % 4 === 1 ? (
+            // Simple line coloring: keys on odd lines
+            <div key={index} className="text-white/85">
+              {line}
+            </div>
+          ) : index % 4 === 2 ? (
+            <div key={index} className="text-green-300/80">
+              {line}
+            </div>
+          ) : (
+            <div key={index} className="text-purple-300/90">
+              {line}
+            </div>
+          )
+        )}
+        {!started ? (
+          <span className="text-white/30">
+            <motion.span
+              className="inline-block h-4 w-2 translate-y-0.5 bg-cyan-400"
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ repeat: Infinity, duration: 0.7 }}
+              aria-hidden
+            />
+            <span className="ml-2 italic">initializing…</span>
+          </span>
+        ) : (
+          <motion.span
+            className="inline-block h-4 w-2 translate-y-0.5 bg-cyan-400"
+            animate={{ opacity: [0, 1, 0] }}
+            transition={{ repeat: Infinity, duration: 0.7 }}
+            aria-hidden
+          />
+        )}
       </pre>
-    </motion.div>
+    </div>
   );
 };
 
+/* ---------------- TECH CHIPS ---------------- */
+const CORE_TECH = [
+  'TypeScript',
+  'Node.js',
+  'Express.js',
+  'PostgreSQL',
+  'Redis',
+  'RabbitMQ',
+  'Docker',
+];
+
 /* ---------------- HERO CONTENT ---------------- */
 export const HeroContent = () => {
+  const prefersReduced = useReducedMotion();
+
+  const container: Variants = prefersReduced
+    ? { hidden: {}, show: {} }
+    : {
+        hidden: {},
+        show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+      };
+
+  const item: Variants = prefersReduced
+    ? { hidden: { opacity: 1 }, show: { opacity: 1 } }
+    : {
+        hidden: { opacity: 0, y: 24 },
+        show: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const },
+        },
+      };
+
   return (
     <motion.div
-      variants={staggerContainer(0.1, 0.1)}
+      variants={container}
       initial="hidden"
       animate="show"
-      className="flex flex-col items-center justify-center px-2 sm:px-4 md:px-10 lg:px-20 mt-10 sm:mt-20 md:mt-32 w-full z-20"
+      className="relative z-20 flex min-h-[100svh] w-full items-center justify-center px-6 sm:px-10 lg:px-0 py-24"
     >
-      <div className="flex flex-col sm:flex-row items-start justify-between gap-4 sm:gap-6 max-w-4xl sm:max-w-6xl w-full">
-        {/* Text and Button Column */}
-        <div className="flex flex-col gap-3 sm:gap-5 text-start w-full sm:w-1/2">
+      <div className="container-px grid w-full items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+        {/* Text / CTAs */}
+        <motion.div variants={item} className="flex flex-col items-start">
           {/* Badge */}
-          <motion.div
-            variants={textVariant(0.2)}
-            className="Welcome-box py-1 sm:py-2 px-2 sm:px-3 border border-[#7042f88b] opacity-90 bg-gradient-to-r from-purple-900/50 to-cyan-900/50 rounded-lg flex items-center"
+          <motion.span
+            variants={item}
+            className="inline-flex items-center gap-2 rounded-full border border-purple-400/30 bg-purple-500/10 px-4 py-1.5 text-xs font-medium text-purple-200"
           >
-            <SparklesIcon className="text-[#b49bff] mr-1 sm:mr-2 h-4 sm:h-5 w-4 sm:w-5" />
-            <h1 className="Welcome-text text-xs sm:text-sm text-white">
-              Welcome to my Portfolio
-            </h1>
-          </motion.div>
+            <Sparkles className="h-3.5 w-3.5 text-[#b49bff]" aria-hidden />
+            Welcome to my portfolio
+          </motion.span>
 
           {/* Headline */}
-          <motion.div
-            variants={fadeIn('right', 'spring', 0.5, 0.05)}
-            className="flex flex-col gap-2 sm:gap-4 mt-4 text-white"
+          <motion.h1
+            variants={item}
+            className="mt-6 text-4xl font-black leading-[1.05] text-white sm:text-6xl lg:text-7xl"
           >
-            <span className="heroSubText text-white/70">
+            <span className="block text-lg font-medium text-white/50 sm:text-xl">
               Hello, I&apos;m
             </span>
-            <span className="heroHeadText">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-                Theara Chim
-              </span>{' '}
-            </span>
-          </motion.div>
+            <span className="text-gradient-teal mt-2 block">Theara Chim</span>
+          </motion.h1>
 
-          {/* Role badge with FlipWords */}
-          <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/20 mb-2 sm:mb-3 backdrop-blur-sm">
-            <span className="text-blue-400 text-sm sm:text-base">🚀</span>
-            <span>
-              <FlipWords
-                className={'text-lg sm:text-xl text-blue-400 font-medium'}
-                words={[
-                  'Backend-Focused Full-Stack Developer',
-                  'Backend Developer',
-                  'Backend & API Development',
-                  'Software Engineer',
-                ]}
-              />
-            </span>
-          </div>
+          {/* Role */}
+          <motion.p
+            variants={item}
+            className="mt-4 text-base font-semibold text-cyan-300 sm:text-lg"
+          >
+            Backend-Focused Full-Stack Developer
+          </motion.p>
 
           {/* Description */}
           <motion.p
-            variants={fadeIn('right', 'spring', 0.8, 0.75)}
-            className="text-sm sm:text-base md:text-lg text-gray-300 my-2 sm:my-5 max-w-[400px] sm:max-w-[500px]"
+            variants={item}
+            className="mt-5 max-w-xl text-sm leading-[1.8] text-gray-300 sm:text-base"
           >
             I build reliable backend services, REST APIs, distributed systems,
-            and full-stack applications using modern technologies. My core stack
-            is TypeScript, Node.js, Express.js, PostgreSQL, Redis, RabbitMQ, and
-            Docker, with additional experience in React, Next.js, React Native,
-            PHP/Laravel, and Java.
+            and full-stack applications. My core stack is TypeScript, Node.js,
+            Express.js, PostgreSQL, Redis, RabbitMQ, and Docker — with hands-on
+            experience across React, Next.js, and more.
           </motion.p>
 
-          {/* Button */}
-          <motion.a
-            href="#projects"
-            variants={zoomIn(1, 0.5)}
-            className="py-2 sm:py-2.5 px-4 sm:px-5 text-center text-white cursor-pointer rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 transition-colors"
+          {/* CTAs */}
+          <motion.div
+            variants={item}
+            className="mt-8 flex flex-wrap items-center gap-3"
           >
-            View My Work
-          </motion.a>
-        </div>
+            <a
+              href="#projects"
+              className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 px-6 py-3 text-sm font-semibold text-white transition hover:from-purple-500 hover:to-cyan-500 hover:shadow-lg hover:shadow-purple-500/25"
+            >
+              View My Work
+              <ArrowRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                aria-hidden
+              />
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/[0.07]"
+            >
+              <Send className="h-4 w-4" aria-hidden />
+              Contact Me
+            </a>
+          </motion.div>
 
-        {/* Code Animation Column */}
-        <CodeAnimation />
+          {/* Tech chips */}
+          <motion.ul
+            variants={item}
+            className="mt-10 flex flex-wrap items-center gap-2"
+            aria-label="Core technologies"
+          >
+            {CORE_TECH.map((tech) => (
+              <li
+                key={tech}
+                className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium text-white/70"
+              >
+                {tech}
+              </li>
+            ))}
+          </motion.ul>
+        </motion.div>
+
+        {/* Terminal (hidden on small heights/extra small screens for performance) */}
+        <motion.div
+          variants={item}
+          className="hidden justify-center md:flex lg:justify-end"
+          aria-hidden
+        >
+          <CodeTerminal />
+        </motion.div>
       </div>
     </motion.div>
   );

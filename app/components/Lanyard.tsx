@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas, extend, useFrame, type ThreeElements, type ThreeEvent } from '@react-three/fiber';
 import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei';
-import { useLoading } from './PageLoaderProvider';
 import {
   BallCollider,
   CuboidCollider,
@@ -58,7 +57,8 @@ export default function Lanyard({
   lanyardWidth = 1
 }: LanyardProps) {
   const [isMobile, setIsMobile] = useState<boolean>(() => typeof window !== 'undefined' && window.innerWidth < 768);
-  const { isLoaded } = useLoading();
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
     const handleResize = (): void => setIsMobile(window.innerWidth < 768);
@@ -66,8 +66,31 @@ export default function Lanyard({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Only start the lanyard drop animation once the Overview (About) section
+  // has been scrolled into view — the physics engine mounts at that point so
+  // the "falling into place" animation plays as the section appears.
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+    if (!('IntersectionObserver' in window)) {
+      setStarted(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setStarted(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="lanyard-wrapper">
+    <div ref={wrapperRef} className="lanyard-wrapper">
       <Canvas
         camera={{ position, fov }}
         dpr={[1, isMobile ? 1.5 : 2]}
@@ -75,7 +98,7 @@ export default function Lanyard({
         onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
       >
         <ambientLight intensity={Math.PI} />
-        {isLoaded && (
+        {started && (
           <Physics gravity={gravity} timeStep={isMobile ? 1 / 30 : 1 / 60}>
             <Band
               isMobile={isMobile}

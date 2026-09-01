@@ -791,16 +791,6 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference, index }) => {
                       width={64}
                       height={64}
                       className="rounded-full object-cover scale-105"
-                      onError={() => {
-                        console.error(
-                          `Failed to load image: ${reference.image}`
-                        );
-                      }}
-                      onLoad={() => {
-                        console.log(
-                          `Successfully loaded image: ${reference.image}`
-                        );
-                      }}
                     />
                   ) : (
                     <Users className="w-8 h-8 text-emerald-400" />
@@ -820,11 +810,9 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference, index }) => {
           </div>
           <div className="relative flex-grow mb-6">
             <div className="relative">
-              <div className="text-6xl text-slate-600 absolute -top-4 -left-2"></div>
               <p className="text-slate-300 italic leading-relaxed pl-8 pr-4 group-hover:text-slate-200 transition-colors duration-300">
                 {reference.quote}
               </p>
-              <div className="text-6xl text-slate-600 absolute -bottom-8 right-0 rotate-180"></div>
             </div>
           </div>
           <div className="relative flex flex-col gap-3">
@@ -832,6 +820,7 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference, index }) => {
               <Link
                 href={reference.telegram}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex-1 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-400 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-center hover:-translate-y-0.5 hover:border-blue-400/60"
               >
                 Telegram

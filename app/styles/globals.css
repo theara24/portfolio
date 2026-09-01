@@ -154,6 +154,51 @@ html.lenis body {
   -webkit-text-fill-color: transparent;
 }
 
+@layer utilities {
+  /* Modern reusable section container */
+  .container-px {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-12;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-28;
+  }
+
+  /* Accent gradient text */
+  .text-gradient-teal {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(120deg, #5eead4 0%, #22d3ee 45%, #a78bfa 100%);
+  }
+
+  /* Soft glass surface */
+  .glass-surface {
+    background: rgba(21, 16, 48, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Subtle radial spot used behind cards */
+  .spot-glow {
+    background: radial-gradient(
+      circle at 30% 30%,
+      rgba(80, 120, 255, 0.12),
+      transparent 60%
+    );
+  }
+
+  /* Hover lift for interactive cards */
+  .card-lift {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 50px -20px rgba(34, 211, 238, 0.25);
+  }
+}
+
 /* canvas- styles */
 .canvas-loader {
   font-size: 10px;

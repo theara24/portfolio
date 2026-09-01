@@ -25,7 +25,6 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Show loading SweetAlert
     Swal.fire({
       title: 'Sending...',
       text: 'Please wait while I send your message.',
