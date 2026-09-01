@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -513,6 +514,15 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    if (!isModalOpen) return;
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isModalOpen]);
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
@@ -585,18 +595,26 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
       </motion.div>
 
       {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+      {isModalOpen &&
+        createPortal(
+          <div
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+            onClick={closeModal}
+            data-lenis-prevent
+          >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.3 }}
+            onClick={(e) => e.stopPropagation()}
             className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 max-w-5xl w-full mx-4 max-h-[90vh] overflow-y-auto relative"
           >
             <button
+              type="button"
               onClick={closeModal}
-              className="absolute top-4 right-4 text-slate-300 hover:text-white"
+              aria-label="Close"
+              className="absolute top-4 right-4 z-20 text-slate-300 hover:text-white cursor-pointer bg-black/20 hover:bg-black/40 rounded-full p-1 transition-colors"
             >
               <X className="w-6 h-6" />
             </button>
@@ -716,8 +734,9 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
               </div>
             </div>
           </motion.div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </>
   );
 };

@@ -34,18 +34,18 @@ export const services = [
   {
     title: 'Software Engineer',
     description: 'Designing practical and maintainable software solutions.',
-    icon: '/frontend.webp',
+    icon: '/software-engineer.png',
   },
   {
     title: 'Full-Stack Developer',
     description: 'Building web applications across frontend and backend.',
-    icon: '/database.webp',
+    icon: '/full-stack-developer.png',
   },
   {
     title: 'Database & Systems',
     description:
       'Working with databases, APIs, distributed services, and system architecture.',
-    icon: '/uxui.webp',
+    icon: '/database-systems.png',
   },
 ];
 

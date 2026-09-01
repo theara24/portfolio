@@ -1,8 +1,22 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, createContext, useContext } from 'react';
 import PageLoader from './PageLoader';
 import type { ReactNode } from 'react';
+
+interface LoadingContextValue {
+  loading: boolean;
+  isLoaded: boolean;
+}
+
+const LoadingContext = createContext<LoadingContextValue>({
+  loading: true,
+  isLoaded: false,
+});
+
+export function useLoading() {
+  return useContext(LoadingContext);
+}
 
 interface PageLoaderProviderProps {
   children: ReactNode;
@@ -34,10 +48,10 @@ export default function PageLoaderProvider({
   }, [loading]);
 
   return (
-    <>
+    <LoadingContext.Provider value={{ loading, isLoaded: !loading }}>
       <PageLoader onComplete={handleComplete} />
       {/* The loader slides up revealing this; keep content mounted underneath */}
       {children}
-    </>
+    </LoadingContext.Provider>
   );
 }
