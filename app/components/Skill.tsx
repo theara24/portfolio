@@ -12,7 +12,6 @@ import {
   Database,
   Layout,
   Network,
-  Paintbrush,
   Plug,
   Smartphone,
   Terminal,
@@ -50,6 +49,7 @@ import {
   SiSharp,
   SiTailwindcss,
   SiTypescript,
+  SiVuedotjs,
   SiXmpp,
 } from 'react-icons/si';
 import { BsFileEarmarkCode, BsGrid1X2 } from 'react-icons/bs';
@@ -163,7 +163,7 @@ const Skill: React.FC = () => {
   const skillCategories: Category[] = [
     {
       icon: Code2,
-      title: 'Backend Development',
+      title: 'Core Backend',
       color: 'text-green-400',
       skills: [
         {
@@ -177,6 +177,10 @@ const Skill: React.FC = () => {
         {
           name: 'Express.js',
           icon: <SiExpress className="w-4 h-4 text-white" />,
+        },
+        {
+          name: 'REST APIs',
+          icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
         },
         {
           name: 'Java',
@@ -198,15 +202,11 @@ const Skill: React.FC = () => {
           name: 'ASP.NET',
           icon: <SiDotnet className="w-4 h-4 text-[#512BD4]" />,
         },
-        {
-          name: 'REST APIs',
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
-        },
       ],
     },
     {
       icon: Database,
-      title: 'Databases & Data',
+      title: 'Databases & Caching',
       color: 'text-orange-400',
       skills: [
         {
@@ -268,7 +268,7 @@ const Skill: React.FC = () => {
     },
     {
       icon: Layout,
-      title: 'Frontend Development',
+      title: 'Frontend & Mobile',
       color: 'text-blue-400',
       skills: [
         {
@@ -282,6 +282,10 @@ const Skill: React.FC = () => {
         {
           name: 'React Native',
           icon: <Smartphone className="w-4 h-4 text-[#61DAFB]" />,
+        },
+        {
+          name: 'Vue.js',
+          icon: <SiVuedotjs className="w-4 h-4 text-[#4FC08D]" />,
         },
         {
           name: 'JavaScript',
@@ -307,7 +311,7 @@ const Skill: React.FC = () => {
     },
     {
       icon: Cloud,
-      title: 'DevOps & Infrastructure',
+      title: 'DevOps, Infrastructure & Tools',
       color: 'text-blue-400',
       skills: [
         {
@@ -342,14 +346,10 @@ const Skill: React.FC = () => {
           name: 'Jump Server',
           icon: <Terminal className="w-4 h-4 text-[#38BDF8]" />,
         },
-      ],
-    },
-    {
-      icon: Paintbrush,
-      title: 'UI/UX & Design',
-      color: 'text-purple-400',
-      skills: [
-        { name: 'Figma', icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" /> },
+        {
+          name: 'Figma',
+          icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" />,
+        },
         {
           name: 'Adobe XD',
           icon: <SiAdobexd className="w-4 h-4 text-[#FF61F6]" />,
@@ -457,8 +457,8 @@ const Skill: React.FC = () => {
                 skills={category.skills}
                 color={category.color}
                 emphasized={
-                  category.title === 'Backend Development' ||
-                  category.title === 'Databases & Data'
+                  category.title === 'Core Backend' ||
+                  category.title === 'Databases & Caching'
                 }
               />
             </Reveal>

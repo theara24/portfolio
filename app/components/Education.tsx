@@ -377,7 +377,7 @@ const referencesData = [
     quote:
       'Experienced in backend development and building scalable, real-time applications using modern web technologies.',
     image: '/references/htoo-aung.png',
-    telegram: 'https://t.me/reksmey_mom',
+    telegram: 'https://t.me/hto2agKH',
     email: 'cool.htooaung@gmail.com',
     phone: '0713761920',
   },

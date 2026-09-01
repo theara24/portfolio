@@ -153,11 +153,11 @@ export const HeroContent = () => {
             variants={fadeIn('right', 'spring', 0.8, 0.75)}
             className="text-sm sm:text-base md:text-lg text-gray-300 my-2 sm:my-5 max-w-[400px] sm:max-w-[500px]"
           >
-            Backend-Focused Full-Stack Developer building reliable APIs,
-            backend services, distributed systems, and full-stack applications.
-            I specialize in TypeScript, Node.js, and Express.js, with experience
-            across databases, messaging systems, modern frontends, and
-            deployment infrastructure.
+            I build reliable backend services, REST APIs, distributed systems,
+            and full-stack applications using modern technologies. My core stack
+            is TypeScript, Node.js, Express.js, PostgreSQL, Redis, RabbitMQ, and
+            Docker, with additional experience in React, Next.js, React Native,
+            PHP/Laravel, and Java.
           </motion.p>
 
           {/* Button */}

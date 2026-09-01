@@ -150,33 +150,33 @@ export const technologies = [
 
 const experiences = [
   {
-    title: 'Backend Developer',
+    title: 'Junior Backend Developer',
     company_name: 'Everlast Information & Apps Dev Co., Ltd.',
     icon: '/backend.webp',
     iconBg: '#383E56',
     date: '2025 - Present',
     points: [
-      'Developed and maintained REST APIs and backend services using TypeScript, Node.js, and Express.js.',
-      'Worked with microservice and monorepo architectures to build and maintain scalable backend services.',
-      'Implemented asynchronous communication and background processing using RabbitMQ.',
-      'Worked with PostgreSQL, MongoDB, MySQL, and Redis for data persistence, caching, and backend workflows.',
-      'Implemented backend workflows involving concurrency control, transaction management, and background jobs.',
-      'Integrated third-party APIs and external services to support application functionality.',
-      'Used Docker, Nginx, Portainer, and CI/CD workflows for deployment and service management.',
-      'Participated in testing, debugging, code reviews, performance optimization, and production troubleshooting.',
+      'Design, develop, and maintain REST APIs and backend services using TypeScript, Node.js, and Express.js.',
+      'Contribute to production systems involving omnichannel messaging, distributed services, and high-concurrency workflows.',
+      'Work with microservice and monorepo architectures and asynchronous communication using RabbitMQ.',
+      'Implement transaction management, concurrency control, background processing, caching, and distributed service communication.',
+      'Work with PostgreSQL, MongoDB, MySQL, and Redis for data persistence and backend workflows.',
+      'Integrate third-party APIs and external messaging platforms into backend services.',
+      'Use Docker, Nginx, Portainer, CI/CD, and Linux-based environments for deployment and service management.',
+      'Participate in code reviews, testing, debugging, performance optimization, security improvements, and production troubleshooting.',
     ],
   },
   {
-    title: 'Freelance Web Designer',
+    title: 'Freelance Web Designer & Full-Stack Developer',
     company_name: 'Self-Employed',
     icon: '/company/web.png',
     iconBg: '#E6DEDD',
     date: '2024 - Present',
     points: [
-      'Developed responsive web applications using React.js, Tailwind CSS, and modern web technologies.',
-      'Designed and implemented user-friendly interfaces with a focus on responsive layouts and usability.',
-      'Collaborated with clients to understand requirements and deliver practical web solutions.',
-      'Focused on clean, maintainable code and optimized applications for usability and performance.',
+      'Develop responsive web applications using React.js, Tailwind CSS, and modern web technologies.',
+      'Design user interfaces and responsive layouts based on project requirements.',
+      'Collaborate with clients and team members to deliver practical, user-focused digital products.',
+      'Focus on clean implementation, usability, responsiveness, and maintainable code.',
     ],
   },
   {
@@ -217,27 +217,6 @@ const testimonials = [
     image: '/socialmedia/telegram.png',
     link: 'https://t.me/theara24',
   },
-  {
-    testimonial:
-      'Facebook is a social networking service that allows you to connect with friends, family, and colleagues.',
-    name: 'Theara Chim',
-    image: '/socialmedia/facebook.png',
-    link: 'https://www.facebook.com/share/16dR4bHnUa/?mibextid=wwXIfr',
-  },
-  {
-    testimonial:
-      'Dribbble is a self-promotion and social networking platform for digital designers and creatives. It serves as a design portfolio.',
-    name: 'Theara Chim',
-    image: '/socialmedia/dribble.svg',
-    link: 'https://dribbble.com/theara24',
-  },
-  {
-    testimonial:
-      'Fiverr is a global online marketplace for freelance services, where you can showcase your skills and get hired.',
-    name: 'Theara Chim',
-    image: '/socialmedia/fiverr.png',
-    link: 'https://www.fiverr.com/rrelaxing/buying?source=avatar_menu_profile',
-  },
 ];
 
 type ProjectCategory = 'Professional' | 'Personal' | 'University';
@@ -271,9 +250,9 @@ const projects: Project[] = [
     name: 'Omnichannel Messaging Platform',
     category: 'Professional',
     description:
-      'Backend development for an internal omnichannel messaging platform connecting WhatsApp, Telegram, LINE, and Messenger with a central customer-support platform, handling message processing, media, and two-way synchronization across channels.',
+      'Backend development for an internal omnichannel messaging platform integrating WhatsApp, Telegram, LINE, and Messenger with a central customer-support platform.',
     context:
-      'Focused on backend services — REST APIs, queue-based and asynchronous message processing, multi-tenant logic, and external channel integrations.',
+      'Contributed to backend services for message processing, asynchronous workflows, multi-tenant logic, media handling, REST APIs, external channel integrations, and two-way message synchronization.',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: [
@@ -289,12 +268,12 @@ const projects: Project[] = [
       'Company proprietary project — implementation details are confidential.',
     tags: [
       {
-        name: 'Node.js',
-        color: 'green-text-gradient',
-      },
-      {
         name: 'TypeScript',
         color: 'blue-text-gradient',
+      },
+      {
+        name: 'Node.js',
+        color: 'green-text-gradient',
       },
       {
         name: 'Express.js',
@@ -332,9 +311,9 @@ const projects: Project[] = [
     name: 'HashGame — Admin & Client Platform',
     category: 'Professional',
     description:
-      'Full-stack development for an internal gaming platform, contributing across four application layers — Client Web, Client API, Admin Web, and Admin API — on both frontend interfaces and backend APIs.',
+      'Full-stack development across Client Web, Client API, Admin Web, and Admin API for an internal gaming platform.',
     context:
-      'Implemented and maintained features across the client and admin applications, covering UI, API integrations, and backend logic.',
+      'Contributed across frontend interfaces, API integrations, backend logic, and application features for both client and administration platforms.',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: [
@@ -378,7 +357,7 @@ const projects: Project[] = [
         color: 'blue-text-gradient',
       },
       {
-        name: 'REST API',
+        name: 'REST APIs',
         color: 'pink-text-gradient',
       },
     ],
@@ -393,9 +372,9 @@ const projects: Project[] = [
     name: 'Voting & Wallet Platform',
     category: 'Professional',
     description:
-      'Full-stack development on a TypeScript-based voting platform across all four applications — Client Web, Client API, Admin Web, and Admin API — with backend-heavy work on APIs, voting workflows, authentication, and transactional services, plus supporting frontend development.',
+      'Full-stack development for a TypeScript-based voting platform covering Client Web, Client API, Admin Web, and Admin API.',
     context:
-      'Contributed backend architecture, core platform logic, and APIs across the client and admin applications, with supporting frontend development.',
+      'Focused primarily on backend development, contributing to platform architecture, APIs, voting workflows, authentication, transactional services, asynchronous processing, and supporting frontend development.',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: [
@@ -458,9 +437,9 @@ const projects: Project[] = [
     name: 'Customized Chatwoot Support Platform',
     category: 'Professional',
     description:
-      'Backend development on a customized, multi-tenant customer-support platform built on Chatwoot, including APIs, real-time communication, agent workflows, integrations, and security hardening.',
+      'Backend development for a customized, multi-tenant customer-support platform based on Chatwoot.',
     context:
-      'Contributed backend and platform hardening for an internal customer-support system — API development, real-time services, access control, reliability, and performance improvements.',
+      'Contributed to API development, real-time communication, agent workflows, access control, backend reliability, performance improvements, and platform hardening.',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: [

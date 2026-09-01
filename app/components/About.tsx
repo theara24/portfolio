@@ -117,26 +117,30 @@ const About = () => {
             className="text-secondary text-[17px] max-w-[3xl] leading-[30px] mt-4"
           >
             I&apos;m a Backend-Focused Full-Stack Developer with professional
-            experience building backend services, REST APIs, distributed systems,
-            and full-stack applications. I have been studying programming and
-            software development since 2023 and have been working professionally
-            in backend development since 2025.
+            experience building REST APIs, backend services, distributed
+            applications, and full-stack systems. I focus on developing reliable,
+            maintainable, and practical software solutions.
             <br />
             <br />
-            My professional experience focuses on TypeScript, Node.js, and
-            Express.js, with hands-on work involving databases, Redis, message
-            queues, microservices, third-party integrations, and production
-            infrastructure. I have also contributed to frontend development using
-            React, Next.js, Vue.js, and React Native, allowing me to work across
-            different parts of the application stack.
+            My main experience is with TypeScript, Node.js, and Express.js,
+            working with PostgreSQL, MongoDB, MySQL, Redis, RabbitMQ, background
+            jobs, microservices, third-party integrations, and production
+            infrastructure. I also have experience with API design, asynchronous
+            processing, caching, and database-driven applications.
             <br />
             <br />
-            With a background in Management Information Systems, I combine
-            software development knowledge with an understanding of business
-            requirements and information systems. I enjoy building practical
-            solutions, solving technical problems, and continuously improving my
-            engineering skills through professional, academic, and personal
-            projects.
+            I also have hands-on experience with React, Next.js, React Native,
+            Vue.js, Java, PHP, and Laravel, allowing me to contribute across the
+            full application stack when needed. This helps me understand how
+            different parts of a system work together, from frontend interfaces
+            to backend services and databases.
+            <br />
+            <br />
+            I enjoy solving complex technical problems, improving system
+            reliability and performance, and building practical software that
+            meets real business requirements. I&apos;m continuously learning and
+            improving my skills through professional work, academic projects, and
+            personal development.
           </motion.p>
         </div>
 
