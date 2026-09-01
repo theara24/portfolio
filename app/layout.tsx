@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Poppins as FontSans } from 'next/font/google';
 import SmoothScroll from '@/app/components/SmoothScroll';
 import '@/app/styles/globals.css';
@@ -9,39 +9,34 @@ const fontSans = FontSans({
   variable: '--font-sans',
 });
 
+const SITE_URL = 'https://theara-portfolio.vercel.app';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://theara-portfolio.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Theara Chim | Full Stack Developer & UI/UX Designer',
-    template: '%s | Theara Chim Portfolio',
+    default: 'Theara Chim | Backend-Focused Full-Stack Developer',
+    template: '%s | Theara Chim',
   },
   description:
-    'Passionate Full Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Creating beautiful, responsive, and scalable web applications with exceptional user experiences.',
+    'Portfolio of Theara Chim, a Backend-Focused Full-Stack Developer in Cambodia. I build scalable APIs, backend services, and distributed systems with TypeScript, Node.js, Express.js, PostgreSQL, Redis, and RabbitMQ.',
   keywords: [
     'Theara Chim',
-    'Full Stack Developer',
-    'Frontend Developer',
     'Backend Developer',
-    'React Developer',
-    'Next.js Developer',
+    'Full Stack Developer',
+    'Node.js Developer',
     'TypeScript',
-    'JavaScript',
-    'Node.js',
-    'UI/UX Designer',
-    'Web Developer',
-    'Software Engineer',
-    'Portfolio',
-    'Freelance Developer',
-    'Web Development',
-    'Mobile Development',
-    'Responsive Design',
-    'Tailwind CSS',
-    'MongoDB',
-    'MySQL',
-    'AWS',
+    'Express.js',
+    'PostgreSQL',
+    'Redis',
+    'RabbitMQ',
     'Docker',
-    'Git',
-    'Figma',
+    'API Development',
+    'Software Engineer',
+    'Backend Engineer',
+    'Distributed Systems',
+    'Microservices',
+    'Cambodia Developer',
+    'Portfolio',
   ],
   authors: [{ name: 'Theara Chim', url: 'https://github.com/theara24' }],
   creator: 'Theara Chim',
@@ -54,28 +49,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://theara-portfolio.vercel.app',
-    title: 'Theara Chim | Full Stack Developer & UI/UX Designer',
-    description:
-      'Passionate Full Stack Developer creating modern, responsive, and scalable web applications. Specializing in React, Next.js, TypeScript, and exceptional user experiences.',
+    url: SITE_URL,
     siteName: 'Theara Chim Portfolio',
+    title: 'Theara Chim | Backend-Focused Full-Stack Developer',
+    description:
+      'Backend-focused Full-Stack Developer specializing in scalable APIs, backend services, and distributed systems with TypeScript, Node.js, Express.js, PostgreSQL, Redis, and RabbitMQ.',
     images: [
       {
         url: '/portfolio_preview.png',
         width: 1200,
         height: 630,
-        alt: 'Theara Chim - Full Stack Developer Portfolio Preview',
+        alt: 'Theara Chim - Backend-Focused Full-Stack Developer Portfolio',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@thearachim24',
-    creator: '@thearachim24',
-    title: 'Theara Chim | Full Stack Developer & UI/UX Designer',
+    title: 'Theara Chim | Backend-Focused Full-Stack Developer',
     description:
-      'Passionate Full Stack Developer creating modern web applications with React, Next.js, and TypeScript.',
+      'Backend-focused Full-Stack Developer building scalable APIs and distributed systems with TypeScript, Node.js, PostgreSQL, Redis, and RabbitMQ.',
     images: ['/portfolio_preview.png'],
   },
   robots: {
@@ -89,20 +82,51 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
-  },
   alternates: {
-    canonical: 'https://theara-portfolio.vercel.app',
+    canonical: SITE_URL,
   },
   category: 'technology',
   classification: 'Portfolio Website',
+  icons: {
+    icon: '/my_logo.png',
+    apple: '/my_logo.png',
+  },
   other: {
     'msapplication-TileColor': '#2d89ef',
-    'theme-color': '#ffffff',
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#04081a',
+  width: 'device-width',
+  initialScale: 1,
+};
+
+/* JSON-LD structured data for search-engine rich results. */
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Theara Chim',
+  url: SITE_URL,
+  image: `${SITE_URL}/portfolio_preview.png`,
+  jobTitle: 'Backend-Focused Full-Stack Developer',
+  knowsAbout: [
+    'TypeScript',
+    'Node.js',
+    'Express.js',
+    'Backend Development',
+    'API Development',
+    'PostgreSQL',
+    'Redis',
+    'RabbitMQ',
+    'Docker',
+    'Distributed Systems',
+  ],
+  sameAs: [
+    'https://github.com/theara24',
+    'https://www.linkedin.com/in/theara-chim-971845341/',
+    'https://t.me/chim_theara',
+  ],
 };
 
 export default function RootLayout({
@@ -113,6 +137,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fontSans.variable}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
