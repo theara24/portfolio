@@ -16,6 +16,10 @@ import {
   Calendar,
   MapPin,
   X,
+  Send,
+  Mail,
+  Phone,
+  Quote,
 } from 'lucide-react';
 
 // Sample data with updated details
@@ -357,7 +361,7 @@ const referencesData = [
     image: '/references/reksmey-mom.png',
     telegram: 'https://t.me/reksmey_mom',
     email: 'it.reksmey@gmail.com',
-    phone: '085522690',
+    phone: '+855 85522690',
   },
   {
     name: 'Pinchhai Choeurn',
@@ -368,7 +372,7 @@ const referencesData = [
     image: '/references/pinchhai-choeurn.png',
     telegram: 'https://t.me/Pinchai',
     email: 'choeurnpinchai@gmail.com',
-    phone: '099774967',
+    phone: '+855 99774967',
   },
   {
     name: 'Htoo Aung',
@@ -379,7 +383,7 @@ const referencesData = [
     image: '/references/htoo-aung.png',
     telegram: 'https://t.me/hto2agKH',
     email: 'cool.htooaung@gmail.com',
-    phone: '0713761920',
+    phone: '+855713761920',
   },
 ];
 
@@ -761,28 +765,30 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference, index }) => {
       viewport={{ once: true }}
       className="h-full group"
     >
-      <Tilt options={{ max: 10, scale: 1.01, speed: 500 }} className="h-full">
+      <Tilt options={{ max: 8, scale: 1.01, speed: 500 }} className="h-full">
         <div
           onMouseMove={handleMouseMove}
-          className="relative bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg border border-slate-700/50 rounded-2xl p-6 overflow-hidden transition-all duration-500 group-hover:border-emerald-500/60 group-hover:-translate-y-1.5 shadow-xl group-hover:shadow-emerald-500/20 h-full flex flex-col"
+          className="relative flex h-full flex-col bg-gradient-to-b from-[#141228] to-[#0c0a1f] backdrop-blur-lg border border-white/10 rounded-2xl p-6 overflow-hidden transition-all duration-500 group-hover:border-emerald-500/50 group-hover:-translate-y-1.5 shadow-xl group-hover:shadow-emerald-500/15"
         >
-          {/* light sweep */}
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          {/* top edge */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent opacity-70" />
           {/* cursor spotlight */}
           <div
             className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             style={{
               background:
-                'radial-gradient(circle 380px at var(--mx,50%) var(--my,0%), rgba(16,185,129,0.13), transparent 60%)',
+                'radial-gradient(circle 380px at var(--mx,50%) var(--my,0%), rgba(16,185,129,0.12), transparent 60%)',
             }}
           />
-          <div className="relative flex items-center gap-4 mb-4">
+
+          {/* Header */}
+          <div className="relative flex items-center gap-4">
             <motion.div
-              whileHover={{ scale: 1.1, rotate: 3 }}
+              whileHover={{ scale: 1.08, rotate: 3 }}
               transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-              className="relative"
+              className="relative shrink-0"
             >
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 p-0.5 overflow-hidden shadow-lg shadow-emerald-500/30 group-hover:shadow-emerald-500/50 ring-2 ring-transparent group-hover:ring-emerald-400/50 transition-all duration-500">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 p-0.5 shadow-lg shadow-emerald-500/25 ring-2 ring-transparent group-hover:ring-emerald-400/50 transition-all duration-500">
                 <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center overflow-hidden">
                   {reference.image ? (
                     <Image
@@ -798,39 +804,59 @@ const ReferenceCard: React.FC<ReferenceCardProps> = ({ reference, index }) => {
                 </div>
               </div>
             </motion.div>
-            <div>
-              <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-300">
+            <div className="min-w-0">
+              <h3 className="text-lg font-bold text-white leading-tight group-hover:text-emerald-300 transition-colors duration-300">
                 {reference.name}
               </h3>
-              <p className="text-emerald-400 font-semibold text-sm">
+              <p className="text-emerald-400 font-semibold text-sm leading-tight">
                 {reference.title}
               </p>
-              <p className="text-slate-400 text-sm">{reference.company}</p>
-            </div>
-          </div>
-          <div className="relative flex-grow mb-6">
-            <div className="relative">
-              <p className="text-slate-300 italic leading-relaxed pl-8 pr-4 group-hover:text-slate-200 transition-colors duration-300">
-                {reference.quote}
+              <p className="text-slate-400 text-xs mt-0.5 truncate">
+                {reference.company}
               </p>
             </div>
           </div>
+
+          {/* Quote */}
+          <div className="relative grow pt-5">
+            <Quote className="absolute top-4 left-0 w-5 h-5 text-emerald-400/40 rotate-180" />
+            <p className="pl-7 text-slate-300 text-sm italic leading-relaxed">
+              &ldquo;{reference.quote}&rdquo;
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div className="relative my-5 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+          {/* Contact */}
           <div className="relative flex flex-col gap-3">
-            <div className="flex gap-3">
-              <Link
-                href={reference.telegram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-400 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-center hover:-translate-y-0.5 hover:border-blue-400/60"
+            <Link
+              href={reference.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center gap-2 bg-gradient-to-r from-blue-600/25 to-blue-500/15 hover:from-blue-600/40 hover:to-blue-500/25 border border-blue-500/30 text-blue-300 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400/60"
+            >
+              <Send className="w-4 h-4" />
+              Message on Telegram
+            </Link>
+
+            <div className="flex flex-col gap-2 text-[13px]">
+              <a
+                href={`mailto:${reference.email}`}
+                className="flex items-center gap-2.5 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-slate-300 w-full transition-all duration-300 hover:border-emerald-400/50 hover:bg-white/[0.06] hover:text-white"
               >
-                Telegram
-              </Link>
-            </div>
-            <div className="text-slate-300 text-sm">
-              Email: <span className="text-emerald-400">{reference.email}</span>
-            </div>
-            <div className="text-slate-300 text-sm">
-              Phone: <span className="text-emerald-400">{reference.phone}</span>
+                <Mail className="w-4 h-4 shrink-0 text-emerald-400" />
+                <span className="font-medium text-slate-400 shrink-0">Email</span>
+                <span className="break-all text-slate-200">{reference.email}</span>
+              </a>
+              <a
+                href={`tel:${reference.phone}`}
+                className="flex items-center gap-2.5 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-slate-300 w-full transition-all duration-300 hover:border-emerald-400/50 hover:bg-white/[0.06] hover:text-white"
+              >
+                <Phone className="w-4 h-4 shrink-0 text-emerald-400" />
+                <span className="font-medium text-slate-400 shrink-0">Phone</span>
+                <span className="text-slate-200">{reference.phone}</span>
+              </a>
             </div>
           </div>
         </div>
@@ -944,7 +970,7 @@ const Education: React.FC = () => {
                 Professional References
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {referencesData.map((reference, index) => (
                 <ReferenceCard
                   key={`reference-${index}`}

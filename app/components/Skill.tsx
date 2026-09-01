@@ -69,51 +69,123 @@ type Category = {
   skills: Skill[];
 };
 
+/* Per-category accent styling for a cohesive, modern look. */
+const ACCENTS: Record<
+  string,
+  { text: string; chip: string; dot: string; ring: string; glow: string }
+> = {
+  'text-green-400': {
+    text: 'text-emerald-300',
+    chip: 'from-emerald-500/25 to-teal-500/10 border-emerald-400/30',
+    dot: 'bg-emerald-400',
+    ring: 'hover:border-emerald-400/50 hover:shadow-emerald-500/10',
+    glow: 'via-emerald-400/20',
+  },
+  'text-orange-400': {
+    text: 'text-orange-300',
+    chip: 'from-orange-500/25 to-amber-500/10 border-orange-400/30',
+    dot: 'bg-orange-400',
+    ring: 'hover:border-orange-400/50 hover:shadow-orange-500/10',
+    glow: 'via-orange-400/20',
+  },
+  'text-cyan-400': {
+    text: 'text-cyan-300',
+    chip: 'from-cyan-500/25 to-sky-500/10 border-cyan-400/30',
+    dot: 'bg-cyan-400',
+    ring: 'hover:border-cyan-400/50 hover:shadow-cyan-500/10',
+    glow: 'via-cyan-400/20',
+  },
+  'text-blue-400': {
+    text: 'text-blue-300',
+    chip: 'from-blue-500/25 to-indigo-500/10 border-blue-400/30',
+    dot: 'bg-blue-400',
+    ring: 'hover:border-blue-400/50 hover:shadow-blue-500/10',
+    glow: 'via-blue-400/20',
+  },
+};
+
+const DEFAULT_ACCENT = ACCENTS['text-blue-400'];
+
 const SkillCard: React.FC<{
   icon: React.ComponentType<{ className?: string }>;
   title: string;
   skills: Skill[];
   color: string;
   emphasized?: boolean;
-}> = ({ icon: Icon, title, skills, color, emphasized = false }) => (
-  <Card
-    className={`group relative overflow-hidden py-5 h-full bg-gray-900/80 flex flex-col hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 ${
-      emphasized
-        ? 'border-cyan-400/40 shadow-lg shadow-cyan-500/5'
-        : 'border-gray-700'
-    }`}
-  >
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(100,100,255,0.1)] to-transparent group-hover:via-[rgba(100,100,255,0.2)] animate-shimmer" />
-    {emphasized && (
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
-    )}
-    <CardContent className="p-6 relative z-10 flex flex-col gap-5 grow">
-      <div className="flex items-center gap-4 min-h-[52px]">
-        <div
-          className={`p-3 rounded-xl bg-gray-800/50 ${color} group-hover:scale-110 transition-transform duration-300`}
-        >
-          <Icon className="w-7 h-7" />
-        </div>
-        <h3 className="text-xl leading-snug font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-          {title}
-        </h3>
-      </div>
-      <div className="flex flex-wrap content-start items-start gap-2 grow min-h-[120px]">
-        {skills.map((skill, index) => (
-          <Badge
-            key={index}
-            className="group/badge relative bg-gray-800/50 hover:bg-gray-700/80 text-gray-100 border-gray-600 flex items-center gap-2 py-2 px-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20"
+  wide?: boolean;
+}> = ({ icon: Icon, title, skills, color, emphasized = false, wide = false }) => {
+  const accent = ACCENTS[color] ?? DEFAULT_ACCENT;
+
+  return (
+    <Card
+      className={`group card-lift relative flex h-full flex-col overflow-hidden bg-gradient-to-b from-[#12102a] to-[#0c0a1f] backdrop-blur ${
+        wide ? 'lg:flex-row lg:items-center lg:gap-8 lg:px-3' : ''
+      } ${
+        emphasized
+          ? `border-cyan-400/30 ${accent.ring} shadow-lg shadow-cyan-500/5`
+          : `border-white/10 ${accent.ring}`
+      }`}
+    >
+      {/* Top accent edge */}
+      <div
+        className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent ${accent.glow} to-transparent opacity-70`}
+      />
+      {/* Category glow blob */}
+      <div
+        className={`pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full opacity-[0.15] blur-3xl transition-opacity duration-500 group-hover:opacity-30 ${
+          emphasized ? 'bg-cyan-400' : accent.dot
+        }`}
+      />
+
+      <CardContent
+        className={`relative z-10 flex grow flex-col gap-5 p-6 pt-7 ${
+          wide ? 'lg:flex-row lg:items-center lg:gap-8 lg:py-6' : ''
+        }`}
+      >
+        {/* Header */}
+        <div className={`flex items-center gap-3 ${wide ? 'lg:w-64 lg:shrink-0' : ''}`}>
+          <div
+            className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border bg-gradient-to-br ${accent.chip} ${accent.text} transition-transform duration-300 group-hover:scale-110`}
           >
-            <span className="shrink-0 transform group-hover/badge:scale-110 transition-transform duration-300">
-              {skill.icon}
-            </span>
-            <span className="font-medium">{skill.name}</span>
-          </Badge>
-        ))}
-      </div>
-    </CardContent>
-  </Card>
-);
+            <Icon className="h-6 w-6" />
+          </div>
+          <div className="min-w-0">
+            <h3 className="text-lg leading-tight font-bold text-white">
+              {title}
+            </h3>
+          </div>
+        </div>
+
+        {/* Divider + count */}
+        <div className={`flex w-full items-center gap-3 ${wide ? 'lg:hidden' : ''}`}>
+          <span className="h-px flex-1 bg-white/10" />
+          <span className={`text-[11px] font-medium uppercase tracking-wider ${accent.text}`}>
+            {skills.length} technologies
+          </span>
+        </div>
+
+        {/* Skills */}
+        <div
+          className={`flex grow flex-wrap content-start items-start gap-2 ${
+            wide ? 'lg:grid lg:grid-cols-2 xl:grid-cols-3' : ''
+          }`}
+        >
+          {skills.map((skill, index) => (
+            <Badge
+              key={index}
+              className="group/badge flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] py-1.5 px-3 text-gray-200 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/[0.07]"
+            >
+              <span className="shrink-0 transition-transform duration-300 group-hover/badge:scale-110">
+                {skill.icon}
+              </span>
+              <span className="font-medium text-[13px]">{skill.name}</span>
+            </Badge>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
 
 // Spline Viewer Component with WebGL fallback
 const SplineViewer: React.FC = () => {
@@ -443,26 +515,29 @@ const Skill: React.FC = () => {
         </div>
 
         {/* Bottom Section: Skill Cards */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-          {skillCategories.map((category, index) => (
-            <Reveal
-              key={index}
-              direction="up"
-              delay={(index % 3) * 0.1}
-              className="h-full"
-            >
-              <SkillCard
-                icon={category.icon}
-                title={category.title}
-                skills={category.skills}
-                color={category.color}
-                emphasized={
-                  category.title === 'Core Backend' ||
-                  category.title === 'Databases & Caching'
-                }
-              />
-            </Reveal>
-          ))}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+          {skillCategories.map((category, index) => {
+            const isWide =
+              category.title === 'Core Backend' ||
+              category.title === 'Databases & Caching';
+            return (
+              <Reveal
+                key={index}
+                direction="up"
+                delay={(index % 3) * 0.1}
+                className={`h-full ${isWide ? 'lg:col-span-3' : ''}`}
+              >
+                <SkillCard
+                  icon={category.icon}
+                  title={category.title}
+                  skills={category.skills}
+                  color={category.color}
+                  emphasized={isWide}
+                  wide={isWide}
+                />
+              </Reveal>
+            );
+          })}
         </div>
       </div>
       <style jsx>{`

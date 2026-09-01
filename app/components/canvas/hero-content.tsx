@@ -4,8 +4,36 @@ import { ArrowRight, Send, Sparkles } from 'lucide-react';
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLoading } from '../PageLoaderProvider';
+import { FlipWords } from './FlipWords';
 
-/* ---------------- CODE TERMINAL (Typing Effect) ---------------- */
+/* ---------------- CODE TERMINAL (Smooth Typing Effect) ---------------- */
+
+type CodeToken = { text: string; cls: string };
+
+/* Tokenizes a single line of the developer.js snippet for clean syntax
+   highlighting (keys / strings / booleans / punctuation). */
+function tokenize(line: string): CodeToken[] {
+  const tokens: CodeToken[] = [];
+  const re =
+    /('(?:[^'\\]|\\.)*')|(\b\d+(?:\.\d+)?\b)|(\btrue\b|\bfalse\b)|([A-Za-z_][A-Za-z0-9_]*)|(\s+)|([^{}\[\]:,;=]|[{}[\]:,;=])/g;
+  let m: RegExpExecArray | null;
+  let lastIndex = 0;
+  while ((m = re.exec(line)) !== null) {
+    if (m[1]) tokens.push({ text: m[1], cls: 'text-emerald-300' });
+    else if (m[2]) tokens.push({ text: m[2], cls: 'text-amber-300' });
+    else if (m[3]) tokens.push({ text: m[3], cls: 'text-amber-200' });
+    else if (m[4]) tokens.push({ text: m[4], cls: 'text-violet-300' });
+    else if (m[5]) tokens.push({ text: m[5], cls: '' });
+    else tokens.push({ text: m[6], cls: 'text-white/50' });
+    lastIndex = re.lastIndex;
+  }
+  // Any unmatched remainder
+  if (lastIndex < line.length) {
+    tokens.push({ text: line.slice(lastIndex), cls: 'text-white/50' });
+  }
+  return tokens;
+}
+
 const CodeTerminal = () => {
   const codeSegments = useMemo(
     () => [
@@ -44,24 +72,38 @@ const CodeTerminal = () => {
   }, [isLoaded]);
 
   const startedRef = useRef(false);
+
+  // Smooth typing loop: natural per-character delay, a short pause after
+  // punctuation, and a slightly longer pause at the end of a line.
   useEffect(() => {
     if (!started || startedRef.current) return;
+
     if (currentLine < codeSegments.length) {
-      if (currentChar < codeSegments[currentLine].length) {
+      const line = codeSegments[currentLine];
+      if (currentChar < line.length) {
+        const ch = line[currentChar];
+        const base = 10;
+        // Pause briefly after syntax like ':' ',' '=' so it reads naturally.
+        const extra = /[:=,]/.test(ch) ? 80 : 0;
+        const jitter = Math.random() * 16;
+        const delay = base + extra + jitter;
+
         const timeout = setTimeout(() => {
           setDisplayedCode((prev) => {
-            const newLines = [...prev];
-            newLines[currentLine] =
-              (newLines[currentLine] || '') +
-              codeSegments[currentLine][currentChar];
-            return newLines;
+            const next = [...prev];
+            next[currentLine] = (next[currentLine] || '') + ch;
+            return next;
           });
           setCurrentChar((prev) => prev + 1);
-        }, 1);
+        }, delay);
         return () => clearTimeout(timeout);
       } else {
-        setCurrentLine((prev) => prev + 1);
-        setCurrentChar(0);
+        // End of a line: small pause before advancing.
+        const timeout = setTimeout(() => {
+          setCurrentLine((prev) => prev + 1);
+          setCurrentChar(0);
+        }, 60);
+        return () => clearTimeout(timeout);
       }
     } else {
       startedRef.current = true;
@@ -69,7 +111,7 @@ const CodeTerminal = () => {
   }, [started, currentChar, currentLine, codeSegments]);
 
   return (
-    <div className="w-full max-w-md rounded-xl border border-white/10 bg-[#0b0a1f]/90 shadow-2xl shadow-purple-900/20 overflow-hidden">
+    <div className="w-full max-w-md rounded-xl border border-white/10 bg-[#0d0b22]/95 shadow-2xl shadow-purple-900/25 overflow-hidden">
       <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-3">
         <div className="flex gap-1.5">
           <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
@@ -78,23 +120,20 @@ const CodeTerminal = () => {
         </div>
         <span className="ml-2 font-mono text-xs text-white/40">developer.js</span>
       </div>
-      <pre className="p-5 font-mono text-xs leading-relaxed text-gray-200 whitespace-pre-wrap">
-        {displayedCode.map((line, index) =>
-          index % 4 === 1 ? (
-            // Simple line coloring: keys on odd lines
-            <div key={index} className="text-white/85">
-              {line}
-            </div>
-          ) : index % 4 === 2 ? (
-            <div key={index} className="text-green-300/80">
-              {line}
-            </div>
-          ) : (
-            <div key={index} className="text-purple-300/90">
-              {line}
-            </div>
-          )
-        )}
+      <pre className="p-5 font-mono text-xs leading-[1.75] text-gray-200 whitespace-pre-wrap">
+        {displayedCode.map((line, index) => (
+          <div key={index}>
+            {tokenize(line).map((tok, i) =>
+              tok.cls ? (
+                <span key={i} className={tok.cls}>
+                  {tok.text}
+                </span>
+              ) : (
+                <span key={i}>{tok.text}</span>
+              )
+            )}
+          </div>
+        ))}
         {!started ? (
           <span className="text-white/30">
             <motion.span
@@ -181,13 +220,23 @@ export const HeroContent = () => {
             <span className="text-gradient-teal mt-2 block">Theara Chim</span>
           </motion.h1>
 
-          {/* Role */}
-          <motion.p
+          {/* Role badge with FlipWords */}
+          <motion.div
             variants={item}
-            className="mt-4 text-base font-semibold text-cyan-300 sm:text-lg"
+            className="mt-4 inline-flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-blue-500/20 bg-gradient-to-r from-blue-500/10 to-teal-500/10 px-4 sm:px-6 py-2 sm:py-3 backdrop-blur-sm"
           >
-            Backend-Focused Full-Stack Developer
-          </motion.p>
+            <span className="text-base sm:text-lg" aria-hidden>
+              🚀
+            </span>
+            <FlipWords
+              className="text-lg sm:text-xl text-blue-400 font-medium"
+              words={[
+                'Backend & API Development',
+                'Software Engineer',
+                'Backend Developer',
+              ]}
+            />
+          </motion.div>
 
           {/* Description */}
           <motion.p
