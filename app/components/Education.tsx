@@ -44,7 +44,7 @@ const educationData = [
   {
     institution: 'Sok An Doung Khpous Bouret Cholsar High School',
     degree: 'High School Diploma',
-    date: '2020 - 2022',
+    date: '2019 - 2022',
     location: 'Takeo, Cambodia',
     icon: '/education/highschool.png',
     iconBg: '#14b8a6',
