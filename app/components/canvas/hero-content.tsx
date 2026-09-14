@@ -1,9 +1,10 @@
 'use client';
 
 import { ArrowRight, Send, Sparkles } from 'lucide-react';
-import { motion, useReducedMotion, type Variants } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform, type Variants } from 'framer-motion';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLoading } from '../PageLoaderProvider';
+import MagneticButton from '../MagneticButton';
 import { FlipWords } from './FlipWords';
 
 /* ---------------- CODE TERMINAL (Smooth Typing Effect) ---------------- */
@@ -263,13 +264,13 @@ export const HeroContent = () => {
                 aria-hidden
               />
             </a>
-            <a
+            <MagneticButton
               href="#contact"
               className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/[0.07]"
             >
               <Send className="h-4 w-4" aria-hidden />
               Contact Me
-            </a>
+            </MagneticButton>
           </motion.div>
 
           {/* Tech chips */}

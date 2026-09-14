@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Poppins as FontSans } from 'next/font/google';
 import SmoothScroll from '@/app/components/SmoothScroll';
+import ScrollProgress from '@/app/components/ScrollProgress';
 import '@/app/styles/globals.css';
 
 const fontSans = FontSans({
@@ -141,6 +142,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <ScrollProgress />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
