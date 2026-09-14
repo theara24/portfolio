@@ -228,14 +228,14 @@ export const HeroContent = () => {
             <span className="text-base sm:text-lg" aria-hidden>
               🚀
             </span>
-            <FlipWords
-              className="text-lg sm:text-xl text-blue-400 font-medium"
-              words={[
-                'Backend & API Development',
-                'Software Engineer',
-                'Backend Developer',
-              ]}
-            />
+              <FlipWords
+                className="text-lg sm:text-xl text-blue-400 font-medium"
+                words={[
+                  'Backend-Focused Full-Stack Developer',
+                  'Backend Developer',
+                  'Software Engineer',
+                ]}
+              />
           </motion.div>
 
           {/* Description */}
@@ -243,10 +243,9 @@ export const HeroContent = () => {
             variants={item}
             className="mt-5 max-w-xl text-sm leading-[1.8] text-gray-300 sm:text-base"
           >
-            I build reliable backend services, REST APIs, distributed systems,
-            and full-stack applications. My core stack is TypeScript, Node.js,
-            Express.js, PostgreSQL, Redis, RabbitMQ, and Docker — with hands-on
-            experience across React, Next.js, and more.
+            I build reliable REST APIs, backend services, distributed systems,
+            and full-stack applications using TypeScript, Node.js, Express.js,
+            PostgreSQL, Redis, RabbitMQ, and Docker.
           </motion.p>
 
           {/* CTAs */}

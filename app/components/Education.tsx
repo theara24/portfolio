@@ -31,7 +31,7 @@ const educationData = [
     location: 'Phnom Penh, Cambodia',
     icon: '/education/university.png',
     iconBg: '#3b82f6',
-    gpa: 'In Progress',
+    gpa: 'In Progress — Currently in Semester 5',
     achievements: [
       'Software Development & Programming',
       'Database Management & System Analysis',
@@ -56,6 +56,178 @@ const educationData = [
 ];
 
 const certificatesData = [
+  {
+    title: 'Full Stack Web Development',
+    issuer: 'ISTAD',
+    date: '2025',
+    verifyLink: '',
+    image: '/certificates/fullstack.png',
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Bootstrap',
+      'Tailwind CSS',
+      'Figma',
+      'React',
+      'Next.js',
+      'PostgreSQL',
+      'Spring',
+      'Docker',
+      'NGINX',
+      'Git',
+      'Project Management',
+    ],
+    scholarship: 'Full Stack Scholarship',
+    scholarshipDetails:
+      'Institute of Science and Technology Advanced Development currently provides a 50% scholarship opportunity for 120 to 160 places per year.',
+    technologies: [
+      {
+        name: 'HTML',
+        description:
+          'HTML (Hypertext Markup Language) is the fundamental building block of the web, providing the structure and semantic meaning to web pages by defining the elements and their relationships, enabling the display of content across different browsers and devices.',
+      },
+      {
+        name: 'CSS',
+        description:
+          'CSS is a vital web development technology that controls the visual appearance of web pages, allowing designers to create engaging user experiences by defining layout, colors, fonts, and more.',
+      },
+      {
+        name: 'JavaScript',
+        description:
+          'JavaScript is a dynamic programming language that adds interactivity and functionality to websites, allowing developers to create engaging user experiences and manipulate web page content.',
+      },
+      {
+        name: 'Bootstrap',
+        description:
+          'Bootstrap is a popular front-end framework that simplifies the development of responsive and visually appealing web applications, offering ready-to-use components and a responsive grid system.',
+      },
+      {
+        name: 'Tailwind CSS',
+        description:
+          'Tailwind CSS is a powerful utility-first CSS framework designed to streamline the development of customizable and responsive user interfaces, providing a wide range of pre-built classes for rapid implementation.',
+      },
+      {
+        name: 'Figma',
+        description:
+          'Figma is a cloud-based design tool that simplifies collaboration for creating user interfaces and prototypes. It offers powerful features, intuitive design tools, and seamless sharing capabilities, making it a top choice for design teams working on web and mobile projects.',
+      },
+      {
+        name: 'React',
+        description:
+          'React is a robust and flexible JavaScript library that revolutionizes user interface development by providing reusable components, efficient rendering, and support for building dynamic and scalable applications.',
+      },
+      {
+        name: 'Next.js',
+        description:
+          'Next.js is a powerful framework built on React that simplifies server-rendered React application development with features like server-side rendering, client-side routing, and built-in API support.',
+      },
+      {
+        name: 'PostgreSQL',
+        description:
+          'PostgreSQL is a powerful, open-source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.',
+      },
+      {
+        name: 'Spring',
+        description:
+          'Spring makes programming Java quicker, easier, and safer for everybody. Spring\'s focus on speed, simplicity, and productivity has made it the world\'s most popular Java framework.',
+      },
+      {
+        name: 'Docker',
+        description:
+          'Docker is a powerful open-source platform that simplifies application deployment by packaging software and its dependencies into self-contained containers.',
+      },
+      {
+        name: 'NGINX',
+        description:
+          'NGINX is a high-performance, open-source web server and reverse proxy server known for its efficiency and scalability.',
+      },
+      {
+        name: 'Git',
+        description:
+          'Git is a widely used version control system that tracks code changes, supports collaboration, and enhances software development efficiency. It enables developers to work on projects simultaneously, manage revisions, and merge changes seamlessly.',
+      },
+      {
+        name: 'Project Management',
+        description:
+          'Project management involves planning, organizing, and overseeing all aspects of a project to ensure successful completion.',
+      },
+    ],
+  },
+  {
+    title: 'Web Development',
+    issuer: 'ISTAD',
+    date: '2025',
+    verifyLink: '',
+    image: '/certificates/web-dev.png',
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Bootstrap',
+      'Tailwind CSS',
+      'Figma',
+      'React',
+      'Java',
+      'PostgreSQL',
+      'Git',
+    ],
+    scholarship: 'Foundation Scholarship',
+    scholarshipDetails:
+      'Institute of Science and Technology Advanced Development currently provides a 50% scholarship opportunity for 120 to 160 places per year.',
+    technologies: [
+      {
+        name: 'HTML',
+        description:
+          'HTML (Hypertext Markup Language) is the fundamental building block of the web, providing the structure and semantic meaning to web pages by defining the elements and their relationships, enabling the display of content across different browsers and devices.',
+      },
+      {
+        name: 'CSS',
+        description:
+          'CSS is a vital web development technology that controls the visual appearance of web pages, allowing designers to create engaging user experiences by defining layout, colors, fonts, and more.',
+      },
+      {
+        name: 'JavaScript',
+        description:
+          'JavaScript is a dynamic programming language that adds interactivity and functionality to websites, allowing developers to create engaging user experiences and manipulate web page content.',
+      },
+      {
+        name: 'Bootstrap',
+        description:
+          'Bootstrap is a popular front-end framework that simplifies the development of responsive and visually appealing web applications, offering ready-to-use components and a responsive grid system.',
+      },
+      {
+        name: 'Tailwind CSS',
+        description:
+          'Tailwind CSS is a powerful utility-first CSS framework designed to streamline the development of customizable and responsive user interfaces, providing a wide range of pre-built classes for rapid implementation.',
+      },
+      {
+        name: 'Figma',
+        description:
+          'Figma is a cloud-based design tool that simplifies collaboration for creating user interfaces and prototypes. It offers powerful features, intuitive design tools, and seamless sharing capabilities, making it a top choice for design teams working on web and mobile projects.',
+      },
+      {
+        name: 'React',
+        description:
+          'React is a robust and flexible JavaScript library that revolutionizes user interface development by providing reusable components, efficient rendering, and support for building dynamic and scalable applications.',
+      },
+      {
+        name: 'Java',
+        description:
+          'Java is a versatile, object-oriented programming language known for its "write once, run anywhere" (WORA) capability, enabling robust, scalable, and platform-independent applications. First released by Sun Microsystems in 1995 and now maintained by Oracle, Java is widely used in software development, web and mobile apps, and enterprise systems.',
+      },
+      {
+        name: 'PostgreSQL',
+        description:
+          'PostgreSQL is a powerful, open-source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.',
+      },
+      {
+        name: 'Git',
+        description:
+          'Git is a widely used version control system that tracks code changes, supports collaboration, and enhances software development efficiency. It enables developers to work on projects simultaneously, manage revisions, and merge changes seamlessly.',
+      },
+    ],
+  },
   {
     title: 'Web Design',
     issuer: 'ISTAD',
@@ -144,83 +316,25 @@ const certificatesData = [
     ],
   },
   {
-    title: 'Web Development',
-    issuer: 'ISTAD',
-    date: '2025',
+    title: 'English Language Program',
+    issuer: 'PCU',
+    date: '2023 - 2024',
     verifyLink: '',
-    image: '/certificates/web-dev.png',
-    skills: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'Bootstrap',
-      'Tailwind CSS',
-      'Figma',
-      'React',
-      'Java',
-      'PostgreSQL',
-      'Git',
-    ],
-    scholarship: 'Foundation Scholarship',
+    image: '/certificates/english.png',
+    skills: ['English Communication', 'Writing', 'Speaking', 'Reading'],
+    scholarship: 'GESL (General English as a Second Language)',
     scholarshipDetails:
-      'Institute of Science and Technology Advanced Development currently provides a 50% scholarship opportunity for 120 to 160 places per year.',
-    technologies: [
-      {
-        name: 'HTML',
-        description:
-          'HTML (Hypertext Markup Language) is the fundamental building block of the web, providing the structure and semantic meaning to web pages by defining the elements and their relationships, enabling the display of content across different browsers and devices.',
-      },
-      {
-        name: 'CSS',
-        description:
-          'CSS is a vital web development technology that controls the visual appearance of web pages, allowing designers to create engaging user experiences by defining layout, colors, fonts, and more.',
-      },
-      {
-        name: 'JavaScript',
-        description:
-          'JavaScript is a dynamic programming language that adds interactivity and functionality to websites, allowing developers to create engaging user experiences and manipulate web page content.',
-      },
-      {
-        name: 'Bootstrap',
-        description:
-          'Bootstrap is a popular front-end framework that simplifies the development of responsive and visually appealing web applications, offering ready-to-use components and a responsive grid system.',
-      },
-      {
-        name: 'Tailwind CSS',
-        description:
-          'Tailwind CSS is a powerful utility-first CSS framework designed to streamline the development of customizable and responsive user interfaces, providing a wide range of pre-built classes for rapid implementation.',
-      },
-      {
-        name: 'Figma',
-        description:
-          'Figma is a cloud-based design tool that simplifies collaboration for creating user interfaces and prototypes. It offers powerful features, intuitive design tools, and seamless sharing capabilities, making it a top choice for design teams working on web and mobile projects.',
-      },
-      {
-        name: 'React',
-        description:
-          'React is a robust and flexible JavaScript library that revolutionizes user interface development by providing reusable components, efficient rendering, and support for building dynamic and scalable applications.',
-      },
-      {
-        name: 'Java',
-        description:
-          'Java is a versatile, object-oriented programming language known for its "write once, run anywhere" (WORA) capability, enabling robust, scalable, and platform-independent applications. First released by Sun Microsystems in 1995 and now maintained by Oracle, Java is widely used in software development, web and mobile apps, and enterprise systems.',
-      },
-      {
-        name: 'PostgreSQL',
-        description:
-          'PostgreSQL is a powerful, open-source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.',
-      },
-      {
-        name: 'Git',
-        description:
-          'Git is a widely used version control system that tracks code changes, supports collaboration, and enhances software development efficiency. It enables developers to work on projects simultaneously, manage revisions, and merge changes seamlessly.',
-      },
+      'The GESL program is a part-time, general English program tailored for adults. Classes are offered on weekdays during the afternoons or evenings, and there is also an intensive version of the GESL program that runs on weekends. The program consists of 12 levels from beginner to advanced, with each level lasting 3 months.',
+    technologies: [],
+    additionalDetails: [
+      'Taught by two alternating teachers focusing on speaking, listening, reading, and writing.',
+      'Upon successful completion of level 12, students are eligible to enroll in a university Bachelor\'s (BA) program without further English preparation.',
     ],
   },
   {
     title: 'General Korean Program',
     issuer: 'CKCC',
-    date: '2025',
+    date: '2023 - 2024',
     verifyLink: '',
     image: '/certificates/korean.png',
     skills: ['Korean Language', 'Speaking', 'Listening', 'Writing'],
@@ -233,120 +347,6 @@ const certificatesData = [
       'Receiving a free CKCC library membership card valid for one year.',
       'Opportunities to experience Korean culture (K-Wave Club), Korean Clinic Club (K-Clinic Club), and special classes (Special Lecture) for free.',
       'Students receive a free set of books and study materials.',
-    ],
-  },
-  {
-    title: 'English Language Program',
-    issuer: 'PCU',
-    date: '2025',
-    verifyLink: '',
-    image: '/certificates/english.png',
-    skills: ['English Communication', 'Writing', 'Speaking', 'Reading'],
-    scholarship: 'GESL (General English as a Second Language)',
-    scholarshipDetails:
-      'The GESL program is a part-time, general English program tailored for adults. Classes are offered on weekdays during the afternoons or evenings, and there is also an intensive version of the GESL program that runs on weekends. The program consists of 12 levels from beginner to advanced, with each level lasting 3 months.',
-    technologies: [],
-    additionalDetails: [
-      'Taught by two alternating teachers focusing on speaking, listening, reading, and writing.',
-      'Upon successful completion of level 12, students are eligible to enroll in a university Bachelor’s (BA) program without further English preparation.',
-    ],
-  },
-  {
-    title: 'Full Stack Web Development',
-    issuer: 'ISTAD',
-    date: '2025',
-    verifyLink: '',
-    image: '/certificates/fullstack.png',
-    skills: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'Bootstrap',
-      'Tailwind CSS',
-      'Figma',
-      'React',
-      'Next.js',
-      'PostgreSQL',
-      'Spring',
-      'Docker',
-      'NGINX',
-      'Git',
-      'Project Management',
-    ],
-    scholarship: 'Full Stack Scholarship',
-    scholarshipDetails:
-      'Institute of Science and Technology Advanced Development currently provides a 50% scholarship opportunity for 120 to 160 places per year.',
-    technologies: [
-      {
-        name: 'HTML',
-        description:
-          'HTML (Hypertext Markup Language) is the fundamental building block of the web, providing the structure and semantic meaning to web pages by defining the elements and their relationships, enabling the display of content across different browsers and devices.',
-      },
-      {
-        name: 'CSS',
-        description:
-          'CSS is a vital web development technology that controls the visual appearance of web pages, allowing designers to create engaging user experiences by defining layout, colors, fonts, and more.',
-      },
-      {
-        name: 'JavaScript',
-        description:
-          'JavaScript is a dynamic programming language that adds interactivity and functionality to websites, allowing developers to create engaging user experiences and manipulate web page content.',
-      },
-      {
-        name: 'Bootstrap',
-        description:
-          'Bootstrap is a popular front-end framework that simplifies the development of responsive and visually appealing web applications, offering ready-to-use components and a responsive grid system.',
-      },
-      {
-        name: 'Tailwind CSS',
-        description:
-          'Tailwind CSS is a powerful utility-first CSS framework designed to streamline the development of customizable and responsive user interfaces, providing a wide range of pre-built classes for rapid implementation.',
-      },
-      {
-        name: 'Figma',
-        description:
-          'Figma is a cloud-based design tool that simplifies collaboration for creating user interfaces and prototypes. It offers powerful features, intuitive design tools, and seamless sharing capabilities, making it a top choice for design teams working on web and mobile projects.',
-      },
-      {
-        name: 'React',
-        description:
-          'React is a robust and flexible JavaScript library that revolutionizes user interface development by providing reusable components, efficient rendering, and support for building dynamic and scalable applications.',
-      },
-      {
-        name: 'Next.js',
-        description:
-          'Next.js is a powerful framework built on React that simplifies server-rendered React application development with features like server-side rendering, client-side routing, and built-in API support.',
-      },
-      {
-        name: 'PostgreSQL',
-        description:
-          'PostgreSQL is a powerful, open-source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.',
-      },
-      {
-        name: 'Spring',
-        description:
-          'Spring makes programming Java quicker, easier, and safer for everybody. Spring’s focus on speed, simplicity, and productivity has made it the world’s most popular Java framework.',
-      },
-      {
-        name: 'Docker',
-        description:
-          'Docker is a powerful open-source platform that simplifies application deployment by packaging software and its dependencies into self-contained containers.',
-      },
-      {
-        name: 'NGINX',
-        description:
-          'NGINX is a high-performance, open-source web server and reverse proxy server known for its efficiency and scalability.',
-      },
-      {
-        name: 'Git',
-        description:
-          'Git is a widely used version control system that tracks code changes, supports collaboration, and enhances software development efficiency.',
-      },
-      {
-        name: 'Project Management',
-        description:
-          'Project management involves planning, organizing, and overseeing all aspects of a project to ensure successful completion.',
-      },
     ],
   },
 ];

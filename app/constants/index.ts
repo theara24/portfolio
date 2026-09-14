@@ -154,7 +154,7 @@ const experiences = [
     company_name: 'Everlast Information & Apps Dev Co., Ltd.',
     icon: '/backend.webp',
     iconBg: '#383E56',
-    date: '2025 - Present',
+    date: '2025 - 2026',
     points: [
       'Design, develop, and maintain REST APIs and backend services using TypeScript, Node.js, and Express.js.',
       'Contribute to production systems involving omnichannel messaging, distributed services, and high-concurrency workflows.',
@@ -167,24 +167,23 @@ const experiences = [
     ],
   },
   {
-    title: 'Freelance Web Designer & Full-Stack Developer',
+    title: 'Freelance Full-Stack Developer / Self-Employed',
     company_name: 'Self-Employed',
     icon: '/company/web.png',
     iconBg: '#E6DEDD',
     date: '2024 - Present',
     points: [
       'Develop responsive web applications using React.js, Tailwind CSS, and modern web technologies.',
-      'Design user interfaces and responsive layouts based on project requirements.',
-      'Collaborate with clients and team members to deliver practical, user-focused digital products.',
-      'Focus on clean implementation, usability, responsiveness, and maintainable code.',
+      'Implement frontend functionality and integrate application components with backend APIs.',
+      'Develop and maintain web applications based on project requirements.',
     ],
   },
   {
-    title: 'Work Study Student',
+    title: 'Academic & Practical Projects',
     company_name: 'ISTAD / SETEC Institute',
     icon: '/company/frontend.png',
     iconBg: '#383E56',
-    date: '2024 - Present',
+    date: '2023 – Present',
     points: [
       'Developed practical skills in web development, programming, databases, UI/UX, and information systems through academic and project-based work.',
       'Built frontend applications using React, Tailwind CSS, Bootstrap, and JavaScript.',
@@ -437,7 +436,7 @@ const projects: Project[] = [
     name: 'Customized Chatwoot Support Platform',
     category: 'Professional',
     description:
-      'Backend development for a customized, multi-tenant customer-support platform based on Chatwoot.',
+      'Contributed to backend and frontend development for a customized, multi-tenant customer-support platform based on Chatwoot.',
     context:
       'Contributed to API development, real-time communication, agent workflows, access control, backend reliability, performance improvements, and platform hardening.',
     longDescription:
@@ -448,7 +447,7 @@ const projects: Project[] = [
       'Platform integrations',
       'Security hardening',
     ],
-    role: 'Backend Developer',
+    role: 'Backend + Frontend Developer',
     status: 'Professional Project',
     company: 'Everlast Information & Apps Dev Co., Ltd.',
     confidentialNote:
@@ -712,53 +711,6 @@ const projects: Project[] = [
     platform: 'Vercel',
     featured: false,
     sortOrder: 10,
-  },
-  {
-    name: 'EasyFound - Ux Ui',
-    category: 'University',
-    description:
-      'Figma UI/UX design for the EasyFound lost and found platform.',
-    longDescription: 'Not available',
-    features: [],
-    role: 'Not verified',
-    status: 'Not available',
-    date: 'Not available',
-    tags: [
-      {
-        name: 'Figma',
-        color: 'blue-text-gradient',
-      },
-    ],
-    image: '/projectimg/easyfoundui.png',
-    source_code_link: undefined,
-    deploy_link: undefined,
-    platform: 'Figma',
-    featured: false,
-    sortOrder: 11,
-  },
-  {
-    name: 'JobSeek - Ux Ui',
-    category: 'University',
-    description:
-      'Figma UI/UX design for the JobSeek job portal.',
-    longDescription: 'Not available',
-    features: [],
-    role: 'Not verified',
-    status: 'Not available',
-    date: 'Not available',
-    tags: [
-      {
-        name: 'Figma',
-        color: 'blue-text-gradient',
-      },
-    ],
-    image: '/projectimg/jobseekui.png',
-    source_code_link: undefined,
-    deploy_link:
-      'https://www.figma.com/design/xtMOvFfMJVKh1zoiOUKBk4/F3-Project?node-id=0-1&t=Pex5WD5eefpBhI8E-1',
-    platform: 'Figma',
-    featured: false,
-    sortOrder: 12,
   },
 ];
 

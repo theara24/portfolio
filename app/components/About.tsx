@@ -57,17 +57,17 @@ const About = () => {
             description={
               <>
                 I&apos;m a Backend-Focused Full-Stack Developer with professional
-                experience building REST APIs, backend services, distributed
+                backend experience building REST APIs, backend services, distributed
                 applications, and full-stack systems. I focus on developing
                 reliable, maintainable, and practical software solutions.
                 <br />
                 <br />
-                My main experience is with TypeScript, Node.js, and Express.js,
-                working with PostgreSQL, MongoDB, MySQL, Redis, RabbitMQ,
-                background jobs, microservices, third-party integrations, and
-                production infrastructure. I also have hands-on experience with
-                React, Next.js, React Native, Vue.js, Java, PHP, and Laravel —
-                helping me contribute across the full application stack.
+                My main professional experience is with TypeScript, Node.js,
+                and Express.js, working with PostgreSQL, MongoDB, MySQL, Redis,
+                RabbitMQ, background jobs, microservices, third-party
+                integrations, and production infrastructure. I also have
+                full-stack experience with React, Vue.js, and modern
+                frontend technologies.
                 <br />
                 <br />
                 I enjoy solving complex technical problems, improving system

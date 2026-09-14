@@ -12,9 +12,8 @@ import {
   Database,
   Layout,
   Network,
+  Palette,
   Plug,
-  Smartphone,
-  Terminal,
 } from 'lucide-react';
 import { isWebGLSupported } from '@/app/utils/webgl';
 import WebGLFallback from '@/app/components/WebGLFallback';
@@ -50,7 +49,6 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiVuedotjs,
-  SiXmpp,
 } from 'react-icons/si';
 import { BsFileEarmarkCode, BsGrid1X2 } from 'react-icons/bs';
 import { FcWorkflow } from 'react-icons/fc';
@@ -101,6 +99,13 @@ const ACCENTS: Record<
     dot: 'bg-blue-400',
     ring: 'hover:border-blue-400/50 hover:shadow-blue-500/10',
     glow: 'via-blue-400/20',
+  },
+  'text-purple-400': {
+    text: 'text-purple-300',
+    chip: 'from-purple-500/25 to-violet-500/10 border-purple-400/30',
+    dot: 'bg-purple-400',
+    ring: 'hover:border-purple-400/50 hover:shadow-purple-500/10',
+    glow: 'via-purple-400/20',
   },
 };
 
@@ -277,68 +282,6 @@ const Skill: React.FC = () => {
       ],
     },
     {
-      icon: Database,
-      title: 'Databases & Caching',
-      color: 'text-orange-400',
-      skills: [
-        {
-          name: 'PostgreSQL',
-          icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
-        },
-        {
-          name: 'MySQL',
-          icon: <SiMysql className="w-4 h-4 text-[#4479A1]" />,
-        },
-        {
-          name: 'MongoDB',
-          icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
-        },
-        {
-          name: 'SQL Server',
-          icon: <Database className="w-4 h-4 text-[#CC2927]" />,
-        },
-        {
-          name: 'Redis',
-          icon: <SiRedis className="w-4 h-4 text-[#FF4438]" />,
-        },
-        {
-          name: 'Navicat',
-          icon: <Database className="w-4 h-4 text-[#1B9CFC]" />,
-        },
-      ],
-    },
-    {
-      icon: Network,
-      title: 'Messaging & Distributed Systems',
-      color: 'text-cyan-400',
-      skills: [
-        {
-          name: 'RabbitMQ',
-          icon: <SiRabbitmq className="w-4 h-4 text-[#FF6600]" />,
-        },
-        {
-          name: 'BullMQ',
-          icon: <Plug className="w-4 h-4 text-[#10B981]" />,
-        },
-        {
-          name: 'WebSockets',
-          icon: <Network className="w-4 h-4 text-[#0EA5E9]" />,
-        },
-        {
-          name: 'XMPP',
-          icon: <SiXmpp className="w-4 h-4 text-[#002B5C]" />,
-        },
-        {
-          name: 'Microservices',
-          icon: <Boxes className="w-4 h-4 text-[#8B5CF6]" />,
-        },
-        {
-          name: 'Monorepo',
-          icon: <Blocks className="w-4 h-4 text-[#06B6D4]" />,
-        },
-      ],
-    },
-    {
       icon: Layout,
       title: 'Frontend & Mobile',
       color: 'text-blue-400',
@@ -350,10 +293,6 @@ const Skill: React.FC = () => {
         {
           name: 'Next.js',
           icon: <SiNextdotjs className="w-4 h-4 text-white" />,
-        },
-        {
-          name: 'React Native',
-          icon: <Smartphone className="w-4 h-4 text-[#61DAFB]" />,
         },
         {
           name: 'Vue.js',
@@ -378,6 +317,60 @@ const Skill: React.FC = () => {
         {
           name: 'Bootstrap',
           icon: <FaBootstrap className="w-4 h-4 text-[#7952B3]" />,
+        },
+      ],
+    },
+    {
+      icon: Database,
+      title: 'Databases & Caching',
+      color: 'text-orange-400',
+      skills: [
+        {
+          name: 'PostgreSQL',
+          icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
+        },
+        {
+          name: 'MySQL',
+          icon: <SiMysql className="w-4 h-4 text-[#4479A1]" />,
+        },
+        {
+          name: 'MongoDB',
+          icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
+        },
+        {
+          name: 'SQL Server',
+          icon: <Database className="w-4 h-4 text-[#CC2927]" />,
+        },
+        {
+          name: 'Redis',
+          icon: <SiRedis className="w-4 h-4 text-[#FF4438]" />,
+        },
+      ],
+    },
+    {
+      icon: Network,
+      title: 'Messaging & Distributed Systems',
+      color: 'text-cyan-400',
+      skills: [
+        {
+          name: 'RabbitMQ',
+          icon: <SiRabbitmq className="w-4 h-4 text-[#FF6600]" />,
+        },
+        {
+          name: 'BullMQ',
+          icon: <Plug className="w-4 h-4 text-[#10B981]" />,
+        },
+        {
+          name: 'WebSockets',
+          icon: <Network className="w-4 h-4 text-[#0EA5E9]" />,
+        },
+        {
+          name: 'Microservices',
+          icon: <Boxes className="w-4 h-4 text-[#8B5CF6]" />,
+        },
+        {
+          name: 'Monorepo',
+          icon: <Blocks className="w-4 h-4 text-[#06B6D4]" />,
         },
       ],
     },
@@ -410,14 +403,13 @@ const Skill: React.FC = () => {
           name: 'Linux',
           icon: <FaLinux className="w-4 h-4 text-[#FCC624]" />,
         },
-        {
-          name: 'AWS',
-          icon: <FaAws className="w-4 h-4 text-[#FF9900]" />,
-        },
-        {
-          name: 'Jump Server',
-          icon: <Terminal className="w-4 h-4 text-[#38BDF8]" />,
-        },
+      ],
+    },
+    {
+      icon: Palette,
+      title: 'Design',
+      color: 'text-purple-400',
+      skills: [
         {
           name: 'Figma',
           icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" />,
@@ -425,10 +417,6 @@ const Skill: React.FC = () => {
         {
           name: 'Adobe XD',
           icon: <SiAdobexd className="w-4 h-4 text-[#FF61F6]" />,
-        },
-        {
-          name: 'Responsive Design',
-          icon: <Layout className="w-4 h-4 text-[#38B2AC]" />,
         },
       ],
     },
@@ -519,7 +507,8 @@ const Skill: React.FC = () => {
           {skillCategories.map((category, index) => {
             const isWide =
               category.title === 'Core Backend' ||
-              category.title === 'Databases & Caching';
+              category.title === 'Databases & Caching' ||
+              category.title === 'Frontend & Mobile';
             return (
               <Reveal
                 key={index}
