@@ -510,20 +510,8 @@ const projects: Project[] = [
     company: 'Personal',
     tags: [
       {
-        name: 'Vue.js',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'Node.js',
+        name: 'C#',
         color: 'green-text-gradient',
-      },
-      {
-        name: 'MySQL',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'Bootstrap',
-        color: 'blue-text-gradient',
       },
     ],
     image: '/projectimg/pos.png',
