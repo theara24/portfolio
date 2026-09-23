@@ -50,7 +50,7 @@ const CodeTerminal = () => {
       "  ],",
       "  primaryStack: [",
       "    'TypeScript', 'Node.js', 'Express.js',",
-      "    'PostgreSQL', 'Redis', 'RabbitMQ', 'Docker',",
+      "    'PostgreSQL', 'Redis', 'RabbitMQ', 'Docker', 'Linux',",
       "  ],",
       "  availableForWork: true,",
       "};",
@@ -167,6 +167,7 @@ const CORE_TECH = [
   'Redis',
   'RabbitMQ',
   'Docker',
+  'Linux',
 ];
 
 /* ---------------- HERO CONTENT ---------------- */
@@ -244,9 +245,8 @@ export const HeroContent = () => {
             variants={item}
             className="mt-5 max-w-xl text-sm leading-[1.8] text-gray-300 sm:text-base"
           >
-            I build reliable REST APIs, backend services, distributed systems,
-            and full-stack applications using TypeScript, Node.js, Express.js,
-            PostgreSQL, Redis, RabbitMQ, and Docker.
+            Building scalable backend systems, REST APIs, distributed services,
+            third-party integrations, and full-stack applications with modern technologies.
           </motion.p>
 
           {/* CTAs */}

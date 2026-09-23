@@ -28,123 +28,78 @@ export const navLinks = [
 export const services = [
   {
     title: 'Backend Developer',
-    description: 'Building REST APIs, backend services, and business logic.',
+    description:
+      'Designing and building scalable backend services, REST APIs, microservices, and database systems.',
     icon: '/fullsttack.webp',
   },
   {
     title: 'Software Engineer',
-    description: 'Designing practical and maintainable software solutions.',
+    description:
+      'Architecting maintainable, reliable, and high-performance software solutions for business requirements.',
     icon: '/software-engineer.png',
   },
   {
     title: 'Full-Stack Developer',
-    description: 'Building web applications across frontend and backend.',
+    description:
+      'Developing end-to-end web applications across backend APIs, frontend UIs, and real-time features.',
     icon: '/full-stack-developer.png',
   },
   {
     title: 'Database & Systems',
     description:
-      'Working with databases, APIs, distributed services, and system architecture.',
+      'Optimizing relational & NoSQL databases, caching layers, message queues, and distributed architectures.',
     icon: '/database-systems.png',
   },
 ];
 
 export const technologies = [
   {
-    name: 'HTML 5',
-    icon: '/tech/html.png',
-  },
-  {
-    name: 'CSS 3',
-    icon: '/tech/css.webp',
-  },
-  {
-    name: 'JavaScript',
-    icon: '/tech/javascript.webp',
-  },
-  {
     name: 'TypeScript',
     icon: '/tech/typescript.webp',
-  },
-  {
-    name: 'React JS',
-    icon: '/tech/reactjs.webp',
-  },
-  {
-    name: 'Redux Toolkit',
-    icon: '/tech/redux.webp',
-  },
-  {
-    name: 'Tailwind CSS',
-    icon: '/tech/tailwind.webp',
   },
   {
     name: 'Node JS',
     icon: '/tech/nodejs.webp',
   },
   {
+    name: 'Express JS',
+    icon: '/tech/express.png',
+  },
+  {
+    name: 'PostgreSQL',
+    icon: '/tech/postgres.png',
+  },
+  {
     name: 'MongoDB',
     icon: '/tech/mongodb.webp',
   },
   {
-    name: 'Three JS',
-    icon: '/tech/threejs.webp',
+    name: 'MySQL',
+    icon: '/tech/my_sql.png',
+  },
+  {
+    name: 'Redis',
+    icon: '/tech/redis.png',
+  },
+  {
+    name: 'RabbitMQ',
+    icon: '/tech/rabbitmq.png',
+  },
+  {
+    name: 'Docker',
+    icon: '/tech/docker.png',
+  },
+  {
+    name: 'React JS',
+    icon: '/tech/reactjs.webp',
+  },
+  {
+    name: 'Vue JS',
+    icon: '/tech/vue.png',
   },
   {
     name: 'git',
     icon: '/tech/git.webp',
-  },
-  {
-    name: 'figma',
-    icon: '/tech/figma.webp',
-  },
-  {
-    name: 'docker',
-    icon: '/tech/docker.png',
-  },
-  {
-    name: 'postgres',
-    icon: '/tech/postgres.png',
-  },
-  {
-    name: 'my_sql',
-    icon: '/tech/my_sql.png',
-  },
-  {
-    name: 'java',
-    icon: '/tech/java.png',
-  },
-  {
-    name: 'c',
-    icon: '/tech/c.png',
-  },
-  {
-    name: 'c_shap',
-    icon: '/tech/c_shap.png',
-  },
-  {
-    name: 'spring',
-    icon: '/tech/spring.png',
-  },
-  {
-    name: 'vue',
-    icon: '/tech/vue.png',
-  },
-  {
-    name: 'angular',
-    icon: '/tech/angular.png',
-  },
-  {
-    name: 'NGINX_web_server',
-    icon: '/tech/NGINX_web_server.png',
-  },
-  {
-    name: 'project_management',
-    icon: '/tech/project_management.png',
-  },
-  {
-    name: 'wordpress',
-    icon: '/tech/wordpress.webp',
   },
 ];
 
@@ -154,16 +109,16 @@ const experiences = [
     company_name: 'Everlast Information & Apps Dev Co., Ltd.',
     icon: '/backend.webp',
     iconBg: '#383E56',
-    date: '2025 - 2026',
+    date: 'October 2025 – September 2026',
     points: [
-      'Design, develop, and maintain REST APIs and backend services using TypeScript, Node.js, and Express.js.',
-      'Contribute to production systems involving omnichannel messaging, distributed services, and high-concurrency workflows.',
-      'Work with microservice and monorepo architectures and asynchronous communication using RabbitMQ.',
-      'Implement transaction management, concurrency control, background processing, caching, and distributed service communication.',
-      'Work with PostgreSQL, MongoDB, MySQL, and Redis for data persistence and backend workflows.',
-      'Integrate third-party APIs and external messaging platforms into backend services.',
-      'Use Docker, Nginx, Portainer, CI/CD, and Linux-based environments for deployment and service management.',
-      'Participate in code reviews, testing, debugging, performance optimization, security improvements, and production troubleshooting.',
+      'Designed, developed, and maintained REST APIs and core backend services using TypeScript, Node.js, and Express.js.',
+      'Contributed to backend systems involving omnichannel messaging, distributed microservices, monorepos, and high-concurrency workflows.',
+      'Implemented transactional management, concurrency controls, background job processing (BullMQ), caching (Redis), and message queues (RabbitMQ).',
+      'Engineered data persistence and optimization across PostgreSQL, MySQL, and MongoDB databases.',
+      'Integrated third-party APIs and messaging platforms including Telegram, WhatsApp, LINE, and Messenger into backend services.',
+      'Configured Docker, Docker Swarm, Nginx, Linux, and CI/CD pipelines for deployment, service management, and containerized hosting.',
+      'Developed Python automation scripts, Telegram bots, and AI/LLM API integrations to enhance operational workflows.',
+      'Participated in code reviews, testing, performance tuning, security enhancements, and production environment troubleshooting.',
     ],
   },
   {
@@ -173,9 +128,9 @@ const experiences = [
     iconBg: '#E6DEDD',
     date: '2024 - Present',
     points: [
-      'Develop responsive web applications using React.js, Tailwind CSS, and modern web technologies.',
-      'Implement frontend functionality and integrate application components with backend APIs.',
-      'Develop and maintain web applications based on project requirements.',
+      'Developed responsive web applications using React.js, Vue.js, Tailwind CSS, and modern full-stack web technologies.',
+      'Implemented robust frontend interfaces and integrated client applications with custom backend REST APIs.',
+      'Designed database schemas and implemented core business logic based on client specifications.',
     ],
   },
   {
@@ -185,11 +140,10 @@ const experiences = [
     iconBg: '#383E56',
     date: '2023 – Present',
     points: [
-      'Developed practical skills in web development, programming, databases, UI/UX, and information systems through academic and project-based work.',
-      'Built frontend applications using React, Tailwind CSS, Bootstrap, and JavaScript.',
-      'Developed full-stack and console applications using Java, OOP, MVC, JDBC, and QR payment systems.',
-      'Worked with PostgreSQL, MySQL, and MongoDB for database design and data management.',
-      'Collaborated on projects including JobFinder, Carify, FoodPanda Clone, Scholarship Portal, SQL Server Management Tool, and POS System.',
+      'Built strong practical foundation in software engineering, database design, backend API development, and web application architecture.',
+      'Developed full-stack web applications using React, Next.js, Node.js, Express, Java, and PHP/Laravel.',
+      'Worked with PostgreSQL, MySQL, and MongoDB for database modeling, query writing, and data management.',
+      'Collaborated on practical systems including TaskBoard, JobSeek, EasyFound, CinePremium, POS System, and SQL Server Management Tool.',
     ],
   },
 ];
@@ -197,30 +151,30 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      'GitHub is a web-based platform used for version control and collaboration. It allows developers to work together on projects from anywhere.',
+      'GitHub is a web-based platform used for version control and collaboration. Explore my open-source projects and code repositories.',
     name: 'Theara Chim',
     image: '/socialmedia/github.png',
     link: 'https://github.com/theara24',
   },
   {
     testimonial:
-      'LinkedIn is a business and employment-focused social media platform that works through websites and mobile apps.',
+      'LinkedIn is a professional social media network. Connect with me for professional background and software engineering roles.',
     name: 'Theara Chim',
     image: '/socialmedia/linkedin.svg',
     link: 'https://www.linkedin.com/in/theara-chim-971845341/',
   },
   {
     testimonial:
-      'Telegram is a cloud-based instant messaging and voice over IP service. It allows you to send messages and exchange files.',
+      'Telegram is an instant messaging service. Reach out directly for project inquiries, technical discussions, or opportunities.',
     name: 'Theara Chim',
     image: '/socialmedia/telegram.png',
     link: 'https://t.me/chim_theara',
   },
 ];
 
-type ProjectCategory = 'Professional' | 'Personal' | 'University';
+export type ProjectCategory = 'Professional' | 'Personal' | 'Academic';
 
-interface Project {
+export interface Project {
   name: string;
   category: ProjectCategory;
   description: string;
@@ -238,228 +192,48 @@ interface Project {
   }[];
   image: string;
   source_code_link?: string;
+  backend_code_link?: string;
   deploy_link?: string;
+  admin_deploy_link?: string;
+  backend_api_link?: string;
+  swagger_link?: string;
+  admin_swagger_link?: string;
   platform?: string;
   featured?: boolean;
   sortOrder?: number;
 }
 
 const projects: Project[] = [
+  /* ---------------- PROFESSIONAL WORK (1-5) ---------------- */
   {
-    name: 'Omnichannel Messaging Platform',
+    name: 'Customized Chatwoot',
     category: 'Professional',
     description:
-      'Backend development for an internal omnichannel messaging platform integrating WhatsApp, Telegram, LINE, and Messenger with a central customer-support platform.',
+      'Backend engineering and feature enhancements for a customized, multi-tenant customer-support platform based on Chatwoot.',
     context:
-      'Contributed to backend services for message processing, asynchronous workflows, multi-tenant logic, media handling, REST APIs, external channel integrations, and two-way message synchronization.',
+      'Contributed to backend REST APIs, real-time messaging via ActionCable, background job execution using Sidekiq & Redis, PostgreSQL query tuning, and messaging channel workflows (Telegram, WhatsApp, Messenger).',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: [
-      'Message processing',
-      'External channel integrations',
-      'Two-way synchronization',
-      'Multi-tenant services',
+      'Real-time ActionCable',
+      'Sidekiq Background Jobs',
+      'PostgreSQL Optimization',
+      'Multi-Tenant Workflows',
+      'Python Automation Scripts',
     ],
     role: 'Backend Developer',
-    status: 'Professional Project',
+    status: 'Professional Project — Confidential',
     company: 'Everlast Information & Apps Dev Co., Ltd.',
     confidentialNote:
-      'Company proprietary project — implementation details are confidential.',
+      'Company proprietary project — source code and internal environment are confidential.',
     tags: [
-      {
-        name: 'TypeScript',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'Node.js',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'Express.js',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'PostgreSQL',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'Prisma',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'Redis',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'BullMQ',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'Docker',
-        color: 'blue-text-gradient',
-      },
-    ],
-    image: '/projectimg/Omnichannel-Messaging-Platform.jpg',
-    source_code_link: undefined,
-    deploy_link: undefined,
-    platform: 'Not available',
-    featured: true,
-    sortOrder: 1,
-  },
-  {
-    name: 'HashGame — Admin & Client Platform',
-    category: 'Professional',
-    description:
-      'Full-stack development across Client Web, Client API, Admin Web, and Admin API for an internal gaming platform.',
-    context:
-      'Contributed across frontend interfaces, API integrations, backend logic, and application features for both client and administration platforms.',
-    longDescription:
-      'Company proprietary project — implementation details are confidential.',
-    features: [
-      'Client Web',
-      'Client API',
-      'Admin Web',
-      'Admin API',
-    ],
-    role: 'Backend + Frontend Developer',
-    status: 'Professional Project',
-    company: 'Everlast Information & Apps Dev Co., Ltd.',
-    confidentialNote:
-      'Company proprietary project — implementation details are confidential.',
-    tags: [
-      {
-        name: 'Vue.js',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'Vuex',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'Element UI',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'Vue Router',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'i18n',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'Laravel',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'PHP',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'REST APIs',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: '/projectimg/HashGame-Admin&Clien-Platform.jpg',
-    source_code_link: undefined,
-    deploy_link: undefined,
-    platform: 'Not available',
-    featured: true,
-    sortOrder: 2,
-  },
-  {
-    name: 'Voting & Wallet Platform',
-    category: 'Professional',
-    description:
-      'Full-stack development for a TypeScript-based voting platform covering Client Web, Client API, Admin Web, and Admin API.',
-    context:
-      'Focused primarily on backend development, contributing to platform architecture, APIs, voting workflows, authentication, transactional services, asynchronous processing, and supporting frontend development.',
-    longDescription:
-      'Company proprietary project — implementation details are confidential.',
-    features: [
-      'Voting workflows',
-      'Authentication',
-      'Admin APIs',
-      'Transactional services',
-    ],
-    role: 'Backend + Frontend Developer',
-    status: 'Professional Project',
-    company: 'Everlast Information & Apps Dev Co., Ltd.',
-    confidentialNote:
-      'Company proprietary project — implementation details are confidential.',
-    tags: [
-      {
-        name: 'TypeScript',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'Node.js',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'React',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'PostgreSQL',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'Knex.js',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'RabbitMQ',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'Redis',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'BullMQ',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'JWT',
-        color: 'green-text-gradient',
-      },
-    ],
-    image: '/projectimg/Voting&Wallet-Platform.jpg',
-    source_code_link: undefined,
-    deploy_link: undefined,
-    platform: 'Not available',
-    featured: true,
-    sortOrder: 3,
-  },
-  {
-    name: 'Customized Chatwoot Support Platform',
-    category: 'Professional',
-    description:
-      'Contributed to backend and frontend development for a customized, multi-tenant customer-support platform based on Chatwoot.',
-    context:
-      'Contributed to API development, real-time communication, agent workflows, access control, backend reliability, performance improvements, and platform hardening.',
-    longDescription:
-      'Company proprietary project — implementation details are confidential.',
-    features: [
-      'Real-time communication',
-      'Agent workflows',
-      'Platform integrations',
-      'Security hardening',
-    ],
-    role: 'Backend + Frontend Developer',
-    status: 'Professional Project',
-    company: 'Everlast Information & Apps Dev Co., Ltd.',
-    confidentialNote:
-      'Company proprietary project — implementation details are confidential.',
-    tags: [
-      {
-        name: 'Ruby',
-        color: 'pink-text-gradient',
-      },
       {
         name: 'Ruby on Rails',
         color: 'pink-text-gradient',
+      },
+      {
+        name: 'Vue.js',
+        color: 'green-text-gradient',
       },
       {
         name: 'PostgreSQL',
@@ -478,12 +252,20 @@ const projects: Project[] = [
         color: 'blue-text-gradient',
       },
       {
-        name: 'REST APIs',
+        name: 'Telegram',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'WhatsApp',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Messenger',
         color: 'blue-text-gradient',
       },
       {
-        name: 'Docker',
-        color: 'blue-text-gradient',
+        name: 'Python',
+        color: 'green-text-gradient',
       },
     ],
     image: '/projectimg/Customized-Chatwoot-Support-Platform.jpg',
@@ -491,111 +273,31 @@ const projects: Project[] = [
     deploy_link: undefined,
     platform: 'Not available',
     featured: true,
-    sortOrder: 4,
+    sortOrder: 1,
   },
   {
-    name: 'POS System - Point of Sale',
-    category: 'Personal',
+    name: 'Customer Services',
+    category: 'Professional',
     description:
-      'A complete point of sale system for retail businesses with inventory management, sales tracking, and reporting features. Built with modern web technologies and responsive design.',
-    longDescription: 'Not available',
+      'Backend development for an internal omnichannel customer services messaging platform integrating Telegram, WhatsApp, and microservice architectures.',
+    context:
+      'Focused on backend REST APIs, microservices, message processing routines, database operations, monorepo architecture, and asynchronous message delivery with RabbitMQ.',
+    longDescription:
+      'Company proprietary project — implementation details are confidential.',
     features: [
-      'Inventory management',
-      'Sales tracking',
-      'Reporting',
+      'REST APIs & Microservices',
+      'RabbitMQ Queue Processing',
+      'Messaging Integrations',
+      'Monorepo Architecture',
     ],
-    role: 'Not verified',
-    status: 'Not available',
-    date: 'Not available',
-    company: 'Personal',
+    role: 'Backend Developer',
+    status: 'Professional Project — Confidential',
+    company: 'Everlast Information & Apps Dev Co., Ltd.',
+    confidentialNote:
+      'Company proprietary project — source code and internal environment are confidential.',
     tags: [
       {
-        name: 'C#',
-        color: 'green-text-gradient',
-      },
-    ],
-    image: '/projectimg/pos.png',
-    source_code_link: 'https://github.com/theara24/POS-System.git',
-    deploy_link: undefined,
-    platform: 'Not available',
-    featured: false,
-    sortOrder: 5,
-  },
-  {
-    name: 'SQL Server Management Tool',
-    category: 'Personal',
-    description:
-      'A web-based SQL Server management tool with query execution, database visualization, and performance monitoring. Features include query history, export functionality, and user management.',
-    longDescription: 'Not available',
-    features: [
-      'Query execution',
-      'Database visualization',
-      'Performance monitoring',
-    ],
-    role: 'Not verified',
-    status: 'Not available',
-    date: 'Not available',
-    company: 'Personal',
-    tags: [
-      {
-        name: 'C#',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'SQL Server',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: '/projectimg/sql_sever.png',
-    source_code_link: 'https://github.com/theara24/POS_SQLServer.git',
-    deploy_link: undefined,
-    platform: 'Not available',
-    featured: false,
-    sortOrder: 6,
-  },
-  {
-    name: 'C++ Learning Platform',
-    category: 'Personal',
-    description:
-      'An interactive learning platform for C++ programming with coding challenges, tutorials, and progress tracking. Features include code editor, compiler integration, and user progress analytics.',
-    // TODO: Verify project identity and repository before final portfolio publication.
-    longDescription: 'Not available',
-    features: ['Not available'],
-    role: 'Not verified',
-    status: 'Not available',
-    date: 'Not available',
-    company: 'Personal',
-    tags: [
-      {
-        name: 'C++',
-        color: 'blue-text-gradient',
-      },
-    ],
-    image: '/projectimg/c.png',
-    source_code_link: undefined,
-    deploy_link: undefined,
-    platform: 'Not available',
-    featured: false,
-    sortOrder: 7,
-  },
-  {
-    name: 'EasyFound - Lost & Found Platform',
-    category: 'University',
-    description:
-      'A comprehensive lost and found platform built with React and Node.js, featuring user authentication, image upload, and real-time notifications. Users can post lost items and search for found items with advanced filtering.',
-    longDescription: 'Not available',
-    features: [
-      'User authentication',
-      'Image upload',
-      'Real-time notifications',
-      'Search and filtering',
-    ],
-    role: 'Not verified',
-    status: 'Not available',
-    date: 'Not available',
-    tags: [
-      {
-        name: 'React',
+        name: 'TypeScript',
         color: 'blue-text-gradient',
       },
       {
@@ -603,36 +305,273 @@ const projects: Project[] = [
         color: 'green-text-gradient',
       },
       {
-        name: 'MongoDB',
+        name: 'Express.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'PostgreSQL',
         color: 'pink-text-gradient',
       },
       {
-        name: 'Express',
+        name: 'RabbitMQ',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'React',
         color: 'blue-text-gradient',
       },
+      {
+        name: 'Microservices',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Telegram',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'WhatsApp',
+        color: 'green-text-gradient',
+      },
     ],
-    image: '/projectimg/easyfound.png',
+    image: '/projectimg/Omnichannel-Messaging-Platform.jpg',
     source_code_link: undefined,
-    deploy_link: 'https://ezfound-deploy.vercel.app/',
-    platform: 'Vercel',
-    featured: false,
-    sortOrder: 8,
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: true,
+    sortOrder: 2,
   },
   {
-    name: 'JobSeek - Job Portal',
-    category: 'University',
+    name: 'Customer Services V2',
+    category: 'Professional',
     description:
-      'A modern job portal with advanced search functionality, company profiles, and application tracking. Built with Next.js and featuring responsive design, user authentication, and admin dashboard.',
-    longDescription: 'Not available',
+      'Backend APIs and queue processing architecture for next-generation messaging services handling Telegram, WhatsApp, LINE, and Messenger integrations.',
+    context:
+      'Focused on high-performance queue processing with Redis and BullMQ, MinIO object storage, Docker Swarm infrastructure, multi-channel messaging integrations, and Python automation tools.',
+    longDescription:
+      'Company proprietary project — implementation details are confidential.',
     features: [
-      'Advanced search',
-      'Company profiles',
-      'Application tracking',
-      'Admin dashboard',
+      'Redis & BullMQ Processing',
+      'MinIO Object Storage',
+      'Docker Swarm Infrastructure',
+      'Python Automation',
+      'Multi-Channel Messaging',
     ],
-    role: 'Not verified',
-    status: 'Not available',
-    date: 'Not available',
+    role: 'Backend Developer',
+    status: 'Professional Project — Confidential',
+    company: 'Everlast Information & Apps Dev Co., Ltd.',
+    confidentialNote:
+      'Company proprietary project — source code and internal environment are confidential.',
+    tags: [
+      {
+        name: 'Node.js',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'TypeScript',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Express.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'PostgreSQL',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Redis',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'BullMQ',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'MinIO',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Docker Swarm',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Telegram',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'WhatsApp',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'LINE',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Messenger',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Python',
+        color: 'green-text-gradient',
+      },
+    ],
+    image: '/projectimg/Omnichannel-Messaging-Platform.jpg',
+    source_code_link: undefined,
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: true,
+    sortOrder: 3,
+  },
+  {
+    name: 'Hash Game',
+    category: 'Professional',
+    description:
+      'Full-stack development across Client Web, Client API, Admin Web, and Admin API for a real-time gaming platform.',
+    context:
+      'Worked personally on BOTH backend and frontend. Built REST APIs, handled database operations, integrated TRON blockchain API, implemented real-time communication via WebSockets (Pusher), and secured user endpoints with JWT/Sanctum authentication.',
+    longDescription:
+      'Company proprietary project — implementation details are confidential.',
+    features: [
+      'Client & Admin APIs',
+      'TRON API Integration',
+      'WebSockets (Pusher) Real-time',
+      'JWT / Sanctum Auth',
+      'Database Operations',
+    ],
+    role: 'Full-Stack Developer (Backend + Frontend)',
+    status: 'Professional Project — Confidential',
+    company: 'Everlast Information & Apps Dev Co., Ltd.',
+    confidentialNote:
+      'Company proprietary project — source code and internal environment are confidential.',
+    tags: [
+      {
+        name: 'Laravel',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'PHP',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'React',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'MySQL',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'PostgreSQL',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'TRON API',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Pusher',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'WebSockets',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'JWT/Sanctum',
+        color: 'green-text-gradient',
+      },
+    ],
+    image: '/projectimg/HashGame-Admin&Clien-Platform.jpg',
+    source_code_link: undefined,
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: true,
+    sortOrder: 4,
+  },
+  {
+    name: 'Voting System',
+    category: 'Professional',
+    description:
+      'Full-stack development for a high-concurrency TypeScript voting platform covering Client Web, Client API, Admin Web, and Admin API.',
+    context:
+      'Worked personally on BOTH backend and frontend. Contributed to API engineering, transactional services, database schema operations, RabbitMQ message passing, wallet integrations, API security using HMAC-SHA256, and concurrency control via Reservation Pattern.',
+    longDescription:
+      'Company proprietary project — implementation details are confidential.',
+    features: [
+      'Voting API Workflows',
+      'Wallet Integration',
+      'RabbitMQ Communication',
+      'Reservation Pattern Concurrency',
+      'HMAC-SHA256 Security',
+    ],
+    role: 'Full-Stack Developer (Backend + Frontend)',
+    status: 'Professional Project — Confidential',
+    company: 'Everlast Information & Apps Dev Co., Ltd.',
+    confidentialNote:
+      'Company proprietary project — source code and internal environment are confidential.',
+    tags: [
+      {
+        name: 'TypeScript',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Node.js',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Express.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'PostgreSQL',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'RabbitMQ',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'React',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Wallet Integration',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'HMAC-SHA256',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Reservation Pattern',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: '/projectimg/Voting&Wallet-Platform.jpg',
+    source_code_link: undefined,
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: true,
+    sortOrder: 5,
+  },
+
+  /* ---------------- ACADEMIC PROJECTS ---------------- */
+  {
+    name: 'JobSeek - Job Portal',
+    category: 'Academic',
+    description:
+      'A modern job portal built as a university project with advanced search functionality, company profiles, application tracking, and an admin dashboard.',
+    context:
+      'Built using Next.js, TypeScript, and Prisma for academic coursework. Implemented search filters, user authentication, company management, and responsive UI layouts.',
+    features: [
+      'Advanced Search & Filtering',
+      'Company Profiles',
+      'Application Tracking',
+      'Admin Management Dashboard',
+    ],
+    role: 'Full-Stack Developer',
+    status: 'Academic Project',
+    company: 'SETEC Institute',
     tags: [
       {
         name: 'Next.js',
@@ -641,6 +580,10 @@ const projects: Project[] = [
       {
         name: 'TypeScript',
         color: 'green-text-gradient',
+      },
+      {
+        name: 'React',
+        color: 'blue-text-gradient',
       },
       {
         name: 'Tailwind CSS',
@@ -656,25 +599,63 @@ const projects: Project[] = [
     deploy_link: undefined,
     platform: 'Vercel',
     featured: false,
-    sortOrder: 9,
+  },
+  {
+    name: 'EasyFound - Lost & Found Platform',
+    category: 'Academic',
+    description:
+      'A comprehensive lost and found web application built as an academic project with React and Node.js, featuring user authentication, image upload, and real-time notifications.',
+    context:
+      'Developed user authentication flow, file attachment uploads, item search filters, and real-time user notifications for university project presentation.',
+    features: [
+      'User Authentication',
+      'Image Upload',
+      'Real-time Notifications',
+      'Search & Filtering',
+    ],
+    role: 'Full-Stack Developer',
+    status: 'Academic Project',
+    company: 'SETEC Institute',
+    tags: [
+      {
+        name: 'React',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Node.js',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'MongoDB',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Express.js',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: '/projectimg/easyfound.png',
+    source_code_link: 'https://github.com/preuniversity1stscholarship/services-listing-website.git',
+    deploy_link: 'https://ezfound-deploy.vercel.app/',
+    platform: 'Vercel',
+    featured: false,
   },
   {
     name: 'DocuHub - Document Management',
-    category: 'University',
+    category: 'Academic',
     description:
-      'A secure document management system with file upload, categorization, and sharing capabilities. Features include user roles, document versioning, and search functionality.',
-    longDescription: 'Not available',
+      'A secure document management system built as an academic project with file upload, categorization, and sharing capabilities.',
+    context:
+      'Developed user roles, document categorization, file attachment management, versioning control, and search functionality across frontend and backend services.',
     features: [
-      'File upload',
-      'Categorization',
-      'Sharing',
-      'User roles',
-      'Versioning',
-      'Search',
+      'File Upload & Categorization',
+      'Document Sharing & Roles',
+      'Document Versioning',
+      'Search & Filtering',
     ],
-    role: 'Not verified',
-    status: 'Not available',
-    date: 'Not available',
+    role: 'Full-Stack Developer',
+    status: 'Academic Project',
+    company: 'SETEC Institute',
     tags: [
       {
         name: 'React',
@@ -694,11 +675,246 @@ const projects: Project[] = [
       },
     ],
     image: '/projectimg/docuhub.png',
-    source_code_link: undefined,
+    source_code_link: 'https://github.com/FSWD-GEN-01/ipub-frontend.git',
+    backend_code_link: 'https://github.com/FSWD-GEN-01/ipub-engine-backend.git',
     deploy_link: 'https://deploy-docu-hub-frontend.vercel.app/',
     platform: 'Vercel',
     featured: false,
-    sortOrder: 10,
+  },
+  {
+    name: 'Civil Management System (C++)',
+    category: 'Academic',
+    description:
+      'A C++ console application developed to efficiently manage civil servant data with Admin and User roles, attendance tracking, salary calculation, and binary file handling.',
+    context:
+      'Features Admin Panel (Add, View, Sort, Search, Update, Delete civil servants, Attendance & Time management, Salary calculation, Reports) and User Panel (View, Sort, Search, Attendance & Salary overview, Reporting).',
+    features: [
+      'Admin & User Roles',
+      'Attendance & Time Management',
+      'Salary Calculation Engine',
+      'Binary File Data Storage',
+      'Civil Servant Reporting',
+    ],
+    role: 'Software Developer',
+    status: 'Academic Project',
+    company: 'SETEC Institute',
+    tags: [
+      {
+        name: 'C++',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'DEV C++',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Binary File Handling',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'OOP',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: '/projectimg/c.png',
+    source_code_link: 'https://github.com/theara24/Employee-Management-System.git',
+    deploy_link: undefined,
+    platform: 'Console App',
+    featured: false,
+  },
+
+  /* ---------------- PERSONAL PROJECTS ---------------- */
+  {
+    name: 'TaskBoard',
+    category: 'Personal',
+    description:
+      'A production full-stack task and project management application with user authentication, project workflows, Zustand state management, and schema-validated Express REST APIs.',
+    context:
+      'Independently built frontend and backend services. Features Zustand state store, Prisma ORM PostgreSQL queries, Zod schema validation, JWT authentication, and interactive Swagger API documentation.',
+    features: [
+      'Interactive Swagger API Documentation',
+      'Full-Stack Task & Project Management',
+      'User Roles & Project Membership',
+      'Zustand State Management',
+      'Prisma ORM & PostgreSQL',
+      'Zod & JWT Security',
+    ],
+    role: 'Full-Stack Developer',
+    status: 'Personal Production Project',
+    company: 'Personal Project',
+    tags: [
+      {
+        name: 'React',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'TypeScript',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Vite',
+        color: 'purple-text-gradient',
+      },
+      {
+        name: 'Tailwind CSS',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Zustand',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'React Router',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Node.js',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Express.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Prisma',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'PostgreSQL',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Zod',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Swagger UI',
+        color: 'green-text-gradient',
+      },
+    ],
+    image: '/projectimg/taskboard.png',
+    source_code_link: 'https://github.com/theara24/Taskboard-Web.git',
+    backend_code_link: 'https://github.com/theara24/Taskboard-Api',
+    deploy_link: 'https://taskboard-setec.vercel.app',
+    backend_api_link: 'https://taskboard-api-0gtw.onrender.com',
+    swagger_link: 'https://taskboard-api-0gtw.onrender.com/api-docs',
+    platform: 'Vercel & Render',
+    featured: false,
+  },
+  {
+    name: 'CinePremium',
+    category: 'Personal',
+    description:
+      'Movie ticket reservation and digital payment ecosystem featuring Client Portal, Admin Portal, Client REST API, Admin REST API, and ABA PayWay Sandbox payment integration.',
+    context:
+      'Engineered multi-portal web applications and backend APIs with Render deployments, payment callback transaction handling, payment hash validations, and Swagger API documentation.',
+    features: [
+      'Client Portal & Admin Portal',
+      'Client API & Admin API',
+      'ABA PayWay Sandbox Payment Integration',
+      'Client & Admin Swagger API Docs',
+      'Payment Transaction Security',
+    ],
+    role: 'Full-Stack Developer',
+    status: 'Personal Project',
+    company: 'Personal Project',
+    tags: [
+      {
+        name: 'React',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Node.js',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Express.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'PostgreSQL',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'ABA PayWay API',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Render',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Swagger Docs',
+        color: 'green-text-gradient',
+      },
+    ],
+    image: '/projectimg/cinepremium.png',
+    source_code_link: 'https://gitlab.com/theara24-group/movie-tickets-booking.git',
+    deploy_link: 'https://movie-tickets-booking-1gfu.onrender.com',
+    admin_deploy_link: 'https://movie-tickets-booking-1-1t24.onrender.com',
+    backend_api_link: 'https://movie-tickets-booking-85p9.onrender.com',
+    swagger_link: 'https://movie-tickets-booking-85p9.onrender.com/api/docs',
+    admin_swagger_link: 'https://movie-tickets-booking-1-e3yd.onrender.com/api/docs',
+    platform: 'Render & GitLab',
+    featured: false,
+  },
+  {
+    name: 'POS System - Point of Sale',
+    category: 'Personal',
+    description:
+      'A point of sale system for retail businesses with inventory management, sales tracking, and transaction reporting features.',
+    features: [
+      'Inventory Management',
+      'Sales Tracking',
+      'Transaction Reporting',
+    ],
+    role: 'Software Developer',
+    status: 'Personal Project',
+    company: 'Personal Project',
+    tags: [
+      {
+        name: 'C#',
+        color: 'green-text-gradient',
+      },
+      {
+        name: '.NET',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: '/projectimg/pos.png',
+    source_code_link: 'https://github.com/theara24/POS-System.git',
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: false,
+  },
+  {
+    name: 'SQL Server Management Tool',
+    category: 'Personal',
+    description:
+      'A database utility tool for SQL Server management featuring query execution, database schema visualization, and export utilities.',
+    features: [
+      'Query Execution',
+      'Database Schema Visualization',
+      'Data Export Utilities',
+    ],
+    role: 'Software Developer',
+    status: 'Personal Project',
+    company: 'Personal Project',
+    tags: [
+      {
+        name: 'C#',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'SQL Server',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: '/projectimg/sql_sever.png',
+    source_code_link: 'https://github.com/theara24/POS_SQLServer.git',
+    deploy_link: undefined,
+    platform: 'Not available',
+    featured: false,
   },
 ];
 

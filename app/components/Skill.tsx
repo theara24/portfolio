@@ -1,38 +1,39 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import IconCloudDemo from '@/app/components/globe';
 import { Card, CardContent } from '@/app/components/ui/card';
 import { Badge } from '@/app/components/ui/badge';
 import {
   Blocks,
   Boxes,
+  Bot,
   Cloud,
   Code2,
+  Cpu,
   Database,
   Layout,
   Network,
-  Palette,
   Plug,
+  Terminal,
+  Wrench,
 } from 'lucide-react';
 import { isWebGLSupported } from '@/app/utils/webgl';
 import WebGLFallback from '@/app/components/WebGLFallback';
 import Reveal from '@/app/components/Reveal';
 
 import {
-  FaAws,
   FaBootstrap,
   FaDocker,
-  FaFigma,
   FaGitAlt,
   FaJava,
   FaLinux,
   FaNodeJs,
   FaPhp,
+  FaPython,
   FaReact,
 } from 'react-icons/fa';
 import {
-  SiAdobexd,
+  SiAngular,
   SiDotnet,
   SiExpress,
   SiLaravel,
@@ -40,20 +41,19 @@ import {
   SiMysql,
   SiNextdotjs,
   SiNginx,
-  SiNodedotjs,
   SiPortainer,
   SiPostgresql,
   SiRabbitmq,
   SiRedis,
   SiSharp,
   SiTailwindcss,
+  SiTelegram,
   SiTypescript,
   SiVuedotjs,
 } from 'react-icons/si';
 import { BsFileEarmarkCode, BsGrid1X2 } from 'react-icons/bs';
 import { FcWorkflow } from 'react-icons/fc';
 
-// Assuming textVariant is defined elsewhere
 const textVariant = () => ({
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.2 } },
@@ -240,16 +240,16 @@ const Skill: React.FC = () => {
   const skillCategories: Category[] = [
     {
       icon: Code2,
-      title: 'Core Backend',
+      title: 'Backend & APIs',
       color: 'text-green-400',
       skills: [
         {
-          name: 'Node.js',
-          icon: <FaNodeJs className="w-4 h-4 text-[#339933]" />,
-        },
-        {
           name: 'TypeScript',
           icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
+        },
+        {
+          name: 'Node.js',
+          icon: <FaNodeJs className="w-4 h-4 text-[#339933]" />,
         },
         {
           name: 'Express.js',
@@ -260,8 +260,8 @@ const Skill: React.FC = () => {
           icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
         },
         {
-          name: 'Java',
-          icon: <FaJava className="w-4 h-4 text-[#007396]" />,
+          name: 'Third-party API Integration',
+          icon: <Plug className="w-4 h-4 text-[#10B981]" />,
         },
         {
           name: 'PHP',
@@ -272,27 +272,23 @@ const Skill: React.FC = () => {
           icon: <SiLaravel className="w-4 h-4 text-[#FF2D20]" />,
         },
         {
-          name: 'C#',
-          icon: <SiSharp className="w-4 h-4 text-[#68217A]" />,
+          name: 'Java',
+          icon: <FaJava className="w-4 h-4 text-[#007396]" />,
         },
         {
-          name: 'ASP.NET',
-          icon: <SiDotnet className="w-4 h-4 text-[#512BD4]" />,
+          name: 'C#',
+          icon: <SiSharp className="w-4 h-4 text-[#68217A]" />,
         },
       ],
     },
     {
       icon: Layout,
-      title: 'Frontend & Mobile',
+      title: 'Frontend',
       color: 'text-blue-400',
       skills: [
         {
           name: 'React',
           icon: <FaReact className="w-4 h-4 text-[#61DAFB]" />,
-        },
-        {
-          name: 'Next.js',
-          icon: <SiNextdotjs className="w-4 h-4 text-white" />,
         },
         {
           name: 'Vue.js',
@@ -301,6 +297,10 @@ const Skill: React.FC = () => {
         {
           name: 'JavaScript',
           icon: <BsFileEarmarkCode className="w-4 h-4 text-[#F7DF1E]" />,
+        },
+        {
+          name: 'TypeScript',
+          icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
         },
         {
           name: 'HTML',
@@ -315,14 +315,14 @@ const Skill: React.FC = () => {
           icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" />,
         },
         {
-          name: 'Bootstrap',
-          icon: <FaBootstrap className="w-4 h-4 text-[#7952B3]" />,
+          name: 'Angular — Familiar',
+          icon: <SiAngular className="w-4 h-4 text-[#DD0031]" />,
         },
       ],
     },
     {
       icon: Database,
-      title: 'Databases & Caching',
+      title: 'Database & Distributed Systems',
       color: 'text-orange-400',
       skills: [
         {
@@ -338,20 +338,9 @@ const Skill: React.FC = () => {
           icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
         },
         {
-          name: 'SQL Server',
-          icon: <Database className="w-4 h-4 text-[#CC2927]" />,
-        },
-        {
           name: 'Redis',
           icon: <SiRedis className="w-4 h-4 text-[#FF4438]" />,
         },
-      ],
-    },
-    {
-      icon: Network,
-      title: 'Messaging & Distributed Systems',
-      color: 'text-cyan-400',
-      skills: [
         {
           name: 'RabbitMQ',
           icon: <SiRabbitmq className="w-4 h-4 text-[#FF6600]" />,
@@ -361,22 +350,18 @@ const Skill: React.FC = () => {
           icon: <Plug className="w-4 h-4 text-[#10B981]" />,
         },
         {
-          name: 'WebSockets',
-          icon: <Network className="w-4 h-4 text-[#0EA5E9]" />,
-        },
-        {
           name: 'Microservices',
           icon: <Boxes className="w-4 h-4 text-[#8B5CF6]" />,
         },
         {
-          name: 'Monorepo',
-          icon: <Blocks className="w-4 h-4 text-[#06B6D4]" />,
+          name: 'Asynchronous Processing',
+          icon: <Network className="w-4 h-4 text-[#0EA5E9]" />,
         },
       ],
     },
     {
       icon: Cloud,
-      title: 'DevOps, Infrastructure & Tools',
+      title: 'DevOps & Infrastructure',
       color: 'text-blue-400',
       skills: [
         {
@@ -384,39 +369,90 @@ const Skill: React.FC = () => {
           icon: <FaDocker className="w-4 h-4 text-[#2496ED]" />,
         },
         {
+          name: 'Docker Swarm',
+          icon: <FaDocker className="w-4 h-4 text-[#38B2AC]" />,
+        },
+        {
           name: 'Nginx',
           icon: <SiNginx className="w-4 h-4 text-[#009639]" />,
         },
         {
-          name: 'Portainer',
-          icon: <SiPortainer className="w-4 h-4 text-[#13BEF9]" />,
-        },
-        {
-          name: 'CI/CD',
-          icon: <FcWorkflow className="w-4 h-4" />,
+          name: 'Linux',
+          icon: <FaLinux className="w-4 h-4 text-[#FCC624]" />,
         },
         {
           name: 'Git',
           icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" />,
         },
         {
-          name: 'Linux',
-          icon: <FaLinux className="w-4 h-4 text-[#FCC624]" />,
+          name: 'CI/CD',
+          icon: <FcWorkflow className="w-4 h-4" />,
         },
       ],
     },
     {
-      icon: Palette,
-      title: 'Design',
+      icon: Network,
+      title: 'Automation & Integration',
+      color: 'text-cyan-400',
+      skills: [
+        {
+          name: 'Python',
+          icon: <FaPython className="w-4 h-4 text-[#3776AB]" />,
+        },
+        {
+          name: 'Python Automation',
+          icon: <Terminal className="w-4 h-4 text-[#3776AB]" />,
+        },
+        {
+          name: 'Telegram Bots',
+          icon: <SiTelegram className="w-4 h-4 text-[#26A5E4]" />,
+        },
+        {
+          name: 'Webhooks',
+          icon: <Network className="w-4 h-4 text-[#06B6D4]" />,
+        },
+        {
+          name: 'Third-party APIs',
+          icon: <Plug className="w-4 h-4 text-[#10B981]" />,
+        },
+        {
+          name: 'Messaging Integrations',
+          icon: <Boxes className="w-4 h-4 text-[#8B5CF6]" />,
+        },
+      ],
+    },
+    {
+      icon: Bot,
+      title: 'AI Development',
       color: 'text-purple-400',
       skills: [
         {
-          name: 'Figma',
-          icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" />,
+          name: 'AI Chatbots',
+          icon: <Bot className="w-4 h-4 text-[#A855F7]" />,
         },
         {
-          name: 'Adobe XD',
-          icon: <SiAdobexd className="w-4 h-4 text-[#FF61F6]" />,
+          name: 'LLM API Integration',
+          icon: <Cpu className="w-4 h-4 text-[#EC4899]" />,
+        },
+        {
+          name: 'AI-assisted Development',
+          icon: <Wrench className="w-4 h-4 text-[#3B82F6]" />,
+        },
+        {
+          name: 'ChatGPT',
+          icon: <Bot className="w-4 h-4 text-[#10A37F]" />,
+        },
+        {
+          name: 'Gemini',
+          icon: <Bot className="w-4 h-4 text-[#8E75FF]" />,
+        },
+        {
+          name: 'Claude',
+          icon: <Bot className="w-4 h-4 text-[#D97706]" />,
+        },
+        {
+          name: 'OpenCode',
+          icon: <Terminal className="w-4 h-4 text-[#06B6D4]" />,
         },
       ],
     },
@@ -440,7 +476,7 @@ const Skill: React.FC = () => {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{
-                  opacity: [0, 1, 0.8, 1], // subtle flicker glow
+                  opacity: [0, 1, 0.8, 1],
                 }}
                 transition={{
                   duration: 3,
@@ -479,18 +515,16 @@ const Skill: React.FC = () => {
                 }}
                 className="text-secondary text-[17px] max-w-[3xl] leading-[30px]"
               >
-                I&apos;m a backend-focused Full-Stack Developer with hands-on
+                I am a Backend-Focused Full-Stack Developer with hands-on
                 experience building APIs, backend services, full-stack
                 applications, and distributed systems. My core strengths are
-                TypeScript, Node.js, Express.js, databases, messaging systems,
-                and backend infrastructure, supported by experience with modern
-                frontend technologies and UI/UX tools.
+                TypeScript, Node.js, Express.js, PostgreSQL, MongoDB, Redis, RabbitMQ,
+                BullMQ, and Docker infrastructure.
                 <br />
                 <br />
-                My technical foundation began with programming and software
-                development studies in 2023 and has grown through professional
-                development, university coursework, academic projects, and
-                real-world software engineering work.
+                I use AI and automation tools (Python automation scripts, Telegram bots,
+                AI chatbots, LLM APIs, ChatGPT, Gemini, Claude, and OpenCode) to improve
+                development workflows, debugging, research, repetitive tasks, and application workflows.
               </motion.p>
             </div>
           </div>
@@ -506,9 +540,9 @@ const Skill: React.FC = () => {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
           {skillCategories.map((category, index) => {
             const isWide =
-              category.title === 'Core Backend' ||
-              category.title === 'Databases & Caching' ||
-              category.title === 'Frontend & Mobile';
+              category.title === 'Backend & APIs' ||
+              category.title === 'Database & Distributed Systems' ||
+              category.title === 'Frontend';
             return (
               <Reveal
                 key={index}
