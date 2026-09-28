@@ -31,7 +31,7 @@ const educationData = [
     location: 'Phnom Penh, Cambodia',
     icon: '/education/university.png',
     iconBg: '#3b82f6',
-    gpa: 'In Progress — Currently in Semester 5',
+    gpa: 'In Progress — Currently in Semester 6',
     achievements: [
       'Software Development & Programming',
       'Database Management & System Analysis',
@@ -42,7 +42,7 @@ const educationData = [
       'Pursuing a bachelor’s degree in Management Information Systems, combining information technology, software development, database systems, and business processes.',
   },
   {
-    institution: 'Sok An Doung Khpous Bouret Cholsar High School',
+    institution: 'Sok An Doung Khpous Bourei Cholsar High School',
     degree: 'High School Diploma',
     date: '2019 - 2022',
     location: 'Takeo, Cambodia',
@@ -612,7 +612,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.3 }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 max-w-5xl w-full mx-4 max-h-[90vh] overflow-y-auto relative"
+            className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-5 sm:p-8 max-w-5xl w-full mx-4 max-h-[90vh] overflow-y-auto relative"
           >
             <button
               type="button"
@@ -628,7 +628,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
-                className="w-full h-80 relative rounded-lg overflow-hidden"
+                className="w-full h-52 sm:h-80 relative rounded-lg overflow-hidden"
               >
                 <Image
                   src={certificate.image}
@@ -874,7 +874,7 @@ const Education: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-2000" />
       </div>
       <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
-      <div className="container mx-auto px-6 py-20 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-14 sm:py-20 relative z-10">
         <motion.div
           variants={textVariant()}
           initial="hidden"
@@ -897,7 +897,7 @@ const Education: React.FC = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-6xl md:text-7xl font-black bg-gradient-to-r from-white via-blue-200 to-purple-300 bg-clip-text text-transparent mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-white via-blue-200 to-purple-300 bg-clip-text text-transparent mb-6"
           >
             Education & Growth
           </motion.h1>
@@ -916,9 +916,9 @@ const Education: React.FC = () => {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <div className="flex items-center gap-4 mb-12">
-              <GraduationCap className="w-8 h-8 text-blue-400" />
-              <h2 className="text-4xl font-bold text-white">
+            <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+              <GraduationCap className="w-7 h-7 sm:w-8 sm:h-8 text-blue-400" />
+              <h2 className="text-2xl sm:text-4xl font-bold text-white">
                 Academic Background
               </h2>
             </div>
@@ -940,9 +940,9 @@ const Education: React.FC = () => {
             whileInView="show"
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-4 mb-12">
-              <Award className="w-8 h-8 text-purple-400" />
-              <h2 className="text-4xl font-bold text-white">
+            <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+              <Award className="w-7 h-7 sm:w-8 sm:h-8 text-purple-400" />
+              <h2 className="text-2xl sm:text-4xl font-bold text-white">
                 Professional Certificates
               </h2>
             </div>
@@ -964,9 +964,9 @@ const Education: React.FC = () => {
             whileInView="show"
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-4 mb-12">
-              <Users className="w-8 h-8 text-emerald-400" />
-              <h2 className="text-4xl font-bold text-white">
+            <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+              <Users className="w-7 h-7 sm:w-8 sm:h-8 text-emerald-400" />
+              <h2 className="text-2xl sm:text-4xl font-bold text-white">
                 Professional References
               </h2>
             </div>

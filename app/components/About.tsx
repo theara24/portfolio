@@ -20,7 +20,7 @@ const ServiceCard = ({ index, title, description, icon }: ServiceCardProps) => {
   return (
     <Tilt
       options={{ max: 12, scale: 1.02, speed: 450 }}
-      className="xs:w-[250px] w-full"
+      className="w-full"
     >
       <motion.div
         variants={fadeIn('right', 'spring', 0.15 * index, 0.6)}
@@ -56,27 +56,29 @@ const About = () => {
             title="Overview."
             description={
               <>
-                I am a Backend-Focused Full-Stack Developer with professional
-                experience building backend services, REST APIs, database-driven
-                applications, third-party integrations, and full-stack systems.
+                I am a Software Developer with professional experience building
+                backend services, REST APIs, database-driven applications,
+                third-party integrations, and full-stack web applications.
                 <br />
                 <br />
-                My main professional technologies include TypeScript, Node.js, Express.js,
-                PostgreSQL, MongoDB, MySQL, Redis, RabbitMQ, BullMQ, Docker, and Linux.
-                I also have hands-on experience with React, Vue.js, PHP/Laravel, Python automation,
-                Telegram bots, AI chatbots, and AI/LLM API integrations.
+                My strongest experience is with TypeScript, Node.js, Express.js,
+                PostgreSQL, MongoDB, MySQL, Redis, RabbitMQ, BullMQ, Docker, and
+                Linux. I also have hands-on experience with React, Vue.js, Next.js,
+                Tailwind CSS, PHP/Laravel, Java, C#, Python automation, Telegram
+                bots, and AI/LLM API integrations.
                 <br />
                 <br />
-                I enjoy solving problems involving APIs, databases, authentication,
-                asynchronous processing, distributed systems, third-party integrations,
-                security, performance, and workflow automation.
+                I enjoy building reliable software, designing APIs and database
+                systems, implementing authentication and asynchronous processing,
+                integrating third-party services, and improving application
+                security, performance, and scalability.
               </>
             }
           />
         </div>
 
         {/* Lanyard */}
-        <div className="relative mx-auto h-[560px] w-full max-w-[380px]">
+        <div className="relative mx-auto h-[400px] w-full max-w-[380px] sm:h-[480px] lg:h-[560px]">
           <Lanyard frontImage="/Ra.png" />
         </div>
       </div>

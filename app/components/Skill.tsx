@@ -260,7 +260,7 @@ const Skill: React.FC = () => {
           icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
         },
         {
-          name: 'Third-party API Integration',
+          name: 'Third-Party API Integration',
           icon: <Plug className="w-4 h-4 text-[#10B981]" />,
         },
         {
@@ -283,12 +283,16 @@ const Skill: React.FC = () => {
     },
     {
       icon: Layout,
-      title: 'Frontend',
+      title: 'Frontend Development',
       color: 'text-blue-400',
       skills: [
         {
           name: 'React',
           icon: <FaReact className="w-4 h-4 text-[#61DAFB]" />,
+        },
+        {
+          name: 'Next.js',
+          icon: <SiNextdotjs className="w-4 h-4 text-white" />,
         },
         {
           name: 'Vue.js',
@@ -412,7 +416,7 @@ const Skill: React.FC = () => {
           icon: <Network className="w-4 h-4 text-[#06B6D4]" />,
         },
         {
-          name: 'Third-party APIs',
+          name: 'Third-Party APIs',
           icon: <Plug className="w-4 h-4 text-[#10B981]" />,
         },
         {
@@ -437,22 +441,6 @@ const Skill: React.FC = () => {
         {
           name: 'AI-assisted Development',
           icon: <Wrench className="w-4 h-4 text-[#3B82F6]" />,
-        },
-        {
-          name: 'ChatGPT',
-          icon: <Bot className="w-4 h-4 text-[#10A37F]" />,
-        },
-        {
-          name: 'Gemini',
-          icon: <Bot className="w-4 h-4 text-[#8E75FF]" />,
-        },
-        {
-          name: 'Claude',
-          icon: <Bot className="w-4 h-4 text-[#D97706]" />,
-        },
-        {
-          name: 'OpenCode',
-          icon: <Terminal className="w-4 h-4 text-[#06B6D4]" />,
         },
       ],
     },
@@ -515,22 +503,17 @@ const Skill: React.FC = () => {
                 }}
                 className="text-secondary text-[17px] max-w-[3xl] leading-[30px]"
               >
-                I am a Backend-Focused Full-Stack Developer with hands-on
-                experience building APIs, backend services, full-stack
-                applications, and distributed systems. My core strengths are
-                TypeScript, Node.js, Express.js, PostgreSQL, MongoDB, Redis, RabbitMQ,
-                BullMQ, and Docker infrastructure.
-                <br />
-                <br />
-                I use AI and automation tools (Python automation scripts, Telegram bots,
-                AI chatbots, LLM APIs, ChatGPT, Gemini, Claude, and OpenCode) to improve
-                development workflows, debugging, research, repetitive tasks, and application workflows.
+                I work across the full software development stack, with
+                strongest professional experience in backend engineering, APIs,
+                databases, distributed systems, and integrations. I also build
+                modern frontend applications using React, Vue.js, and Next.js, and
+                have experience with automation, DevOps, and AI/LLM integrations.
               </motion.p>
             </div>
           </div>
           {/* Right: 3D Spline Viewer */}
           <div className="lg:w-1/2 flex items-center justify-center">
-            <div className="w-full h-[600px]">
+            <div className="w-full h-[340px] sm:h-[460px] lg:h-[600px]">
               <SplineViewer />
             </div>
           </div>
@@ -542,7 +525,7 @@ const Skill: React.FC = () => {
             const isWide =
               category.title === 'Backend & APIs' ||
               category.title === 'Database & Distributed Systems' ||
-              category.title === 'Frontend';
+              category.title === 'Frontend Development';
             return (
               <Reveal
                 key={index}

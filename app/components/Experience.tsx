@@ -78,7 +78,7 @@ const Experience: React.FC = () => {
       <SectionHeading
         kicker="Career"
         title="Work Experience."
-        description="A look at the roles, teams, and production systems I've contributed to as a backend developer and full-stack engineer."
+        description="A look at the roles, projects, and production systems I've contributed to across backend, full-stack, and software development."
       />
 
       <div className="mt-12">

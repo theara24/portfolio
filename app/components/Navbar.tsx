@@ -157,7 +157,8 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-x-0 top-16 z-40 border-b border-white/10 bg-[#09031f]/95 px-6 py-6 backdrop-blur-xl lg:hidden"
+          className="fixed inset-x-0 top-16 z-40 max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-b border-white/10 bg-[#09031f]/95 px-5 py-6 backdrop-blur-xl lg:hidden"
+          data-lenis-prevent
         >
           <ul className="flex list-none flex-col gap-2">
             {navLinks.map((nav) => (

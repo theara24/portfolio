@@ -88,7 +88,7 @@ const FeaturedPanelContent = ({
       {/* Visual */}
       <div className="relative lg:[direction:ltr]">
         <span
-          className="pointer-events-none absolute -top-14 -left-4 select-none font-black leading-none text-[7rem] text-white/[0.04] sm:text-[10rem]"
+          className="pointer-events-none absolute -top-14 -left-4 select-none font-black leading-none text-white/[0.04] text-[4.5rem] sm:text-[7rem] lg:text-[10rem]"
           aria-hidden
         >
           {String(index + 1).padStart(2, "0")}
@@ -196,11 +196,11 @@ const FeaturedPanel = ({
   }
 
   return (
-    <div ref={wrapperRef} className="relative h-[220vh]">
-      <div className="sticky top-20 flex h-screen items-center overflow-hidden">
+    <div ref={wrapperRef} className="relative lg:h-[220vh]">
+      <div className="flex items-center py-4 lg:sticky lg:top-20 lg:min-h-screen lg:overflow-hidden lg:py-0">
         <motion.div
           style={{ y, opacity, scale }}
-          className="w-full rounded-3xl border border-white/10 bg-gradient-to-br from-[#12102a] to-[#0b0920] p-6 shadow-2xl shadow-black/40 sm:p-10"
+          className="w-full rounded-3xl border border-white/10 bg-gradient-to-br from-[#12102a] to-[#0b0920] p-5 shadow-2xl shadow-black/40 sm:p-8 lg:p-10"
         >
           <FeaturedPanelContent project={project} index={index} />
         </motion.div>
@@ -376,28 +376,28 @@ const Works = () => {
           </p>
 
           {/* Custom Tab Selector */}
-          <div className="mt-8 inline-flex items-center p-1.5 rounded-xl border border-white/10 bg-[#0d0b22] backdrop-blur-md">
+          <div className="mt-8 flex w-full items-center gap-1.5 rounded-xl border border-white/10 bg-[#0d0b22] p-1.5 backdrop-blur-md sm:inline-flex sm:w-auto">
             <button
               onClick={() => setActiveTab("Personal")}
-              className={`flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 ${
+              className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2.5 text-xs font-semibold transition-all duration-300 sm:flex-none sm:px-5 sm:text-sm ${
                 activeTab === "Personal"
                   ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg shadow-purple-500/20"
                   : "text-white/60 hover:text-white hover:bg-white/[0.04]"
               }`}
             >
-              <User className="h-4 w-4" />
-              Personal Projects
+              <User className="h-4 w-4 shrink-0" />
+              <span className="whitespace-nowrap">Personal Projects</span>
             </button>
             <button
               onClick={() => setActiveTab("Academic")}
-              className={`flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 ${
+              className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2.5 text-xs font-semibold transition-all duration-300 sm:flex-none sm:px-5 sm:text-sm ${
                 activeTab === "Academic"
                   ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg shadow-purple-500/20"
                   : "text-white/60 hover:text-white hover:bg-white/[0.04]"
               }`}
             >
-              <GraduationCap className="h-4 w-4" />
-              Academic Projects
+              <GraduationCap className="h-4 w-4 shrink-0" />
+              <span className="whitespace-nowrap">Academic Projects</span>
             </button>
           </div>
         </div>

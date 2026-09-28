@@ -40,13 +40,13 @@ const CodeTerminal = () => {
     () => [
       "const developer = {",
       "  name: 'Theara Chim',",
-      "  role: 'Backend-Focused Full-Stack Developer',",
+      "  role: 'Software Developer',",
       "  experience: 'Programming since 2023',",
       "  professional: 'Backend development since 2025',",
       "  expertise: [",
       "    'Backend Development', 'API Engineering',",
       "    'Database Systems', 'Distributed Systems',",
-      "    'Full-Stack Development',",
+      "    'Full-Stack Development', 'Frontend Development',",
       "  ],",
       "  primaryStack: [",
       "    'TypeScript', 'Node.js', 'Express.js',",
@@ -233,9 +233,10 @@ export const HeroContent = () => {
               <FlipWords
                 className="text-lg sm:text-xl text-blue-400 font-medium"
                 words={[
-                  'Backend-Focused Full-Stack Developer',
+                  'Full-Stack Developer',
                   'Backend Developer',
-                  'Software Engineer',
+                  'Software Developer',
+                  'Frontend Developer',
                 ]}
               />
           </motion.div>
@@ -245,8 +246,9 @@ export const HeroContent = () => {
             variants={item}
             className="mt-5 max-w-xl text-sm leading-[1.8] text-gray-300 sm:text-base"
           >
-            Building scalable backend systems, REST APIs, distributed services,
-            third-party integrations, and full-stack applications with modern technologies.
+            Building reliable software, scalable backend systems, REST APIs,
+            full-stack applications, and modern web solutions with TypeScript,
+            Node.js, React, and other technologies.
           </motion.p>
 
           {/* CTAs */}
