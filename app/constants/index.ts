@@ -27,28 +27,28 @@ export const navLinks = [
 
 export const services = [
   {
-    title: 'Backend Developer',
+    title: 'Software Developer',
     description:
-      'Designing and building scalable backend services, REST APIs, microservices, and database systems.',
-    icon: '/fullsttack.webp',
-  },
-  {
-    title: 'Software Engineer',
-    description:
-      'Architecting maintainable, reliable, and high-performance software solutions for business requirements.',
+      'Architecting maintainable, reliable, and high-performance software solutions tailored to modern business requirements.',
     icon: '/software-engineer.png',
   },
   {
     title: 'Full-Stack Developer',
     description:
-      'Developing end-to-end web applications across backend APIs, frontend UIs, and real-time features.',
+      'Building complete, end-to-end web applications seamlessly bridging responsive frontend UIs and robust backend architectures.',
     icon: '/full-stack-developer.png',
   },
   {
-    title: 'Database & Systems',
+    title: 'Frontend Developer',
     description:
-      'Optimizing relational & NoSQL databases, caching layers, message queues, and distributed architectures.',
-    icon: '/database-systems.png',
+      'Crafting dynamic, responsive, and intuitive user interfaces with modern React, Next.js, Vue.js, and Tailwind CSS.',
+    icon: '/frontend.webp',
+  },
+  {
+    title: 'Backend Developer',
+    description:
+      'Engineering scalable backend services, RESTful APIs, distributed message queues, and optimized database systems.',
+    icon: '/backend.webp',
   },
 ];
 
@@ -105,20 +105,20 @@ export const technologies = [
 
 const experiences = [
   {
-    title: 'Junior Backend Developer',
+    title: 'Software Developer',
     company_name: 'Everlast Information & Apps Dev Co., Ltd.',
-    icon: '/backend.webp',
-    iconBg: '#383E56',
+    icon: '/company/EverlastInformation_AppsDevCo.png',
+    iconBg: '#FFFFFF',
     date: '2025 – 2026',
     points: [
-      'Designed, developed, and maintained REST APIs and core backend services using TypeScript, Node.js, and Express.js.',
-      'Contributed to backend systems involving omnichannel messaging, distributed microservices, monorepos, and high-concurrency workflows.',
-      'Implemented transactional management, concurrency controls, background job processing (BullMQ), caching (Redis), and message queues (RabbitMQ).',
-      'Engineered data persistence and optimization across PostgreSQL, MySQL, and MongoDB databases.',
-      'Integrated third-party APIs and messaging platforms including Telegram, WhatsApp, LINE, and Messenger into backend services.',
+      'Developed and maintained full-stack web applications, REST APIs, and core backend services using TypeScript, Node.js, Express.js, and React.',
+      'Contributed to client web portals and admin dashboards, integrating real-time WebSockets, push notifications, and responsive UI components.',
+      'Engineered distributed backend architectures involving omnichannel messaging, microservices, monorepos, and high-concurrency workflows.',
+      'Implemented transactional integrity, concurrency controls, background job processing (BullMQ), caching (Redis), and message queues (RabbitMQ).',
+      'Managed data persistence and optimization across PostgreSQL, MySQL, and MongoDB databases.',
+      'Integrated third-party APIs and messaging platforms including Telegram, WhatsApp, LINE, and Messenger into production services.',
       'Configured Docker, Docker Swarm, Nginx, Linux, and CI/CD pipelines for deployment, service management, and containerized hosting.',
       'Developed Python automation scripts, Telegram bots, and AI/LLM API integrations to enhance operational workflows.',
-      'Participated in code reviews, testing, performance tuning, security enhancements, and production environment troubleshooting.',
     ],
   },
   {
@@ -722,6 +722,78 @@ const projects: Project[] = [
     platform: 'Console App',
     featured: false,
   },
+  {
+    name: 'POS System - Point of Sale',
+    category: 'Academic',
+    description:
+      'A point of sale desktop application for retail businesses with inventory management, sales tracking, and transaction reporting features.',
+    context:
+      'Developed as an academic software engineering project using C# and .NET Windows Forms with relational database management. Features inventory stock control, checkout transactions, receipt generation, and sales analytics.',
+    features: [
+      'Inventory & Stock Management',
+      'Sales & Checkout Tracking',
+      'Transaction & Receipt Reporting',
+      'User Authentication & Roles',
+    ],
+    role: 'Software Developer',
+    status: 'Academic Project',
+    company: 'SETEC Institute',
+    tags: [
+      {
+        name: 'C#',
+        color: 'green-text-gradient',
+      },
+      {
+        name: '.NET',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'SQL Server',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: '/projectimg/pos.png',
+    source_code_link: 'https://github.com/theara24/POS-System.git',
+    deploy_link: undefined,
+    platform: 'Desktop App',
+    featured: false,
+  },
+  {
+    name: 'SQL Server Management Tool',
+    category: 'Academic',
+    description:
+      'A database utility desktop application for SQL Server management featuring query execution, database schema visualization, and export utilities.',
+    context:
+      'Engineered as an academic database management project in C# and .NET to simplify database administrative tasks, table inspections, script execution, and tabular data export.',
+    features: [
+      'Query Execution & Editor',
+      'Database Schema Visualization',
+      'Data Export Utilities',
+      'Connection String Management',
+    ],
+    role: 'Software Developer',
+    status: 'Academic Project',
+    company: 'SETEC Institute',
+    tags: [
+      {
+        name: 'C#',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'SQL Server',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: '.NET',
+        color: 'blue-text-gradient',
+      },
+    ],
+    image: '/projectimg/sql_sever.png',
+    source_code_link: 'https://github.com/theara24/POS_SQLServer.git',
+    deploy_link: undefined,
+    platform: 'Desktop App',
+    featured: false,
+  },
 
   /* ---------------- PERSONAL PROJECTS ---------------- */
   {
@@ -730,13 +802,14 @@ const projects: Project[] = [
     description:
       'A production-oriented, multi-tenant Autonomous AI Customer Support & Assistant Platform engineered with NestJS, PostgreSQL (pgvector), Redis/BullMQ, and Next.js 14.',
     context:
-      'Engineered for 24/7 omnichannel customer inquiries (web chat, floating embed widget, Telegram bot). Features semantic RAG retrieval with HNSW vector indexing, deterministic tool execution, automated intent classification, race-condition-free human agent handoff, and real-time Socket.IO synchronization with strict multi-tenant boundary isolation.',
+      'Engineered for 24/7 omnichannel customer inquiries (web chat, floating embed widget, Telegram bot). Features semantic RAG retrieval with HNSW vector indexing, deterministic tool execution, automated intent classification, race-condition-free human agent handoff, real-time presence tracking, and multi-tenant boundary isolation.',
     features: [
       'Strict Multi-Tenant Isolation',
       'Semantic RAG (pgvector + HNSW)',
       'Race-Free Agent Takeover',
       'Omnichannel (Web, Widget, Telegram)',
-      'Real-Time WebSockets (Socket.IO)',
+      'Real-Time WebSockets & Presence Tracking',
+      'Multi-Agent Team Management',
       'BullMQ Background Queue Ingestion',
       'Dual AI Engine (Gemini & Demo Sandbox)',
       'Deterministic Tool Execution',
@@ -793,7 +866,7 @@ const projects: Project[] = [
     image: '/projectimg/ai-support-agent.png',
     source_code_link: 'https://github.com/theara24/ai-support-agent.git',
     deploy_link: 'https://theara-ai-support-agent.vercel.app/',
-    platform: 'Vercel',
+    platform: 'Vercel, Render & Supabase',
     featured: true,
   },
   {
@@ -928,64 +1001,6 @@ const projects: Project[] = [
     swagger_link: 'https://movie-tickets-booking-85p9.onrender.com/api/docs',
     admin_swagger_link: 'https://movie-tickets-booking-1-e3yd.onrender.com/api/docs',
     platform: 'Render & GitLab',
-    featured: false,
-  },
-  {
-    name: 'POS System - Point of Sale',
-    category: 'Personal',
-    description:
-      'A point of sale system for retail businesses with inventory management, sales tracking, and transaction reporting features.',
-    features: [
-      'Inventory Management',
-      'Sales Tracking',
-      'Transaction Reporting',
-    ],
-    role: 'Software Developer',
-    status: 'Personal Project',
-    company: 'Personal Project',
-    tags: [
-      {
-        name: 'C#',
-        color: 'green-text-gradient',
-      },
-      {
-        name: '.NET',
-        color: 'blue-text-gradient',
-      },
-    ],
-    image: '/projectimg/pos.png',
-    source_code_link: 'https://github.com/theara24/POS-System.git',
-    deploy_link: undefined,
-    platform: 'Not available',
-    featured: false,
-  },
-  {
-    name: 'SQL Server Management Tool',
-    category: 'Personal',
-    description:
-      'A database utility tool for SQL Server management featuring query execution, database schema visualization, and export utilities.',
-    features: [
-      'Query Execution',
-      'Database Schema Visualization',
-      'Data Export Utilities',
-    ],
-    role: 'Software Developer',
-    status: 'Personal Project',
-    company: 'Personal Project',
-    tags: [
-      {
-        name: 'C#',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'SQL Server',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: '/projectimg/sql_sever.png',
-    source_code_link: 'https://github.com/theara24/POS_SQLServer.git',
-    deploy_link: undefined,
-    platform: 'Not available',
     featured: false,
   },
 ];

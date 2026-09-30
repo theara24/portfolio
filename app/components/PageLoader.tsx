@@ -125,7 +125,7 @@ export default function PageLoader({ onComplete }: PageLoaderProps) {
               transition={{ duration: 0.5, ease: [0.33, 1, 0.68, 1] }}
               className="text-sm sm:text-base text-white/40 tracking-widest uppercase font-light"
             >
-              Backend-Focused Full-Stack Developer
+              Software Developer · Full-Stack · Frontend · Backend
             </motion.p>
           </div>
         </motion.div>

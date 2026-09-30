@@ -56,23 +56,24 @@ const About = () => {
             title="Overview."
             description={
               <>
-                I am a Software Developer with professional experience building
-                backend services, REST APIs, database-driven applications,
-                third-party integrations, and full-stack web applications.
+                I am a versatile Software Developer with professional experience
+                building full-stack web applications, responsive frontend user
+                interfaces, scalable backend services, and REST APIs.
                 <br />
                 <br />
-                My strongest experience is with TypeScript, Node.js, Express.js,
-                NestJS, PostgreSQL, MongoDB, MySQL, Redis, RabbitMQ, BullMQ,
-                Docker, and Linux. I also have hands-on experience with React,
-                Vue.js, Next.js, Tailwind CSS, PHP/Laravel, Java, C#, Python
-                automation, Telegram bots, RAG architectures (pgvector), and
-                AI/LLM agent integrations.
+                My technical expertise spans modern frontend frameworks (React,
+                Next.js, Vue.js, Tailwind CSS) and robust backend engineering
+                (TypeScript, Node.js, Express.js, NestJS, PostgreSQL, MongoDB,
+                MySQL, Redis, RabbitMQ, BullMQ, Docker, and Linux). I also have
+                hands-on experience with PHP/Laravel, Java, C#/.NET, Python
+                automation, Telegram bots, RAG vector architectures (pgvector),
+                and AI/LLM integrations.
                 <br />
                 <br />
-                I enjoy building reliable software, designing APIs and database
-                systems, implementing authentication and asynchronous processing,
-                integrating third-party services, and improving application
-                security, performance, and scalability.
+                Whether crafting intuitive, high-performance interfaces on the
+                frontend, architecting resilient backend services, or delivering
+                complete end-to-end software solutions, I focus on clean code,
+                scalability, and solving real-world business problems.
               </>
             }
           />

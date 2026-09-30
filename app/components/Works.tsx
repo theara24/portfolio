@@ -351,7 +351,7 @@ const Works = () => {
       <SectionHeading
         kicker="Professional Work"
         title="Professional Projects."
-        description="Selected projects and systems I worked on professionally. Explore the backend services, REST APIs, real-time engines, and full-stack systems I've developed in production environments."
+        description="Selected production systems and applications I worked on professionally. Explore the full-stack platforms, client and admin portals, real-time messaging engines, REST APIs, and backend architectures I've built."
       />
 
       {/* Featured Professional Work Pinned Showcase */}
@@ -368,11 +368,10 @@ const Works = () => {
             More Work
           </span>
           <h3 className="mt-2 text-3xl font-black text-white sm:text-4xl">
-            Academic & Personal Projects.
+            Personal & Academic Projects.
           </h3>
           <p className="mt-3 text-sm text-secondary leading-relaxed">
-            Academic and personal projects that showcase my learning,
-            experimentation, and independent development experience.
+            Independent full-stack applications, AI platforms, and software engineering projects showcasing my development experience across frontend and backend technologies.
           </p>
 
           {/* Custom Tab Selector */}

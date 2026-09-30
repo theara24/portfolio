@@ -41,16 +41,14 @@ const CodeTerminal = () => {
       "const developer = {",
       "  name: 'Theara Chim',",
       "  role: 'Software Developer',",
-      "  experience: 'Programming since 2023',",
-      "  professional: 'Backend development since 2025',",
-      "  expertise: [",
-      "    'Backend Development', 'API Engineering',",
-      "    'Database Systems', 'Distributed Systems',",
-      "    'Full-Stack Development', 'Frontend Development',",
+      "  experience: 'Building software since 2023',",
+      "  domains: [",
+      "    'Full-Stack Development', 'Frontend Applications',",
+      "    'Backend Engineering', 'Software Solutions',",
       "  ],",
       "  primaryStack: [",
-      "    'TypeScript', 'Node.js', 'Express.js',",
-      "    'PostgreSQL', 'Redis', 'RabbitMQ', 'Docker', 'Linux',",
+      "    'TypeScript', 'React', 'Next.js', 'Node.js',",
+      "    'Express.js', 'PostgreSQL', 'Tailwind CSS', 'Docker',",
       "  ],",
       "  availableForWork: true,",
       "};",
@@ -161,13 +159,13 @@ const CodeTerminal = () => {
 /* ---------------- TECH CHIPS ---------------- */
 const CORE_TECH = [
   'TypeScript',
+  'React',
+  'Next.js',
   'Node.js',
   'Express.js',
   'PostgreSQL',
-  'Redis',
-  'RabbitMQ',
+  'Tailwind CSS',
   'Docker',
-  'Linux',
 ];
 
 /* ---------------- HERO CONTENT ---------------- */
@@ -233,10 +231,10 @@ export const HeroContent = () => {
               <FlipWords
                 className="text-lg sm:text-xl text-blue-400 font-medium"
                 words={[
-                  'Full-Stack Developer',
-                  'Backend Developer',
                   'Software Developer',
+                  'Full-Stack Developer',
                   'Frontend Developer',
+                  'Backend Developer',
                 ]}
               />
           </motion.div>
@@ -246,9 +244,9 @@ export const HeroContent = () => {
             variants={item}
             className="mt-5 max-w-xl text-sm leading-[1.8] text-gray-300 sm:text-base"
           >
-            Building reliable software, scalable backend systems, REST APIs,
-            full-stack applications, and modern web solutions with TypeScript,
-            Node.js, React, and other technologies.
+            Building modern software, responsive frontend web applications,
+            scalable backend APIs, and end-to-end full-stack solutions with
+            TypeScript, React, Next.js, Node.js, and PostgreSQL.
           </motion.p>
 
           {/* CTAs */}

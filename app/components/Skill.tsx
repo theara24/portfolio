@@ -521,11 +521,12 @@ const Skill: React.FC = () => {
                 }}
                 className="text-secondary text-[17px] max-w-[3xl] leading-[30px]"
               >
-                I work across the full software development stack, with
-                strongest professional experience in backend engineering, APIs,
-                databases, distributed systems, and integrations. I also build
-                modern frontend applications using React, Vue.js, and Next.js, and
-                have experience with automation, DevOps, and AI/LLM integrations.
+                I build modern software across the entire development stack. My
+                skill set covers responsive frontend interfaces with React,
+                Next.js, and Vue.js, high-performance backend APIs and
+                microservices with TypeScript, Node.js, Express, and NestJS,
+                reliable database systems, distributed queues, and AI-driven
+                automation.
               </motion.p>
             </div>
           </div>
