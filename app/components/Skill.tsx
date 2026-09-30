@@ -39,6 +39,7 @@ import {
   SiLaravel,
   SiMongodb,
   SiMysql,
+  SiNestjs,
   SiNextdotjs,
   SiNginx,
   SiPortainer,
@@ -46,6 +47,7 @@ import {
   SiRabbitmq,
   SiRedis,
   SiSharp,
+  SiSocketdotio,
   SiTailwindcss,
   SiTelegram,
   SiTypescript,
@@ -256,6 +258,14 @@ const Skill: React.FC = () => {
           icon: <SiExpress className="w-4 h-4 text-white" />,
         },
         {
+          name: 'NestJS',
+          icon: <SiNestjs className="w-4 h-4 text-[#E0234E]" />,
+        },
+        {
+          name: 'Socket.IO',
+          icon: <SiSocketdotio className="w-4 h-4 text-white" />,
+        },
+        {
           name: 'REST APIs',
           icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
         },
@@ -431,12 +441,20 @@ const Skill: React.FC = () => {
       color: 'text-purple-400',
       skills: [
         {
-          name: 'AI Chatbots',
+          name: 'Autonomous AI Agents',
           icon: <Bot className="w-4 h-4 text-[#A855F7]" />,
         },
         {
-          name: 'LLM API Integration',
+          name: 'RAG & pgvector',
+          icon: <Database className="w-4 h-4 text-[#06B6D4]" />,
+        },
+        {
+          name: 'LLM & Gemini API',
           icon: <Cpu className="w-4 h-4 text-[#EC4899]" />,
+        },
+        {
+          name: 'Deterministic Tool Execution',
+          icon: <Terminal className="w-4 h-4 text-[#10B981]" />,
         },
         {
           name: 'AI-assisted Development',

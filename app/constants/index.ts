@@ -725,6 +725,78 @@ const projects: Project[] = [
 
   /* ---------------- PERSONAL PROJECTS ---------------- */
   {
+    name: 'AI Support Agent',
+    category: 'Personal',
+    description:
+      'A production-oriented, multi-tenant Autonomous AI Customer Support & Assistant Platform engineered with NestJS, PostgreSQL (pgvector), Redis/BullMQ, and Next.js 14.',
+    context:
+      'Engineered for 24/7 omnichannel customer inquiries (web chat, floating embed widget, Telegram bot). Features semantic RAG retrieval with HNSW vector indexing, deterministic tool execution, automated intent classification, race-condition-free human agent handoff, and real-time Socket.IO synchronization with strict multi-tenant boundary isolation.',
+    features: [
+      'Strict Multi-Tenant Isolation',
+      'Semantic RAG (pgvector + HNSW)',
+      'Race-Free Agent Takeover',
+      'Omnichannel (Web, Widget, Telegram)',
+      'Real-Time WebSockets (Socket.IO)',
+      'BullMQ Background Queue Ingestion',
+      'Dual AI Engine (Gemini & Demo Sandbox)',
+      'Deterministic Tool Execution',
+    ],
+    role: 'Full-Stack & AI Systems Developer',
+    status: 'Personal Production Project',
+    company: 'Personal Project',
+    tags: [
+      {
+        name: 'NestJS',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Next.js 14',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'TypeScript',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'PostgreSQL',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'pgvector',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Redis',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'BullMQ',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Socket.IO',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'Google Gemini',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'Docker',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'Tailwind CSS',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: '/projectimg/ai-support-agent.png',
+    source_code_link: 'https://github.com/theara24/ai-support-agent.git',
+    deploy_link: 'https://theara-ai-support-agent.vercel.app/',
+    platform: 'Vercel',
+    featured: true,
+  },
+  {
     name: 'TaskBoard',
     category: 'Personal',
     description:

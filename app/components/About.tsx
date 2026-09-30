@@ -62,10 +62,11 @@ const About = () => {
                 <br />
                 <br />
                 My strongest experience is with TypeScript, Node.js, Express.js,
-                PostgreSQL, MongoDB, MySQL, Redis, RabbitMQ, BullMQ, Docker, and
-                Linux. I also have hands-on experience with React, Vue.js, Next.js,
-                Tailwind CSS, PHP/Laravel, Java, C#, Python automation, Telegram
-                bots, and AI/LLM API integrations.
+                NestJS, PostgreSQL, MongoDB, MySQL, Redis, RabbitMQ, BullMQ,
+                Docker, and Linux. I also have hands-on experience with React,
+                Vue.js, Next.js, Tailwind CSS, PHP/Laravel, Java, C#, Python
+                automation, Telegram bots, RAG architectures (pgvector), and
+                AI/LLM agent integrations.
                 <br />
                 <br />
                 I enjoy building reliable software, designing APIs and database
