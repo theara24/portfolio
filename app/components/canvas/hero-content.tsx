@@ -1,10 +1,9 @@
 'use client';
 
-import { ArrowRight, Send, Sparkles } from 'lucide-react';
-import { motion, useReducedMotion, useScroll, useTransform, type Variants } from 'framer-motion';
+import { ArrowRight, Sparkles } from 'lucide-react';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLoading } from '../PageLoaderProvider';
-import MagneticButton from '../MagneticButton';
 import { FlipWords } from './FlipWords';
 
 /* ---------------- CODE TERMINAL (Smooth Typing Effect) ---------------- */
@@ -40,16 +39,10 @@ const CodeTerminal = () => {
     () => [
       "const developer = {",
       "  name: 'Theara Chim',",
-      "  role: 'Software Developer',",
-      "  experience: 'Building software since 2023',",
-      "  domains: [",
-      "    'Full-Stack Development', 'Frontend Applications',",
-      "    'Backend Engineering', 'Software Solutions',",
-      "  ],",
-      "  primaryStack: [",
-      "    'TypeScript', 'React', 'Next.js', 'Node.js',",
-      "    'Express.js', 'PostgreSQL', 'Tailwind CSS', 'Docker',",
-      "  ],",
+      "  role: 'Backend Developer',",
+      "  experience: '1 year professional + freelance since 2024',",
+      "  focus: ['REST APIs', 'Message queues', 'Microservices', 'Full-stack apps'],",
+      "  primaryStack: ['TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'RabbitMQ'],",
       "  availableForWork: true,",
       "};",
     ],
@@ -159,13 +152,11 @@ const CodeTerminal = () => {
 /* ---------------- TECH CHIPS ---------------- */
 const CORE_TECH = [
   'TypeScript',
-  'React',
-  'Next.js',
   'Node.js',
-  'Express.js',
+  'Express',
   'PostgreSQL',
-  'Tailwind CSS',
-  'Docker',
+  'Redis',
+  'RabbitMQ',
 ];
 
 /* ---------------- HERO CONTENT ---------------- */
@@ -200,13 +191,13 @@ export const HeroContent = () => {
       <div className="container-px grid w-full items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
         {/* Text / CTAs */}
         <motion.div variants={item} className="flex flex-col items-start">
-          {/* Badge */}
+          {/* Status Badge */}
           <motion.span
             variants={item}
-            className="inline-flex items-center gap-2 rounded-full border border-purple-400/30 bg-purple-500/10 px-4 py-1.5 text-xs font-medium text-purple-200"
+            className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-medium text-cyan-200"
           >
-            <Sparkles className="h-3.5 w-3.5 text-[#b49bff]" aria-hidden />
-            Welcome to my portfolio
+            <Sparkles className="h-3.5 w-3.5 text-cyan-300" aria-hidden />
+            Available for software developer roles
           </motion.span>
 
           {/* Headline */}
@@ -220,7 +211,7 @@ export const HeroContent = () => {
             <span className="text-gradient-teal mt-2 block">Theara Chim</span>
           </motion.h1>
 
-          {/* Role badge with FlipWords */}
+          {/* Role badge with FlipWords animation */}
           <motion.div
             variants={item}
             className="mt-4 inline-flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-blue-500/20 bg-gradient-to-r from-blue-500/10 to-teal-500/10 px-4 sm:px-6 py-2 sm:py-3 backdrop-blur-sm"
@@ -228,15 +219,15 @@ export const HeroContent = () => {
             <span className="text-base sm:text-lg" aria-hidden>
               🚀
             </span>
-              <FlipWords
-                className="text-lg sm:text-xl text-blue-400 font-medium"
-                words={[
-                  'Software Developer',
-                  'Full-Stack Developer',
-                  'Frontend Developer',
-                  'Backend Developer',
-                ]}
-              />
+            <FlipWords
+              className="text-xl sm:text-2xl text-blue-400 font-bold"
+              words={[
+                'Backend Developer',
+                'REST APIs & Microservices',
+                'Distributed Queues & Systems',
+                'Full-Stack Developer',
+              ]}
+            />
           </motion.div>
 
           {/* Description */}
@@ -244,9 +235,8 @@ export const HeroContent = () => {
             variants={item}
             className="mt-5 max-w-xl text-sm leading-[1.8] text-gray-300 sm:text-base"
           >
-            Building modern software, responsive frontend web applications,
-            scalable backend APIs, and end-to-end full-stack solutions with
-            TypeScript, React, Next.js, Node.js, and PostgreSQL.
+            I build REST APIs, message-queue services, and full-stack web apps
+            with TypeScript, Node.js, PostgreSQL, Redis, and RabbitMQ.
           </motion.p>
 
           {/* CTAs */}
@@ -264,13 +254,6 @@ export const HeroContent = () => {
                 aria-hidden
               />
             </a>
-            <MagneticButton
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/[0.07]"
-            >
-              <Send className="h-4 w-4" aria-hidden />
-              Contact Me
-            </MagneticButton>
           </motion.div>
 
           {/* Tech chips */}

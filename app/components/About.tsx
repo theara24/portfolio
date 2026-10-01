@@ -1,13 +1,17 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { SectionWrapper } from './HigherOrderComponents';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Tilt } from 'react-tilt';
 import { services } from '../constants';
 import { fadeIn } from '@/app/utils/motion';
-import Lanyard from './Lanyard';
 import SectionHeading from './SectionHeading';
+
+const Lanyard = dynamic(() => import('./Lanyard'), {
+  ssr: false,
+});
 
 type ServiceCardProps = {
   index: number;
@@ -56,24 +60,17 @@ const About = () => {
             title="Overview."
             description={
               <>
-                I am a versatile Software Developer with professional experience
-                building full-stack web applications, responsive frontend user
-                interfaces, scalable backend services, and REST APIs.
+                I&apos;m a backend developer from Phnom Penh. For a year at Everlast
+                Information &amp; Apps Dev Co., Ltd., I built REST APIs, microservices,
+                and messaging systems with TypeScript, Node.js, PostgreSQL, Redis,
+                and RabbitMQ. I also build full-stack apps with React, Next.js, and
+                NestJS, and I have worked with Laravel, Ruby on Rails, Python
+                automation, and LLM integrations.
                 <br />
                 <br />
-                My technical expertise spans modern frontend frameworks (React,
-                Next.js, Vue.js, Tailwind CSS) and robust backend engineering
-                (TypeScript, Node.js, Express.js, NestJS, PostgreSQL, MongoDB,
-                MySQL, Redis, RabbitMQ, BullMQ, Docker, and Linux). I also have
-                hands-on experience with PHP/Laravel, Java, C#/.NET, Python
-                automation, Telegram bots, RAG vector architectures (pgvector),
-                and AI/LLM integrations.
-                <br />
-                <br />
-                Whether crafting intuitive, high-performance interfaces on the
-                frontend, architecting resilient backend services, or delivering
-                complete end-to-end software solutions, I focus on clean code,
-                scalability, and solving real-world business problems.
+                I&apos;m studying Management Information Systems at SETEC Institute,
+                and I&apos;m looking for a software developer role where I can keep
+                growing on reliable, scalable systems.
               </>
             }
           />
@@ -87,7 +84,7 @@ const About = () => {
 
       {/* Services */}
       <motion.div
-        className="mt-16 grid grid-cols-1 items-stretch gap-6 xs:grid-cols-2 md:grid-cols-4"
+        className="mt-16 grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 md:grid-cols-3"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.1 }}

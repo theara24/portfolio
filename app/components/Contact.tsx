@@ -2,9 +2,13 @@
 import { slideIn } from '@/app/utils/motion';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { SectionWrapper } from './HigherOrderComponents';
-import { EarthCanvas } from './canvas';
 import Swal from 'sweetalert2';
+
+const EarthCanvas = dynamic(() => import('./canvas/Earth'), {
+  ssr: false,
+});
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);

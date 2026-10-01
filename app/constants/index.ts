@@ -27,28 +27,22 @@ export const navLinks = [
 
 export const services = [
   {
-    title: 'Software Developer',
+    title: 'Backend and APIs',
     description:
-      'Architecting maintainable, reliable, and high-performance software solutions tailored to modern business requirements.',
-    icon: '/software-engineer.png',
-  },
-  {
-    title: 'Full-Stack Developer',
-    description:
-      'Building complete, end-to-end web applications seamlessly bridging responsive frontend UIs and robust backend architectures.',
-    icon: '/full-stack-developer.png',
-  },
-  {
-    title: 'Frontend Developer',
-    description:
-      'Crafting dynamic, responsive, and intuitive user interfaces with modern React, Next.js, Vue.js, and Tailwind CSS.',
-    icon: '/frontend.webp',
-  },
-  {
-    title: 'Backend Developer',
-    description:
-      'Engineering scalable backend services, RESTful APIs, distributed message queues, and optimized database systems.',
+      'REST APIs, authentication, third-party integrations, and database design with PostgreSQL, MySQL, and MongoDB.',
     icon: '/backend.webp',
+  },
+  {
+    title: 'Messaging and queues',
+    description:
+      'Background jobs and asynchronous processing with RabbitMQ, BullMQ, and Redis.',
+    icon: '/database.webp',
+  },
+  {
+    title: 'Full-stack delivery',
+    description:
+      'Complete web apps with React, Next.js, and NestJS, deployed with Docker and Nginx.',
+    icon: '/full-stack-developer.png',
   },
 ];
 
@@ -105,33 +99,30 @@ export const technologies = [
 
 const experiences = [
   {
-    title: 'Software Developer',
+    title: 'Backend Developer',
     company_name: 'Everlast Information & Apps Dev Co., Ltd.',
     icon: '/company/EverlastInformation_AppsDevCo.png',
     iconBg: '#FFFFFF',
-    date: '2025 – 2026',
+    date: 'Oct 2025 – Sep 2026',
     points: [
-      'Developed and maintained full-stack web applications, REST APIs, and core backend services using TypeScript, Node.js, Express.js, and React.',
-      'Contributed to client web portals and admin dashboards, integrating real-time WebSockets, push notifications, and responsive UI components.',
-      'Engineered distributed backend architectures involving omnichannel messaging, microservices, monorepos, and high-concurrency workflows.',
-      'Implemented transactional integrity, concurrency controls, background job processing (BullMQ), caching (Redis), and message queues (RabbitMQ).',
-      'Managed data persistence and optimization across PostgreSQL, MySQL, and MongoDB databases.',
-      'Integrated third-party APIs and messaging platforms including Telegram, WhatsApp, LINE, and Messenger into production services.',
-      'Configured Docker, Docker Swarm, Nginx, Linux, and CI/CD pipelines for deployment, service management, and containerized hosting.',
-      'Developed Python automation scripts, Telegram bots, and AI/LLM API integrations to enhance operational workflows.',
+      'Built and maintained REST APIs and microservices (monorepo) with TypeScript, Node.js, and Express.js.',
+      'Developed omnichannel messaging services for Telegram, WhatsApp, LINE, and Messenger using RabbitMQ, BullMQ, and Redis.',
+      'Implemented transactional integrity, concurrency control, caching, and background jobs for high-traffic services.',
+      'Secured APIs with JWT and HMAC signature verification, and integrated third-party APIs.',
+      'Worked with PostgreSQL, MySQL, and MongoDB, including schema design and query optimization.',
+      'Delivered full-stack features and admin portals with React, Vue, Laravel, and Ruby on Rails.',
+      'Deployed services with Docker Swarm, Nginx, and CI/CD, and took part in code reviews and testing.',
     ],
   },
   {
-    title: 'Freelance Full-Stack Developer / Independent Projects',
+    title: 'Freelance Full-Stack Developer',
     company_name: 'Independent Projects',
     icon: '/company/web.png',
     iconBg: '#E6DEDD',
     date: '2024 – Present',
     points: [
-      'Developed responsive web applications using React.js, Tailwind CSS, and modern web technologies.',
-      'Implemented frontend functionality and integrated application components with backend APIs.',
-      'Developed Python automation scripts and Telegram bots for task automation and API integration.',
-      'Developed AI chatbot and automation solutions using AI/LLM technologies and APIs.',
+      'Built responsive web apps with React, Node.js, TypeScript, and Tailwind CSS.',
+      'Developed Python automation scripts, Telegram bots, and AI chatbots using LLM APIs.',
     ],
   },
   {
@@ -206,10 +197,10 @@ export interface Project {
 const projects: Project[] = [
   /* ---------------- PROFESSIONAL WORK (1-5) ---------------- */
   {
-    name: 'Customized Chatwoot',
+    name: 'Customized multi-tenant support platform (Chatwoot-based)',
     category: 'Professional',
     description:
-      'Backend engineering and feature enhancements for a customized, multi-tenant customer-support platform based on Chatwoot.',
+      'Backend features, background jobs, and messaging channel workflows.',
     context:
       'Contributed to backend REST APIs, real-time messaging via ActionCable, background job execution using Sidekiq & Redis, PostgreSQL query tuning, and messaging channel workflows (Telegram, WhatsApp, Messenger).',
     longDescription:
@@ -276,10 +267,10 @@ const projects: Project[] = [
     sortOrder: 1,
   },
   {
-    name: 'Customer Services',
+    name: 'Omnichannel customer-service platform (V1)',
     category: 'Professional',
     description:
-      'Backend development for an internal omnichannel customer services messaging platform integrating Telegram, WhatsApp, and microservice architectures.',
+      'Backend APIs and queue-based message delivery across Telegram, WhatsApp, and microservice architectures using RabbitMQ and Redis.',
     context:
       'Focused on backend REST APIs, microservices, message processing routines, database operations, monorepo architecture, and asynchronous message delivery with RabbitMQ.',
     longDescription:
@@ -341,10 +332,10 @@ const projects: Project[] = [
     sortOrder: 2,
   },
   {
-    name: 'Customer Services V2',
+    name: 'Omnichannel customer-service platform (V2)',
     category: 'Professional',
     description:
-      'Backend APIs and queue processing architecture for next-generation messaging services handling Telegram, WhatsApp, LINE, and Messenger integrations.',
+      'Backend APIs and queue-based message delivery across Telegram, WhatsApp, LINE, and Messenger, using RabbitMQ, Redis, BullMQ, and MinIO.',
     context:
       'Focused on high-performance queue processing with Redis and BullMQ, MinIO object storage, Docker Swarm infrastructure, multi-channel messaging integrations, and Python automation tools.',
     longDescription:
@@ -423,12 +414,12 @@ const projects: Project[] = [
     sortOrder: 3,
   },
   {
-    name: 'Hash Game',
+    name: 'Real-time gaming platform',
     category: 'Professional',
     description:
-      'Full-stack development across Client Web, Client API, Admin Web, and Admin API for a real-time gaming platform.',
+      'Full-stack work on client and admin portals with REST APIs, WebSockets, and JWT/Sanctum authentication.',
     context:
-      'Worked personally on BOTH backend and frontend. Built REST APIs, handled database operations, integrated TRON blockchain API, implemented real-time communication via WebSockets (Pusher), and secured user endpoints with JWT/Sanctum authentication.',
+      'Worked on both backend and frontend. Built REST APIs, handled database operations, integrated TRON blockchain API, implemented real-time communication via WebSockets (Pusher), and secured user endpoints with JWT/Sanctum authentication.',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: [
@@ -489,12 +480,12 @@ const projects: Project[] = [
     sortOrder: 4,
   },
   {
-    name: 'Voting System',
+    name: 'Real-time voting platform',
     category: 'Professional',
     description:
-      'Full-stack development for a high-concurrency TypeScript voting platform covering Client Web, Client API, Admin Web, and Admin API.',
+      'Full-stack work on client and admin web apps and APIs, covering transactional services, RabbitMQ messaging, HMAC-signed APIs, and concurrency control.',
     context:
-      'Worked personally on BOTH backend and frontend. Contributed to API engineering, transactional services, database schema operations, RabbitMQ message passing, wallet integrations, API security using HMAC-SHA256, and concurrency control via Reservation Pattern.',
+      'Worked on both backend and frontend. Contributed to API engineering, transactional services, database schema operations, RabbitMQ message passing, wallet integrations, API security using HMAC-SHA256, and concurrency control via Reservation Pattern.',
     longDescription:
       'Company proprietary project — implementation details are confidential.',
     features: [
@@ -800,22 +791,17 @@ const projects: Project[] = [
     name: 'AI Support Agent',
     category: 'Personal',
     description:
-      'A production-oriented, multi-tenant Autonomous AI Customer Support & Assistant Platform engineered with NestJS, PostgreSQL (pgvector), Redis/BullMQ, and Next.js 14.',
+      'A multi-tenant AI customer support and assistant platform engineered with NestJS, PostgreSQL (pgvector), Redis/BullMQ, and Next.js 14.',
     context:
-      'Engineered for 24/7 omnichannel customer inquiries (web chat, floating embed widget, Telegram bot). Features semantic RAG retrieval with HNSW vector indexing, deterministic tool execution, automated intent classification, race-condition-free human agent handoff, real-time presence tracking, and multi-tenant boundary isolation.',
+      'Engineered for 24/7 omnichannel customer inquiries (web chat, floating embed widget, Telegram bot). Features semantic RAG retrieval with pgvector, race-condition-free human agent handoff, real-time presence tracking, queue-based message ingestion, and multi-tenant boundary isolation.',
     features: [
-      'Strict Multi-Tenant Isolation',
-      'Semantic RAG (pgvector + HNSW)',
-      'Race-Free Agent Takeover',
-      'Omnichannel (Web, Widget, Telegram)',
-      'Real-Time WebSockets & Presence Tracking',
-      'Multi-Agent Team Management',
-      'BullMQ Background Queue Ingestion',
-      'Dual AI Engine (Gemini & Demo Sandbox)',
-      'Deterministic Tool Execution',
+      'Multi-tenant isolation',
+      'RAG with pgvector',
+      'Race-free agent takeover',
+      'Queue-based ingestion',
     ],
     role: 'Full-Stack & AI Systems Developer',
-    status: 'Personal Production Project',
+    status: 'Personal Project',
     company: 'Personal Project',
     tags: [
       {
@@ -873,7 +859,7 @@ const projects: Project[] = [
     name: 'TaskBoard',
     category: 'Personal',
     description:
-      'A production full-stack task and project management application with user authentication, project workflows, Zustand state management, and schema-validated Express REST APIs.',
+      'A full-stack task and project management app with user authentication, project workflows, Zustand state management, and schema-validated Express REST APIs.',
     context:
       'Independently built frontend and backend services. Features Zustand state store, Prisma ORM PostgreSQL queries, Zod schema validation, JWT authentication, and interactive Swagger API documentation.',
     features: [
@@ -885,7 +871,7 @@ const projects: Project[] = [
       'Zod & JWT Security',
     ],
     role: 'Full-Stack Developer',
-    status: 'Personal Production Project',
+    status: 'Personal Project',
     company: 'Personal Project',
     tags: [
       {

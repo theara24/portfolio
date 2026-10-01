@@ -1,16 +1,20 @@
+import dynamic from 'next/dynamic';
 import {
   About,
   Contact,
   Experience,
-  Education, // Added Education import
+  Education,
   Feedbacks,
   Hero,
   Navbar,
   Skill,
   Works,
-  StarsCanvas,
 } from './components';
 import PageLoaderProvider from './components/PageLoaderProvider';
+
+const StarsCanvas = dynamic(() => import('./components/canvas/Stars'), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
