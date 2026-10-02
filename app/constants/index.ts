@@ -103,7 +103,7 @@ const experiences = [
     company_name: 'Everlast Information & Apps Dev Co., Ltd.',
     icon: '/company/EverlastInformation_AppsDevCo.png',
     iconBg: '#FFFFFF',
-    date: 'Oct 2025 – Sep 2026',
+    date: '2025 - 2026',
     points: [
       'Built and maintained REST APIs and microservices (monorepo) with TypeScript, Node.js, and Express.js.',
       'Developed omnichannel messaging services for Telegram, WhatsApp, LINE, and Messenger using RabbitMQ, BullMQ, and Redis.',
